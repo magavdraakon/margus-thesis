@@ -1,6 +1,6 @@
 %%
 %%
-%% ITKolledži lõputöö stiilipakett
+%% ITKolledži lõputöö stiilipakett - Loodud Jaan Oras poolt
 %%
 %% Stiilipaketi aluseks oli Kaarel Kaljurand poolt loodud
 %% ut_thesis.sty stiilipakett - http://kodu.ut.ee/~kaarel/UTThesis/UTF8/ut_thesis.sty
@@ -52,7 +52,7 @@
 %% need on konstandid 
 %%
 
-\def\ylikool{Eesti Infotehnoloogia KolledŽ}
+\def\ylikool{TALLINN UNIVERSITY OF TECHNOLOGY}
 
 %%
 %%
@@ -98,7 +98,14 @@
         \thispagestyle{empty}
         \Large
 	\begin{center}
-        \Huge\uppercase\expandafter{\ylikool}
+        \Large\uppercase\expandafter{\ylikool}
+	\begin{center}
+	Faculty of Information Technology
+	\\*
+	Department of Computer Science
+	\\*
+	Chair of Network Software
+	\end{center}
 	\end{center}
 
 	\vskip1in
@@ -114,15 +121,15 @@
         \vfill
         \Large\centerline{\@paber}
  \vfill
- \begin{center}
-		\Large\uppercase\expandafter{\@eriala}
-		 \end{center}
+ 		%\begin{center}
+		%\Large\uppercase\expandafter{\@eriala}
+		%\end{center}
  \vfill
 	\vskip.5in
         \begin{flushright}
-        	\large{Juhendaja: \@juhendaja} 
+        	\large{Thesis Supervisor: \@juhendaja} 
         	\\
-        	\large{Konsultant: \@konsultant}
+        	%\large{Konsultant: \@konsultant}
 	\end{flushright}
 	\vskip.5in
 
@@ -131,7 +138,7 @@
 
 
         \vfill
-        \Large\centerline{Tallinn \@aasta}}
+        \Large\centerline{TALLINN \@aasta}}
         
 
        
@@ -141,27 +148,28 @@
         \newpage
         
 		 \begin{center}
-			\Large\uppercase\expandafter{Autorideklaratsioon}
+			\Large\uppercase\expandafter{Declaration}
 		 \end{center}
 		 
-		 \vfill
+		 %\vfill
         
         	\begin{flushleft}
-Deklareerin, et käesolev diplomitöö, mis on minu iseseisva töö tulemus, on esitatud Eesti Infotehnoloogia Kolledžile lõpudiplomi taotlemiseks IT Süsteemide arendamise erialal.  Diplomitöö alusel ei ole varem eriala lõpudiplomit taotletud.
+        	
+I hereby declare that I am the sole author of this thesis. The work is original and has not
+been submitted for any degree or diploma at any other University. I further declare that
+the material obtained from other sources has been duly acknowledged in the thesis.
+
         	\end{flushleft}
         	
-        	\vfill
+        	%\vfill
         	
         	
     \normalsize
 	\begin{flushleft}
 
 	\begin{tabular}{p{6.0cm}p{4.0cm}}
-	Autor:\@autor & ..............................\\
-	 & (allkiri ja kuupäev)  \\
-Töö vastab kehtivatele nõuetele &  \\	
-	Juhendaja:\@juhendaja & ..............................\\
-	 & (allkiri ja kuupäev) \\
+	Author:\@autor & ..............................\\
+	 & (Signature and Date)  \\
 	\end{tabular}
 
 	\end{flushleft}   	                	        	
