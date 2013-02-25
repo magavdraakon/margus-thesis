@@ -192,6 +192,22 @@ the material obtained from other sources has been duly acknowledged in the thesi
 		\addcontentsline{toc}{chapter}{#1}
 	\fi}
 
+
+%%
+%% Annotation - ENG
+%%
+
+%% not numered
+
+\def\annotation#1{%
+	\ifmyartikkel
+        	\section*{#1}
+		\addcontentsline{toc}{section}{#1}
+	\else
+        	\chapter*{#1}
+		\addcontentsline{toc}{chapter}{#1}
+	\fi}
+
 %%
 %% sisukorra tegemine
 %%
