@@ -1,68 +1,67 @@
-\documentclass[a4paper,12pt]{article}
- 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[estonian]{babel}
-\usepackage{txfonts}
-\usepackage{times}
+\documentclass[12pt,a4paper,oneside]{report}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 
-
-%% stiililehe laadimine
-\usepackage{itk_thesis}
 \usepackage{url}
+
 \usepackage{graphicx}
-\usepackage[hmargin={3.1cm, 2.54cm},vmargin=3.17cm]{geometry}
-\graphicspath{{pildid/}}
-\linespread{1.5}
+\graphicspath{{./figures/}}
 
-%% lingid
-\usepackage{hyperref}
+% for resizing page
+\usepackage[top=2.50cm, bottom=2.50cm, left=3.50cm, right=2.50cm, includefoot]{geometry}
 
-\usepackage[toc, xindy, style=list, nonumberlist]{glossaries}
+% use space to separate paragraphs
+\usepackage{parskip}
+\setlength{\parskip}{0.50cm} 
 
-\usepackage{titlesec}
-\newcommand{\sectionbreak}{%
-\vspace*{1.5cm}}
- 
-   
+% line spacing
+\usepackage{setspace}
+\onehalfspace
+
+% change chapter title to be without word chapter
+% http://www.latex-community.org/forum/viewtopic.php?f=4&t=638
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+	\vspace*{50 pt}%
+	{\setlength{\parindent}{0pt} \raggedright \normalfont
+	\bfseries\Huge\thechapter\ #1
+	\par\nobreak\vspace{40 pt}}}
+\makeatother
+
+% for adding bibliography to TOC
+\usepackage[nottoc]{tocbibind}
+
+% Change the name TOC to 
+\renewcommand{\contentsname}{Table of Contents}
+
+
 \begin{document}
 
+\title{Environment of Distance Study of Cyber Security}
+\author{Margus Ernits}
+\date{2013}
 
-%% Tiitelleht
-\begin{tiitelleht}
-\pealkiri{Environment of Distance Study of Cyber Security}
-\paber{Master's Thesis}
-\autor{Margus Ernits}
+\include{title}
+\include{declaration}
+\include{abstract}
 
-\eriala{IT süsteemide arenduse õppekava}
-
-\juhendaja{Juhendaja on puudu!}
-\konsultant{Sinu Konsultant}
-\end{tiitelleht}
-
-\autorideklaratsioon
-
-\teesisukord
-
-%% chapters
-\include{annotation}
-\include{sissejuhatus}
-
-%% jooniste peatükk
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{section}{Joonised}
-
+\tableofcontents
 \listoffigures
+\listoftables
 
-%% viidete peatükk
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{section}{Viited}
+\include{introduction}
+\include{overview}
+\include{solution}
+\include{analysis}
+\include{conclusion}
 
-\bibliographystyle{unsrt}
+\renewcommand\bibname{References}
+\bibliographystyle{plain}
 \bibliography{references}
 
-%\bibliographystyle{unsrt}
-		
+\include{addendum}
+
 \end{document}
