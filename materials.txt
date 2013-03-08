@@ -1,0 +1,3 @@
+http://jabref.sourceforge.net/ bibtex editor - proovida
+
+http://akit.cyber.ee/ - Andmekaitse ja infoturbe seletussõnastik
