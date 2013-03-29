@@ -32,6 +32,10 @@
 	\par\nobreak\vspace{40 pt}}}
 \makeatother
 
+
+\usepackage[square]{natbib}
+\bibliographystyle{plainnat}
+
 % for adding bibliography to TOC
 \usepackage[nottoc]{tocbibind}
 
@@ -67,8 +71,10 @@
 \include{future}
 \include{conclusion}
 
-\renewcommand\bibname{References}
-\bibliographystyle{plain}
+
+%\renewcommand\bibname{references}
+\bibliographystyle{named}
+%\bibliography{references}
 \bibliography{references}
 
 \include{addendum}
