@@ -1,5 +1,215 @@
 
 
-\chapter{Lisa 1}
-\label{appendix-1}
-Appendix...
+\chapter{Protecting Web Application Against (D)DOS Attacks}
+\label{Protecting Web Application Against (D)DOS Attacks}
+\section{Introduction}
+\section{Pre-Requirements} 
+\section{Scope}
+\section{Learning Outcome} 
+\section{Setting up the Virtual Environment} 
+
+In this lab we use two Ubuntu Linux virtual machines.
+Ubuntu server 512MB RAM, NIC1 - NAT, NIC2 - HostOnly with address 192.168.56.200
+Ubuntu client 1GB RAM NIC1 - NAT, NIC2 - HostOnly wid dynamic address. (probably 192.168.56.101)
+Download virtual machines to local disk
+\url{http://elab.itcollege.ee:8000/infra_klient_small.ova}
+\url{http://elab.itcollege.ee:8000/infra_server.ova}
+
+Import virtual machines (If your host computer has only 4GB RAM, then reduce client machine memory to 1GB)
+
+Start both machines. 
+
+{\small{If you got an error about host only network then open Main Menu, choose File Preferences and choose Network and add Host Only Network.}}
+
+Username and password for both machines are student, student.
+
+Username: student
+Password: student
+Student user are in sudo group and can start administrator shell with sudo command.
+
+Log on to client and add two addresses on /etc/hosts
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+echo "192.168.56.200	wp.planet.zz">>/etc/hosts
+echo "192.168.56.200	dvwa.planet.zz">>/etc/hosts
+\end{minted}
+
+\section{Installation of the WordPress}
+All following commands must executed as root user. To get root permissions in Ubuntu Server used in this lab type:
+
+\mint[frame=lines, framesep=1mm]{bash}|sudo -i|
+
+
+This lab demands installing software for that update local package cache first
+\mint[frame=lines, framesep=1mm]{bash}|apt-get update|
+
+If you have time then do system upgrade
+\mint[frame=lines, framesep=1mm]{bash}|apt-get dist-upgrade|
+
+Install apache webserver and mysql database and 
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+apt-get install apache2 mysql-server ssh php5 php5-mysql 
+apt-get install apache2-utils libapache2-mod-php5
+\end{minted}
+
+Download latest version of WordPress
+\mint[frame=lines, framesep=2mm]{bash}|wget http://wordpress.org/latest.tar.gz|
+
+Unpack tar.gz archive to  /var/www directory using tar utility.
+
+\mint[frame=lines, framesep=2mm]{bash}|sudo tar zxvf latest.tar.gz --directory=/var/www/|
+
+Creade new mysql database called wp and database user student. Grant all privileges on database wp to user student.
+
+\begin{minted}[frame=lines, framesep=2mm]{bash}
+mysql -u root -p
+create database wp;
+create user student;
+GRANT ALL PRIVILEGES ON wp.* TO 'student'@'localhost' IDENTIFIED BY 'student';
+quit
+\end{minted}
+
+Create new virtual host for wordpress 
+\marginpar{\rule[-.5cm]{1pt}{1cm}TODO}
+\mint[frame=lines, framesep=2mm]{bash}|cp /etc/apache2/sites-available/default /etc/apache2/sites-available/wp|
+Change owner and group for wordpress files to ensure that web server can read and write files.
+\mint[frame=lines, framesep=2mm]{bash}|chown www-data:www-data /var/www/wordpress -R|
+
+Change root directory (DocumentRoot) for new virtualhost and add server name field (ServerName) to virtualhosts configuration file   /etc/apache2/sites-available/wp
+
+
+\begin{minted}[frame=lines, framesep=2mm]{bash}
+ServerName	wp.planet.zz
+#DocumentRoot /var/www
+DocumentRoot /var/www/wordpress
+\end{minted}
+
+
+To enable new virtualhost for WordPress use a2ensite utility
+\mint[frame=lines, framesep=2mm]{bash}|a2ensite wp|
+
+Change wordpress configuration file
+/var/www/wordpress/wp-config-sample.php
+
+Set correct values for defines DB\_NAME, DB\_USER, DB\_PASSWORD as:
+
+define('DB\_NAME', 'wp');
+
+/** MySQL database username */
+define('DB\_USER', 'student');
+
+/** MySQL database password */
+define('DB\_PASSWORD', 'student');
+
+
+Copy sample file to real config file:
+\mint[frame=lines, framesep=2mm]{bash}|cp  -a /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php|
+
+Reload apache configuration files:
+\mint[frame=lines, framesep=2mm]{bash}|service  apache2 reload|
+
+Go to address http://wp.planet.zz/ using web browser.
+
+Enter values for  Site Title, username, password and an e-mail
+
+Choose Install
+
+\subsection{Testing Your WordPress Installation against sipler DOS attacks}
+
+
+How many requests default installation will serve? (parallel connections, requests/second)
+Install apache2 utils on CLIENT computer, not in the server computer.
+
+\begin{minted}[frame=lines, framesep=2mm]{bash}
+sudo apt-get update
+sudo apt-get install apache2-utils
+\end{minted}
+
+For Fedora/CentOS/RH/Oracle Linux install httpd-utils package.
+
+Execute Apache Benchmark program ab
+\begin{minted}[frame=lines, framesep=2mm]{bash}
+ab -c<NO_CONN> -t<TIME> http://wp.planet.zz/
+\end{minted}
+flag c - parallel connections
+flag t - time for test
+
+\mint[frame=lines, framesep=2mm]{bash}|ab -c600 -t20 http://wp.planet.zz/|
+
+In last example the ab utility makes 600 parallel connections and test takes 20 seconds.
+Test results
+Store test results and the command line used for tests.
+Write down request per second. No of failed requests and No of completed requests.
+
+\subsection{Hardening WordPress Installation}
+
+What is the OOM?
+
+Disable swap (edit /etc/fstab file or use swapoff command)
+
+
+\mint[frame=lines, framesep=2mm]{bash}|swapoff -a|
+
+Disable OOM killer for MySQL database. In newer kernels write -1000 to oom\_score\_adj file.
+
+\mint[frame=lines, framesep=2mm]{bash}|echo "-1000" > /proc/$(pidof mysqld)/oom_score_adj|
+%$
+For backward compatibility with old kernels (2.6.XX series) you can use oom\_adj file
+\mint[frame=lines, framesep=2mm]{bash}|echo "-17" > /proc/$(pidof mysqld)/oom_adj|
+%$
+
+Documentation about proc filesystem and OOM:
+\url{http://www.kernel.org/doc/Documentation/filesystems/proc.txt}
+
+Not mandatory task: Modify mysql startup script to tune OOM score. 
+
+WordPress Supercache
+Install WordPress Supercache plugin.
+Change Permalinks settings
+Test cache with AB
+
+Install Varnish HTTP cache
+Change apache default port to 8080
+In file /etc/apache2/ports.conf
+Change 80 > 8080
+Like:
+NameVirtualHost *:8080
+Listen 8080
+
+Or just download new file using wget 
+
+cd /etc/apache2
+mv ports.conf /root/ports.conf.old
+wget http://elab.itcollege.ee:8000/Configs/apache2/ports.conf
+
+Change all virtual hosts to use new 8080 port using text editor or sed command.
+
+\mint[frame=lines, framesep=2mm]{bash}|sed 's/:80>/:8080>/' -i /etc/apache2/sites-enabled/wp|
+
+
+Install varnish and change varnish default port from 6081 to 80
+apt-get install varnish
+change /etc/default/varnish configuration file
+Change line
+\mint[frame=lines, framesep=2mm]{bash}|DAEMON_OPTS="-a *:6081 \ |
+to
+\mint[frame=lines, framesep=2mm]{bash}|DAEMON_OPTS="-a *:80 \|
+
+This means that varnish will listen port 80 on webserver
+
+Restart apache and varnish services
+
+service apache2 restart
+service varnish restart
+
+Test your result using netstat command
+
+\mint[frame=lines, framesep=2mm]{bash}|netstat -lp | grep varnish|
+
+Test new system with AB utility.
+
+Links:
+\href{http://kaanon.com/blog/work/making-wordpress-shine-varnish-caching-system-part-1}{Making wordpress shine with Varnish caching system}
+\href{http://kaanon.com/blog/varnish/making-wordpress-shine-varnish-caching-system-part-2}{Making wordpress shine with Varnish caching system part 2}
+\href{http://www.google.com/producer/editions/CAowvZtX/full_circle_magazine_57_lite}
+{Full Circle Magazine 57}
+
