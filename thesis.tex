@@ -1,5 +1,6 @@
 \documentclass[12pt,a4paper,oneside]{report}
 \usepackage{minted}
+\usepackage[T1]{fontenc}
 \usepackage[utf8x]{inputenc}
 %\usepackage[utf8]{inputenc}
 \usepackage{ucs}
@@ -8,8 +9,31 @@
 \usepackage{amssymb}
 
 
-\usepackage{url}
 
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={My title},    % title
+    pdfauthor={Author},     % author
+    pdfsubject={Subject},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+\usepackage[xindy]{glossaries}
+\makeglossaries 
 \usepackage{graphicx}
 \graphicspath{{./illustrations/}}
 
@@ -44,10 +68,11 @@
 % Change the name TOC to 
 \renewcommand{\contentsname}{Table of Contents}
 
+\input{glossaries}
 
 \begin{document}
 
-\title{Environment of Distance Study of Cyber Security}
+\title{Hands-On E-course on Cyber Defence for System Administrators}
 \author{Margus Ernits}
 \date{2013}
 
@@ -58,6 +83,7 @@
 \tableofcontents
 \listoffigures
 \listoftables
+\printglossaries
 \include{test}
 \include{introduction}
 %\include{overview}
