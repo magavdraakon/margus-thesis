@@ -65,11 +65,13 @@
 % Change the name TOC to 
 \renewcommand{\contentsname}{Table of Contents}
 
+
 \input{glossaries}
-
+%do remember run:
+%makeglossaries thesis
+\makeglossaries
 \begin{document}
-
-\title{Hands-On E-course on Cyber Defence for System Administrators}
+\title{The Hands-On E-course on Cyber Defence for System Administrators}
 \author{Margus Ernits}
 \date{2013}
 
@@ -84,7 +86,7 @@
 \include{test}
 \include{introduction}
 %\include{overview}
-\include{problem}
+%TODO delete problem:) \include{problem}
 \include{analysis}
 \include{solution}
 \include{methodology}
