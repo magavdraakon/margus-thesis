@@ -14,7 +14,7 @@ LaTeX testing stuff...
 	\item veel midagi
 \end{enumerate}
 \subsection{subsection name}
-
+Please see Figure ~\ref{Lab Setup} on page ~\pageref{Lab Setup} for bla bla bla.
 
 \begin{minted}{c}
 int main() {
@@ -29,7 +29,14 @@ $333
 \end{minted}
 \inputminted{sh}{code/simple.sh}
 
-\includegraphics[width=\textwidth]{Lab_setup.pdf}
+\begin{figure}
+    \centering
+	\includegraphics[width=\textwidth]{Lab_setup.pdf}
+	\caption{Lab Setup}
+	\label{Lab Setup}
+\end{figure}
+
+
 dddddd d  e d dwe \
 
 \mint{ruby}|puts "hello world in ruby"|\
