@@ -52,10 +52,24 @@ Student knows possible mitigation methods and employ appropriate protection meth
 
 Ensure that you have administrator rights
 \mint[frame=lines, framesep=1mm]{bash}|sudo -i|
+
+Update local package cache
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+apt-get update
+\end{minted}
+
+
 Ensure that unzip package is installed
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 type unzip || apt-get install unzip
 \end{minted}
+
+Install apapache web server, mysql server and php5
+\begin{minted}[frame=lines,framesep=2mm,fontsize=\small]{bash}
+apt-get install apache2 mysql-server ssh php5 php5-mysql libapache2-mod-php5
+\end{minted}
+
+
 Dowload DVWA using web get utility wget
 \mint[frame=lines, framesep=1mm]{bash}|wget http://dvwa.googlecode.com/files/DVWA-1.0.7.zip|
 
@@ -171,7 +185,7 @@ chmod 0777 templates_c
 \end{minted}
 
 \section{Installation of Mod Security Application Firewall}
-\begin{minted}[frame=lines,framesep=2mm]{bash}
+\begin{minted}[frame=lines,framesep=2mm,fontsize=\scriptsize]{bash}
 
 sudo apt-get update
 sudo apt-get install libxml2 libxml2-dev libxml2-utils
@@ -180,7 +194,7 @@ ln -sf /usr/lib/x86_64-linux-gnu/libxml2.so.2 /usr/lib/libxml2.so.2
 sudo mv /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
 cd /tmp
  
-sudo wget http://downloads.sourceforge.net/project/mod-security/modsecurity-crs/0-CURRENT/modsecurity-crs_2.2.5.tar.gz
+wget http://downloads.sourceforge.net/project/mod-security/modsecurity-crs/0-CURRENT/modsecurity-crs_2.2.5.tar.gz
  
 sudo tar zxf modsecurity-crs_2.2.5.tar.gz
  
