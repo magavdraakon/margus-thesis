@@ -1,10 +1,17 @@
 \documentclass[12pt,a4paper,oneside]{report}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage{graphicx, type1cm, lettrine, blindtext}
 \usepackage{lipsum}
 \usepackage{minted}
 \usepackage[T1]{fontenc}
 \usepackage[utf8x]{inputenc}
+
+
+
+\definecolor{chapters}{RGB}{68,40,138}
+\definecolor{sections}{RGB}{68,40,138}
+\definecolor{linkcolor}{RGB}{50,50,100}
+\definecolor{citecolor}{RGB}{50,100,100}
+
 
 %\usepackage[utf8]{inputenc}
 \usepackage{ucs}
@@ -20,16 +27,16 @@
     pdfmenubar=true,        % show Acrobat’s menu?
     pdffitwindow=false,     % window fit to page when opened
     pdfstartview={FitH},    % fits the width of the page to the window
-    pdftitle={My title},    % title
+    pdftitle={Hands-On E-course on Cyber Defence for System Administrators},    % title
     pdfauthor={Margus Ernits},     % author
     pdfsubject={Subject},   % subject of the document
     pdfcreator={Creator},   % creator of the document
     pdfproducer={Producer}, % producer of the document
-    pdfkeywords={Cybersecurity} {thesis} {handson}, % list of keywords
+    pdfkeywords={Cybersecurity} {thesis} {hands-on}, % list of keywords
     pdfnewwindow=true,      % links in new window
     colorlinks=true,       % false: boxed links; true: colored links
-    linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
-    citecolor=green,        % color of links to bibliography
+    linkcolor=linkcolor,          % color of internal links (change box color with linkbordercolor)
+    citecolor=citecolor,        % color of links to bibliography
     filecolor=magenta,      % color of file links
     urlcolor=cyan           % color of external links
 }
@@ -53,8 +60,11 @@
 \usepackage{setspace}
 \onehalfspace
 
-
-
+\usepackage{sectsty}
+%\chapterfont{\color{blue}}  % sets colour of chapters
+%\sectionfont{\color{cyan}}  % sets colour of sections
+\allsectionsfont{\color{sections}}
+%\chapterfont{\color{chapters}}
 
 
 % change chapter title to be without word chapter
@@ -62,11 +72,13 @@
 \makeatletter
 \renewcommand{\@makechapterhead}[1]{%
 	\vspace*{50 pt}%
-	{\setlength{\parindent}{0pt} \raggedright \normalfont
+	{\color{chapters}\setlength{\parindent}{0pt} \raggedright \normalfont
 	\bfseries\Huge\thechapter\ #1
 	\par\nobreak\vspace{40 pt}}}
 \makeatother
 
+
+\usepackage{graphicx, type1cm, lettrine, blindtext}
 
 \usepackage[square]{natbib}
 
