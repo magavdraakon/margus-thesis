@@ -1,7 +1,8 @@
 \chapter{Analysis}
 \label{analysis}
-In this chapter ... 
-\url{http://www.qatar.cmu.edu/iliano/courses/12F-CMU-CS349/index.php?page=info} - uurida
+\lettrine[lraise=0.1, nindent=0em, slope=-.5em]{\color{Violet}I}{n} this chapter will be analysed the current situation and the problem statement. Knowing the problem gives possibility to investigate similar problems and research done in the world. After problem and research analysis the methodology will be chosen to solve the problem.
+
+
 
 
 \section{Problem Analysis}
@@ -11,9 +12,15 @@ In this chapter ...
 Study program focuses on practical learning by doing approach to ITC subjects. The students gain skills and knowledge as they progress through curricula lectures and practical classes. The studies include lectures, practical classes and independent work as homework. By and large, one subject is divided as follows: 25\% lectures, 25\% practical classes and 50\% homework which is mostly working with materials (books, web articles). In the worst case, practical work constitutes only 25\% and takes place at \gls{EITC} computer classes. Students are not interested in learning mere theory. The formulas are not seen necessary nor linked to their study area or future job. Theory that is not used will be forgotten quickly. In a few years students won't even remember if a specific topic was covered or not. Applied education should introduce practical approach and learning by doing. In ITC field practical classes and practical homework is the key to achieving acceptable results. Students appreciate learning IT system administration by building complex systems using virtual distance laboratory environment and gaining practical experience during this process following learning-by-doing study model.
 The problem with practical classes in the cyber field that the practical approach requires hardware, software and preconfigured laboratory environment. However, the  distance laboratory environment can be developed in a manner  that practical classes can be accessed from any Internet connected computer using web browser. Moreover, using virtual and game-like environments is a contemporary approach for teaching IT System administration and programming focusing to the cyber security requirements. The outcome of the developed environment and contemporary teaching methods are students with increased motivation and skills in the cyber field. The tasks given to the students for solving have to be associated with the practical applicability of the theoretical knowledge.
 
-Developed systems allows to  increase of the proportion of practical work by converting independent and theoretical homework to  the practical classes. The quality of studies will improve due to increased amount of practical hands-on classes. The developed system uses only open source components and released using open source compatible MIT licence. The development and hardware are funded by European Social Fund (\gls{ESF}). We expect to have results of using virtual laboratory system to be available in 2013.
 
 
+
+
+
+Now-days a learning by doing approach is accepted way to gain new skills and knowledge in cyber security field. This thesis focuses to develop of the practical hands-on e-course for system administrators in \gls{EITC}. Moreover the developed laboratories are used in higher education and also in continuous education classes.
+
+
+The popularity of the cyber security related subjects in information and communications technology \gls{ICT} curricula is growing, moreover being a "student's magnet" for higher educational institutes.\citep{CyberIsHot}. Thereafter is possible to gain additional information by analysing related curricula in several higher educational institutes.
 
 Problem Analysis...
 \begin{itemize}
@@ -22,6 +29,20 @@ Problem Analysis...
 	\item EIK õppekavad pole turva poolelt muutunud peale nende tegemist
 \end{itemize}
 
+
+Veel viiteid uurida 
+{\scriptsize
+\\
+\url{http://www.emergencymgmt.com/safety/4-Priorities-Improving-Cybersecurity-US.html}\\
+\url{http://www.umuc.edu/grad/gradprograms/csec.cfm}
+\\
+\url{http://www.poly.edu/academics/programs/cybersecurity-ms/curriculum}\\
+\url{http://cms.montgomerycollege.edu/EDU/Plain.aspx?id=13043}\\
+\url{http://cybersecurity.byu.edu/}\\
+\url{http://gcn.com/articles/2010/07/09/cyber-command-panel-afcea-symposium.aspx}\\
+\url{http://www.emergencymgmt.com/training/Cybersecurity-Curriculum-University-Maryland-Students.html}\\
+\url{http://www.qatar.cmu.edu/iliano/courses/12F-CMU-CS349/index.php?page=info}\\
+}
 \section{Related Work}
 \label{Related Work}
 Related Work...
@@ -79,12 +100,120 @@ Weaknesses of the ADDIE Model \url{http://www.instructionaldesign.org/models/add
 
 \section{Alalysis of the e-course}
 \subsection{Analysis of target group}
-The target group are second and third years students who already mastered basics of operating systems.
-The System Administrator's Job
+The analysis of the target group gives input to the course development because starting point of the course and difficulty level of the hands-on labs depends on the target group. According to problem analysis the target group can divided to two separate groups, the students who do not have long working experience and system administrators who have working experience in particular field but do not have degree or diploma in \gls{ICT} field or they are graduated several years ago.
 
-\subsection{Analysing of the requirements and establishing goals for e-course}
-\subsection{Analysing of restrictions and scope}
+The first target group are second and third years students who already mastered basics of operating systems, GNU/Linux administration, Windows administration. The second target group are system administrators with different practical background because deep specializing in enterprises. Common relevant (on course development point of view)  properties are described in Table~\ref{tab:targetgroup}
+\begin{table}[h]
+\centering
+\caption{The target group properties}
+
+\begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
+\hline 
+\color{blue}
+Property & \color{blue} Students & \color{blue} System Administrators \\ 
+\hline 
+Background & No or few working experience & Experience on one or more specialized field \\ 
+\hline 
+Motivation & To get diploma and work and knowledge/skills needed to protect \gls{ICT} systems & To get knowledge and skills to protect \gls{ICT} systems \\ 
+\hline 
+Time and possibilities & possible to do home work/reading & in practice can not do homework/readings efficiently  \\ 
+\hline 
+Previous knowledge & • & • \\ 
+\hline 
+Previous study experience & Good & Lesser \\ 
+\hline 
+Study Stile & Student's style (everything done little before deadlines) & All study should take place during contact hours  \\ 
+\hline 
+How {\color{red}{homogeenne}} the group are  & More flat & {\color{red}{ebaühtlane}} \\ 
+\hline 
+Previous experience in GNU/Linux & Present & Poor (only 10\%) passed the test  \\ 
+\hline 
+\end{tabular} 
+
+\label{tab:targetgroup}
+\end{table}
+
+In this time no data about age and ... {\color{red} TODO mis jäi vaatluse alt välja} because of insufficient data. 
+
+
+
+For conclusion to target group's analysis can be stated that course material should be suitable for both groups. First group the students have advantage because time for home readings. However the second group has advantage from work experience. Second group's problem is insufficient knowledge about GNU/Linux system and separate short auxiliary course about basic command line is needed before entering to the main course. However some system administrators do not need those course and need for additional course will decided using entry test developed during this thesis.
+
+According to motivation the main focus of new e-course to give practical hands-on approach for protecting \gls{ICT} systems.
+
+\subsection{Analysing of the requirements, scope and restrictions for e-course}
+During several curricula development seminars author establishes requirements for this particular e-course according to input from partners like \gls{EISA}, students feedback, graduate students feedback and curricula analysis from other higher educational institutes and private training companies. {\color{red} TODO tuua ära seminaride protokollid või viidata erinevatele piltidele, mis seminaris joonistati...vaja mõelda}
+
+
+The main requirements can be presented as following:
+
+\begin{enumerate}[label=Requirement \arabic*.,leftmargin=*]
+  \item Developed e-course must be usable for \gls{EITC} students and also in continuous education field for system administrators
+  \item Course must contain {\color{red} tasanduskursust} entry course for GNU/Linux and should cover basics  of OpenBSD/FreeBSD systems
+  \item Course should contains main aspects of system administration and focus to the defence of the systems
+  \item 
+\end{enumerate}
+
+
+0) sissejuhatus:  kahendarvutused.... (anda alused järgmistele kur-
+sustele)
+1) tulemüüri ülespanek, seadistamine ja igapäevane haldus
+2) aja- ja nimeteenuse ülespanek, seadistamine ja igapäevane haldus
+3) veebiteenuse ülespanek, seadistamine ja igapäevane haldus
+4) postiteenuse ülespanek, seadistamine ja igapäevane haldus
+5) logihalduse ülespanek, seadistamine ja igapäevane haldus
+6) ründetuvastus ja intsidentide halduse süsteemi ülespanek, seadistamine ja igapäevane
+haldus
+7) Loov probleemi lahendus ja haldus.
+
 \subsection{Analysis of content of the course}
+
+\begin{enumerate}[label=Hands-on block \arabic*.,leftmargin=*]
+  \item Pre-requirements courses
+    \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+  	\item Operating system basics (one day)
+  	\item Basic networking IPv4/IPv6, TCP/IP (one day)
+  	\item GNU/Linux basics (and OpenBSD/FreeBSD basics) (2 days)
+  	\item Scripting in BASH (2 days)
+  	\item Scripting in Python (1.5 days)
+  	\item Scripting in PowerShell (1.5 days)
+  \end{enumerate}
+  \item Root services
+  \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+  	\item NTP (0.5 days)
+  	\item DNS (2.5 days)
+  	\item DHCP (one day)
+  \end{enumerate}
+  \item Web/File Services
+    \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+  	\item Webserver security (application firewalls) (3.5 days)
+  	\item Fileserver (Samba3 and Samba4) (0.5 day)
+  \end{enumerate}
+    \item E-mail services (4 days)
+    \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+  		\item SPAM control
+	  	\item Virus protection
+  		\item MTA's 
+	  	\item MDA's
+    \end{enumerate}
+    \item IP firewalls and IDS/IPS (4 days)
+        \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+  		\item IP firewalls netfilter/iptables and packet filter (pf) (2 days)
+	  	\item IDS/IPS (2 days)
+  		\item NetFlow (kuna seda loetakse CERT.EE abil, siis jääb välja)
+    \end{enumerate}
+    \item Autentication and authorization (4 days)
+        \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+  		\item LDAP and Samba4 AD
+	  	\item Windows and Linux clients with Samba4 AD 
+  		\item Web application authentication with Samba4 AD and LDAP
+    		\end{enumerate}
+    \item GNU/Linux central management with Puppet
+        \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+	  		\item Installation of Puppet using passenger (2 day)
+		  	\item Writing puppet recipes (1 day)
+    		\end{enumerate}
+\end{enumerate}
 \section{Planning of learning process}
 \subsection{Pedagogical view of e-course}
 \subsection{Planning grading techniques}
