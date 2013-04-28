@@ -8,7 +8,7 @@
 \section{Problem Analysis}
 \label{Problem Analysis}
 
-
+{\color{red} See jutt tuleb ümber kirjutada, kuna teema muutus}\\
 Study program focuses on practical learning by doing approach to ITC subjects. The students gain skills and knowledge as they progress through curricula lectures and practical classes. The studies include lectures, practical classes and independent work as homework. By and large, one subject is divided as follows: 25\% lectures, 25\% practical classes and 50\% homework which is mostly working with materials (books, web articles). In the worst case, practical work constitutes only 25\% and takes place at \gls{EITC} computer classes. Students are not interested in learning mere theory. The formulas are not seen necessary nor linked to their study area or future job. Theory that is not used will be forgotten quickly. In a few years students won't even remember if a specific topic was covered or not. Applied education should introduce practical approach and learning by doing. In ITC field practical classes and practical homework is the key to achieving acceptable results. Students appreciate learning IT system administration by building complex systems using virtual distance laboratory environment and gaining practical experience during this process following learning-by-doing study model.
 The problem with practical classes in the cyber field that the practical approach requires hardware, software and preconfigured laboratory environment. However, the  distance laboratory environment can be developed in a manner  that practical classes can be accessed from any Internet connected computer using web browser. Moreover, using virtual and game-like environments is a contemporary approach for teaching IT System administration and programming focusing to the cyber security requirements. The outcome of the developed environment and contemporary teaching methods are students with increased motivation and skills in the cyber field. The tasks given to the students for solving have to be associated with the practical applicability of the theoretical knowledge.
 
@@ -21,6 +21,10 @@ Now-days a learning by doing approach is accepted way to gain new skills and kno
 
 
 The popularity of the cyber security related subjects in information and communications technology \gls{ICT} curricula is growing, moreover being a "student's magnet" for higher educational institutes.\citep{CyberIsHot}. Thereafter is possible to gain additional information by analysing related curricula in several higher educational institutes.
+
+The term E-learning can be defined as the use of computer and Internet technologies to deliver a broad array of solutions to enable learning and improve performance. \citep[p.~3]{food2011learning}
+
+
 
 Problem Analysis...
 \begin{itemize}
@@ -48,6 +52,8 @@ Veel viiteid uurida
 Related Work...
 Panna siia lühikokkuvõte loetud teadusartikklitest IEEE*
 
+Kauri magistritöö
+
 
 
 
@@ -58,23 +64,6 @@ Panna siia lühikokkuvõte loetud teadusartikklitest IEEE*
 	\item availability monitor (for grading)
 \end{itemize}
 
-\section{Specialness of the e-learning}
-\begin{itemize}
-	\item Millal e-õpe töötab ja millal ei? Õppur peab rohkem pingutama [Chao: 11]
-	\item Erinevad õpikeskkonnad ja nende sobivus antud õppeks
-		\begin{itemize}
-			\item Moodle
-			\item Blackboard WebCT
-			\item CISCO Network Academy
-			\item Maurus
-			\item IVA
-			\item Sakai
-			\item Wikiversity
-			\item TUT Kaur course lab
-		\end{itemize}
-	\item virtual distance laboratory
-	\item security aspects of distance laboratory
-\end{itemize}
 
 \section{Choosing Methodology for Developing an e-course}
 
@@ -88,7 +77,12 @@ Today’s learning environment should support student communities where students
 
 \subsection{E-course design methodologies}
 
-Several methodologies are suitable to develop e-courses. \gls{ADDIE Model}
+Developing an e-course can be done without design methodology but systematic approach to this process should give more effective results. In principle the common systematic methods usable to develop an e-course are the same like in Instructional Design 
+Several methodologies are suitable to develop e-courses like Instructional Design Models (IDM)
+\url{http://www.instructionaldesign.org/models/index.html}
+
+
+ \gls{ADDIE Model}
 
 Methodology 
 ADDIE is short for Analyze, Design, Develop, Implement, and Evaluate \url{http://ed.isu.edu/addie/index.html}
@@ -98,7 +92,10 @@ Weaknesses of the ADDIE Model \url{http://www.instructionaldesign.org/models/add
 
 \url{http://rjh.goingeast.ca/2011/07/05/design-research-for-online-learning-course-design-edumooc/} - uurida
 
-\section{Alalysis of the e-course}
+
+\section{Cyber security aspects of the e-learning}
+
+\section{Analysis of the e-course}
 \subsection{Analysis of target group}
 The analysis of the target group gives input to the course development because starting point of the course and difficulty level of the hands-on labs depends on the target group. According to problem analysis the target group can divided to two separate groups, the students who do not have long working experience and system administrators who have working experience in particular field but do not have degree or diploma in \gls{ICT} field or they are graduated several years ago.
 
@@ -151,20 +148,11 @@ The main requirements can be presented as following:
   \item Developed e-course must be usable for \gls{EITC} students and also in continuous education field for system administrators
   \item Course must contain {\color{red} tasanduskursust} entry course for GNU/Linux and should cover basics  of OpenBSD/FreeBSD systems
   \item Course should contains main aspects of system administration and focus to the defence of the systems
-  \item 
+  \item Developed course materials should released using Creative Commons \gls{CC-BY-SA} license
+  \item Laboratory work should be as realistic as possible including needed infrastructure to run complex infrastructure services. Therefore required solution for set-up hands-on environment in class or home.
 \end{enumerate}
 
 
-0) sissejuhatus:  kahendarvutused.... (anda alused järgmistele kur-
-sustele)
-1) tulemüüri ülespanek, seadistamine ja igapäevane haldus
-2) aja- ja nimeteenuse ülespanek, seadistamine ja igapäevane haldus
-3) veebiteenuse ülespanek, seadistamine ja igapäevane haldus
-4) postiteenuse ülespanek, seadistamine ja igapäevane haldus
-5) logihalduse ülespanek, seadistamine ja igapäevane haldus
-6) ründetuvastus ja intsidentide halduse süsteemi ülespanek, seadistamine ja igapäevane
-haldus
-7) Loov probleemi lahendus ja haldus.
 
 \subsection{Analysis of content of the course}
 
@@ -213,25 +201,60 @@ haldus
 	  		\item Installation of Puppet using passenger (2 day)
 		  	\item Writing puppet recipes (1 day)
     		\end{enumerate}
+    	\item Central logging (3 days)
+    	    \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+	  		\item Collecting logs with rsyslog/syslog-ng (1 day)
+		  	\item Monitor and analyse log files (1 day)
+    		\end{enumerate}
 \end{enumerate}
+
+Content can presented in several ways using {\color{red} lugeda Rowntree, D. Teaching through self-instruction: a practical handbook for course developers.} \citep{rowntree1986teaching}
+
+
 \section{Planning of learning process}
-\subsection{Pedagogical view of e-course}
-\subsection{Planning grading techniques}
+Two possible e-learning processes are common the self-paced and facilitated/instructor-led \citep[p.~10]{food2011learning}.
+
+Do we use collaboration in learning? 
+
+Do we use  e-tutoring, e-coaching, e-mentoring?
+
+Do we use chronological order or problem based? (one is good for lecturing other for practical classes) Also possible ways is spiral order logical order etc {\color{red} (viidata) }
+
+Is the content sufficient to gain learning outcomes?
+
+Is amount of work and student workload normal? How many academic hours for practical classes and home reading/lectures?
+
+\subsection{Pedagogical view of the e-course}
+Different Pedagogical strategies can be used during learning process. First a problem based approach is {\color{red} Pooleli }
+Second koostööl põhinev õpe ja kolmas kogukonnal põhinev õpe.
+
+Do we use group-work, wiki, blog and/or some e-learning environment?
+
+Synchronous or asynchronous learning.
+
+\subsection{Planning a grading techniques}
+What grading methods are useful for this particular course?
+
+Do we need grade knowledge, skills and 
 \subsection{Choosing technological tools}
+\subsubsection{E-Learning platforms}
 
-\section{Implementation of the e-course}
+\begin{itemize}
+	\item Millal e-õpe töötab ja millal ei? Õppur peab rohkem pingutama [Chao: 11]
+	\item Erinevad õpikeskkonnad ja nende sobivus antud õppeks
+		\begin{itemize}
+			\item Moodle
+			\item Blackboard WebCT
+			\item CISCO Network Academy
+			\item Maurus
+			\item IVA
+			\item Sakai
+			\item Wikiversity
+			\item TUT Kaur course lab
+		\end{itemize}
+	\item virtual distance laboratory
+	\item security aspects of distance laboratory
+\end{itemize}
 
-\subsection{Developing learning material}
-\subsection{Text based learning material}
-\subsection{Audio/Visual learning material}
-\subsection{Interactive learning material}
-\subsection{Online tests and laboratory scenarios}
-\subsection{õpijuhis }
-\subsection{technical implementaion}
-\subsection{testing course}
-\section{Kursuse läbiviimine}
-\subsection{Organizational role}
-\subsection{Social role}
-\subsection{Pedagogical role}
 
-\section{Cyber security aspects of the e-learning}
+
