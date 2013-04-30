@@ -6,21 +6,29 @@
 Genuine cybersecurity should not be seen as an additional cost, but as an enabler, guarding our entire digital way of life. --- Toomas Hendrik Ilves
 \end{quote}
 
-\lettrine[lraise=0.1, nindent=0em, slope=-.5em]{\color{Violet}T}{he} role of the cyber security is fundamental for entire digital lifestyle. Information society relies on trust to the information and communications technology (\gls{ICT}) systems. However every system needs maintenance and care from highly skilled technicians who have sufficient knowledge for securing complicated networks and services. 
+\lettrine[lraise=0.1, nindent=0em, slope=-.5em]{\color{Violet}T}{he} role of the cyber security is fundamental for entire digital lifestyle. Information society relies on trust to the information and communications technology (\gls{ICT}) systems. However, every system needs maintenance and care from highly skilled technicians who have sufficient knowledge for securing complicated networks and services. 
 
-This thesis focuses to practical hands-on e-course for system administrators who are protecting citizen’s everyday digital life. Developed laboratories will be used to teach IT System Administration students in Estonian IT College (\gls{EITC}) and also in continuous education field. Moreover, all study materials are released under Creative Commons Attribution-ShareAlike 3.0 Unported  (\gls{CC-BY-SA}) license and developed supportive software are distributed under \gls{MIT} licence and can be used by any institutions or interested parties.
+This thesis focuses on developing a practical hands-on e-course for system administrators who protect the citizens' everyday digital life. Developed laboratories will be used to teach IT System Administration students in Estonian IT College (\gls{EITC}) and also in continuous education field. Moreover, all study materials will be released under Creative Commons Attribution-ShareAlike 3.0 Unported  (\gls{CC-BY-SA}) license and all software developed during this work will be distributed under \gls{MIT} licence and can be used by any institution or interested party.
 
-The cyber security field is rapidly growing and need for highly educated and security aware \gls{ICT} specialist is increasing. Due to increased malicious activities in the Internet the education in gls{ICT} field should emphasize knowledge and skills in cyber security field.
+The cyber security field is rapidly growing and the need for highly educated and security aware \gls{ICT} specialists is increasing. Due to  malicious activities proliferating in the Internet, the education in \gls{ICT} field should emphasize knowledge and skills in cyber security field.
 
-Growth of the Internet connected services and networked infrastructure are collateral to magnitude of possible damage what cyber attack can do to the country. Several countries developed cyber security strategies and -implementation plans to deal with a problem.
+Growth of the Internet connected services and networked infrastructure are contribute to the magnitude of possible damage that cyber attack can cause to a country. Several countries have developed cyber security strategies and implementation plans to deal with the problem.
 
-Estonia developed strategy plan on 2008 \citep{Strategy2008} and goverment have plans to update strategy at end of 2013 \citep{StrategyProposal2013}. However the strategi states that implementation depends on highly educated IT professionals {\color{red}(TODO viide)} and Estonian IT sector has cap between need and possibilities.
+Estonia developed a strategy plan in 2008 \citep{Strategy2008} and the government plans to update the strategy at end of 2013 \citep{StrategyProposal2013}. However, the strategy states that one problem is the absence of sufficient number of highly educated IT professionals. Citation from strategy:  
+\begin{quote}
+In 2007, a survey of the institutions belonging to Estonia’s critical infrastructure revealed that the biggest shortcoming in the field of information security is the shortage of qualified labour. \citep[p.~16]{Strategy2008}
+\end{quote}
 
-Tallinn University of Technology (\gls{TUT}) and University of Tartu (\gls{UT}) have joint Cyber Security Curricula to deal with the problem. The graduates of joint curricula are often dedicated to management, architecture, cryptography field. However every company needs system administrators who are focused on theirs areas and they are not cyber security specialists. Moreover, they often have degree from applied universities or even no degree at all but have good specialised self-studied education.
 
-The Estonian IT College (\gls{EITC}) is focused on applied higher education. Study programs in \gls{EITC} include development, administration and system analysis. IT System administration curricula is open since 2000 {\color{red}(TODO viide)} and are practical and dedicated to technical areas. During ten years a situation in cyber field are changed to more hostile and frictional. The partner organizations of \gls{EITC} who have possibilities to give input to curricula development process stated need for cyber security related skills and knowledge in study subjects.
 
-Fore example in 2009 the Rector of Estonian IT College received letter from \gls{CERT.EE} with the problem:\par
+Tallinn University of Technology (\gls{TUT}) and University of Tartu (\gls{UT}) have joint Cyber Security Curricula to alleviate the problem. The job titles of the graduates of the curricula may include the following: security analyst, architect or research engineer or managerial roles as project/team leader or technology officer. \citep{TUT_UT_curriculum} Thereof the curriculum is focused on producing the officers for cyber field. 
+However, officers need line soldiers to perform their duty.
+
+Almost every company needs system administrators (as line soldiers) who are focused on theirs area but they are not necessarily cyber security specialists. Moreover, they often have degree from applied universities or no degree at all, but have good specialised self-education.
+
+The Estonian IT College (\gls{EITC}) is focused on applied higher education. Study programs in \gls{EITC} include development, administration and system analysis. IT System administration curricula was opened in 2000 {\color{red}(TODO viide)}. In ten years the situation in cyber field has turned more hostile and frictional. The partner organizations of \gls{EITC} who have possibilities to provide input to curricula development process, stated the need to include cyber security related skills and knowledge in study subjects.
+
+Fore example, in 2009 the Rector of Estonian IT College received a letter from \gls{CERT.EE} stating a problem:\par
 
 {
 \begin{spacing}{1} 
@@ -30,70 +38,58 @@ Fore example in 2009 the Rector of Estonian IT College received letter from \gls
 From: CERT.EE\\
 Sent: Tuesday, February 10, 2009 3:55 PM\\
 To: Rector of Estonian IT College\\
-Cc: Head's of Curricula \\
+Cc: Heads of Curricula \\
 Subject: Continuous education\\
 Hello,
 
 We have a problem:\\
-There insufficient amount of IT system administrators in local  governmental, state government and small- and mid-size companies.\\
+There is an insufficient amount of IT system administrators in local governments, state agencies and small- and mid-size organizations.\\
 ...\\
-With Best Regards,\\
+With best regards,\\
 CERT.EE Worker\\
 ---End of Original Message-----
 \end{spacing}
 }
 
-For full letter (in Estonian) see Appendix ~\ref{Letter from CERT.EE to Rector of Esonian IT College} on page ~\pageref{Letter from CERT.EE to Rector of Esonian IT College}
+For full letter (in Estonian), see Appendix~\ref{Letter from CERT.EE to the Rector of Estonian IT College} on page ~\pageref{Letter from CERT.EE to the Rector of Estonian IT College}
 
-Specialists and lecturers from \gls{CERT.EE} and from The Estonian IT College decided to develop practical cyber security module for \gls{EITC} which are usable in higher education and also in continuous education.
+Specialists and lecturers from \gls{CERT.EE} and from the Estonian IT College decided to develop a practical cyber security module for the \gls{EITC} IT system administration curriculum which is usable in higher education and also in continuous education.
 
-The existing system administration subjects should also reviewed and changed according security topic. For example the hands-on class for installing web server should contain installation, configuration and defence and mitigation methods for common attacks. 
+The subjects in current system administration curriculum should also be reviewed and changed according to the needs of cyber security field. For example, the hands-on class for installing web server should contain installation, configuration and also the defence and mitigation methods against common attacks. 
 
-For system administrators the security should be include to specific topics extending them instead of separate topics. On other hand some subjects should focus to the security, architecture and processes.
+For system administrators the security aspects should be included into specific topics extending them instead of creating a separate topics. On other hand some subjects should focus only to the security, architecture and processes.
 
-The author of this thesis focuses to the practical classes in this project. Authors contribution are developed hands-on labs for the IT infrastructure services e-course.
+The author of this thesis focuses on the practical classes in this project. Authors contributions are hands-on labs for the IT infrastructure services e-course.
 
 \section{Main Problems}
-The main problem is lack of skilled and security aware system administrators (in Estonia) who can build companies IT infrastructure and do the everyday maintenance of services.
+The main problem is deficiency of the skilled and security aware system administrators (in Estonia) who able build company IT infrastructure and do the everyday maintenance task for IT services.
 
-During discussions with partners and companies several sub-problems in current situations where enlisted:
+During discussions with partners and private companies a several sub-problems in current situations where enlisted:
 \begin{itemize}
-\item Private companies and governmental sector need for security aware professional systems administrators are increasing. Today Estonian \gls{EITC} educational sector do not fill the gap with new graduates because lack of quality and quantity in particular field. 
-\item System administrators study needs more practical approach and cyber defence related technical hands-on practical classes to give better practical and technical preparation for graduates.
-\item Studying cyber defence should be more attractive and playful for students. Defending the system is not so interesting comparing to offensive activities.
-\item IT System administrators in Estonian public sector are often self studied  and some of them do not have higher education in \gls{ICT} field. Moreover the knowledge needed to protect their IT systems is lesser demands of the industry.
-\item Private companies offer vendor and product based courses which often do not provide enough field related knowledge and do not give broader view to the problem.
+\item Private companies and governmental sector needs for security aware professional systems administrators are increasing. Today Estonian \gls{EITC} educational sector do not fill the gap between demands and amount of specialist with new graduates.
+\item The study in IT System administration curriculum should have more practical approach and cyber defence related hands-on practical classes to give better practical and technical preparation for graduates.
+\item Studying cyber defence should be more attractive and playful for students. Defending the system is not so interesting comparing to offensive activities because attacking are more interesting comparing to defensive course.
+\item IT System administrators public sector in Estonian sector are often self studied (in cyber security field) and some of them do not have higher education in \gls{ICT} field. Moreover the knowledge needed to protect their IT systems is lesser demands of the industry as described in CERT.EE letter see Appendix~\ref{Letter from CERT.EE to the Rector of Estonian IT College} on page ~\pageref{Letter from CERT.EE to the Rector of Estonian IT College}.
+\item The private education companies offer vendor and product based courses which often do not provide enough related knowledge and do not give broader view to the problem.
+\item The courses should use free and open source software because knowledge gathered by studying those solutions can be used to implement open or closed proprietary systems.
 \end{itemize}
 
 \section{Main Objectives}
 
-The main objective of this thesis is to develop practical hands-on e-course "Securing IT Infrastructure Services" focusing to the installation, configuring and securing infrastructure services.
+The main objective of this thesis is to develop practical hands-on e-course "Securing IT Infrastructure Services" focusing to the installation, configuring and securing different IT infrastructure services.
 
-The particular objective can divided to smaller sub-problems and areas.
-
+This particular objective may divided in to smaller sub-problems and areas.
 
 Considering to main problems analyse requirements for hands-on e-course and choose methodology to implement the course.
 
-Developed systems allows to  increase of the proportion of practical work by converting independent and theoretical homework to  the practical classes. The quality of studies will improve due to increased amount of practical hands-on classes. The developed system uses only open source components and released using open source compatible MIT licence.
 
-
-
-\begin{itemize}
-	\item Õppekava ainete analüüs arvestades küberkaitse temaatika suurenemist
-	\item Loodud e-kursused ja õpiobjektid, mis on rakendatavad nii tasemeõppes, kui ka täiendusõppes
-	\item Rakendatud kaugtöölabor loodud õppe toetamiseks
-	\item Loodud metoodika õppejõule
-	\item kogutud tagasiside õppuritelt ja õppejõududelt
-\end{itemize}
-
-
-{\large My contributions and main ideas to implement in thesis}
 \begin{itemize}
 \item To implement practical hands-on labs for system administrators
-\item To improve quality of graduates using virtual lab environment  to perform realistic laboratory work and increase amount of practical hands-on study and decrease length of the lectures.
-\item To improve motivation and increase role of other skilled tutors use \gls{Coding Dojo} methodology known in programmers field to train system administrators in short seminars. I would like to name it \emph{ command dojo} as most of the work are done in command line of the servers.
-\item To improve motivation in defence exercisers use the badges as reward/fame markers for students. Badge for securing webserver from SQLi etc. Rewards are shown in user profile and also seen by other students.
+\item To improve quality of graduates using lab intensive study  to perform realistic laboratory work and increase amount of practical hands-on study and decrease length of the lectures.
+\item To improve motivation and increase role of other skilled students as tutors and use the \gls{Coding Dojo} methodology, known in programmers field to train system administrators. I would like to name this method as \emph{Dommand Dojo} because a most of the work are done in command line of the different servers.
+\item To improve students motivation in defence exercisers use a reward model with virtual badges as markers of success in practical task/field. For example, a badge for securing web server from \gls{SQLi}, \gls{XSS} etc. The reward badges are shown in user profile in laboratory system and also seen by other students.
 \end{itemize}
 \par
 {\color{red} Kas peaks kirjeldama sissejuhatuses ka peatükkide jaotust? }
+
  
