@@ -1,5 +1,13 @@
+%xelatex -shell-escape  -synctex=1 -8bit  -interaction=nonstopmode %.tex
 \documentclass[12pt,a4paper,oneside]{report}
+%for unicode support in XeLaTeX
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Linux Libertine O}
 
+
+
+%fancy verbatim - with box
+\usepackage{fancyvrb}
 
 
 \usepackage[usenames,dvipsnames]{xcolor}
@@ -7,21 +15,30 @@
 %pdfpages - include pdf pages to latex document - for Subject Program
 \usepackage{pdfpages}
 
+%to produce dummy text for testing proposes
 \usepackage{lipsum}
+
+%for coloring syntax
 \usepackage{minted}
-\usepackage[T1]{fontenc}
-\usepackage[utf8x]{inputenc}
 
+%If you want use latex uncomment fontenc and inputenc
+%for UTF8 fonts
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8x]{inputenc}
 
+%for custom enumerators like requirements 1, requirements 2 ...
 \usepackage{enumitem} %for requirements enumeration
 
+%Special colors for chapter titpes, sections, links and citations
 \definecolor{chapters}{RGB}{68,40,138}
 \definecolor{sections}{RGB}{68,40,138}
 \definecolor{linkcolor}{RGB}{50,50,100}
 \definecolor{citecolor}{RGB}{50,100,100}
 
+%For mindmaps
+\usepackage{tikz}
+\usetikzlibrary{mindmap,trees}
 
-%\usepackage[utf8]{inputenc}
 \usepackage{ucs}
 \usepackage{colortbl}
 \usepackage{amsmath}
@@ -31,7 +48,7 @@
 \usepackage{hyperref}
 \hypersetup{
 %   bookmarks=true,         % show bookmarks bar?
-    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
     pdftoolbar=true,        % show Acrobat’s toolbar?
     pdfmenubar=true,        % show Acrobat’s menu?
     pdffitwindow=false,     % window fit to page when opened
@@ -97,7 +114,11 @@
 % Change the name TOC to 
 \renewcommand{\contentsname}{Table of Contents}
 
-
+%fancy quotes
+%\usepackage[helvetica]{quotchap} 
+%\usepackage[utopia]{quotchap} 
+%tikZ pictures
+\usepackage{tikz}
 
 \input{glossaries}
 %do remember run:
@@ -133,12 +154,14 @@
 
 
 %\renewcommand\bibname{references}
-%\bibliographystyle{plainnat}
-\bibliographystyle{named}
+\bibliographystyle{plainnat}
+%\bibliographystyle{named}
+
+
 %\bibliography{references}
 \bibliography{references}
 
 \include{addendum}
-%\include{test}
+\include{test}
 
 \end{document}
