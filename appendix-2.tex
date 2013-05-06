@@ -51,7 +51,9 @@ Student knows possible mitigation methods and employ appropriate protection meth
 \subsection{Introduction to DVWA}
 
 Ensure that you have administrator rights
-\mint[frame=lines, framesep=1mm]{bash}|sudo -i|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+sudo -i
+\end{minted}
 
 Update local package cache
 \begin{minted}[frame=lines,framesep=2mm]{bash}
@@ -71,7 +73,9 @@ apt-get install apache2 mysql-server ssh php5 php5-mysql libapache2-mod-php5
 
 
 Dowload DVWA using web get utility wget
-\mint[frame=lines, framesep=1mm]{bash}|wget http://dvwa.googlecode.com/files/DVWA-1.0.7.zip|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+wget http://dvwa.googlecode.com/files/DVWA-1.0.7.zip
+\end{minted}
 
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 unzip DVWA-1.0.7.zip

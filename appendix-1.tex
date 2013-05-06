@@ -45,14 +45,22 @@ echo "192.168.56.200 dvwa.planet.zz">>/etc/hosts
 \section{Installation of the WordPress}
 All following commands must executed as root user. To get root permissions in Ubuntu Server used in this lab type:
 
-\mint[frame=lines, framesep=1mm]{bash}|sudo -i|
+
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+sudo -i
+\end{minted}
+
 
 
 This lab demands installing software for that update local package cache first
-\mint[frame=lines, framesep=1mm]{bash}|apt-get update|
+
+
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+apt-get update\end{minted}
 
 If you have time then do system upgrade
-\mint[frame=lines, framesep=1mm]{bash}|apt-get dist-upgrade|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+apt-get dist-upgrade\end{minted}
 
 Install apache webserver and mysql database and 
 \begin{minted}[frame=lines,framesep=2mm]{bash}
@@ -61,11 +69,15 @@ apt-get install apache2-utils libapache2-mod-php5
 \end{minted}
 
 Download latest version of WordPress
-\mint[frame=lines, framesep=2mm]{bash}|wget http://wordpress.org/latest.tar.gz|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+wget http://wordpress.org/latest.tar.gz
+\end{minted}
 
 Unpack tar.gz archive to  /var/www directory using tar utility.
 
-\mint[frame=lines, framesep=2mm]{bash}|sudo tar zxvf latest.tar.gz --directory=/var/www/|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+sudo tar zxvf latest.tar.gz --directory=/var/www/
+\end{minted}
 
 Creade new mysql database called wp and database user student. Grant all privileges on database wp to user student.
 
@@ -79,9 +91,14 @@ quit
 
 Create new virtual host for wordpress 
 \marginpar{\rule[-.9cm]{1pt}{1pt}TODO}
-\mint[frame=lines, framesep=2mm]{bash}|cp /etc/apache2/sites-available/default /etc/apache2/sites-available/wp|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+cp /etc/apache2/sites-available/default /etc/apache2/sites-available/wp
+\end{minted}
+
 Change owner and group for wordpress files to ensure that web server can read and write files.
-\mint[frame=lines, framesep=2mm]{bash}|chown www-data:www-data /var/www/wordpress -R|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+chown www-data:www-data /var/www/wordpress -R
+\end{minted}
 
 Change root directory (DocumentRoot) for new virtualhost and add server name field (ServerName) to virtualhosts configuration file   /etc/apache2/sites-available/wp
 
@@ -94,7 +111,9 @@ DocumentRoot /var/www/wordpress
 
 
 To enable new virtualhost for WordPress use a2ensite utility
-\mint[frame=lines, framesep=2mm]{bash}|a2ensite wp|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+a2ensite wp
+\end{minted}
 
 Change wordpress configuration file
 /var/www/wordpress/wp-config-sample.php
@@ -111,10 +130,14 @@ define('DB\_PASSWORD', 'student');
 
 
 Copy sample file to real config file:
-\mint[frame=lines, framesep=2mm]{bash}|cp  -a /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+cp  -a /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php
+\end{minted}
 
 Reload apache configuration files:
-\mint[frame=lines, framesep=2mm]{bash}|service  apache2 reload|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+service  apache2 reload
+\end{minted}
 
 Go to address http://wp.planet.zz/ using web browser.
 
@@ -142,7 +165,9 @@ ab -c<NO_CONN> -t<TIME> http://wp.planet.zz/
 flag c - parallel connections
 flag t - time for test
 
-\mint[frame=lines, framesep=2mm]{bash}|ab -c600 -t20 http://wp.planet.zz/|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+ab -c600 -t20 http://wp.planet.zz/
+\end{minted}
 
 In last example the ab utility makes 600 parallel connections and test takes 20 seconds.
 Test results
@@ -156,16 +181,21 @@ What is the OOM?
 Disable swap (edit /etc/fstab file or use swapoff command)
 
 
-\mint[frame=lines, framesep=2mm]{bash}|swapoff -a|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+swapoff -a
+\end{minted}
 
 Disable OOM killer for MySQL database. In newer kernels write -1000 to oom\_score\_adj file.
 
-\mint[frame=lines, framesep=2mm]{bash}|echo "-1000" > /proc/$(pidof mysqld)/oom_score_adj|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+echo "-1000" > /proc/$(pidof mysqld)/oom_score_adj
+\end{minted}
 %$
 For backward compatibility with old kernels (2.6.XX series) you can use oom\_adj file
-\mint[frame=lines, framesep=2mm]{bash}|echo "-17" > /proc/$(pidof mysqld)/oom_adj|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+echo "-17" > /proc/$(pidof mysqld)/oom_adj
+\end{minted}
 %$
-
 Documentation about proc filesystem and OOM:
 \url{http://www.kernel.org/doc/Documentation/filesystems/proc.txt}
 
@@ -192,27 +222,44 @@ wget http://elab.itcollege.ee:8000/Configs/apache2/ports.conf
 
 Change all virtual hosts to use new 8080 port using text editor or sed command.
 
-\mint[frame=lines, framesep=2mm]{bash}|sed 's/:80>/:8080>/' -i /etc/apache2/sites-enabled/wp|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+sed 's/:80>/:8080>/' -i /etc/apache2/sites-enabled/wp
+\end{minted}
 
 
 Install varnish and change varnish default port from 6081 to 80
 apt-get install varnish
 change /etc/default/varnish configuration file
 Change line
-\mint[frame=lines, framesep=2mm]{bash}|DAEMON_OPTS="-a *:6081 \ |
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+DAEMON_OPTS="-a *:6081 \ 
+\end{minted}
 to
-\mint[frame=lines, framesep=2mm]{bash}|DAEMON_OPTS="-a *:80 \|
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+DAEMON_OPTS="-a *:80 \
+\end{minted}
 
 This means that varnish will listen port 80 on webserver
 
 Restart apache and varnish services
-
+\begin{minted}[frame=lines,framesep=2mm]{bash}
 service apache2 restart
 service varnish restart
-
+\end{minted}
 Test your result using netstat command
 
-\mint[frame=lines, framesep=2mm]{bash}|netstat -lp | grep varnish|
+\begin{minted}[frame=lines, framesep=2mm]{bash}
+netstat -lp | grep varnish
+\end{minted}
+
+
+\begin{Verbatim}[frame=single,
+label=Command output,framesep=2mm,rulecolor=\color{red},commandchars=\\\{\}]
+margus@marguspc:~$ 
+\fbox{\color{red}varnsih}  \fbox{\color{red}TODO}
+\end{Verbatim}
+%$
+
 
 Test new system with AB utility.
 
