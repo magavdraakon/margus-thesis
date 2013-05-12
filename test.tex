@@ -5,6 +5,43 @@
 This chapter will be excluded from final version.}
 }
 
+\enlargethispage{100cm}
+% Start of code
+% \begin{tikzpicture}[anchor=mid,>=latex',join=bevel,]
+\begin{tikzpicture}[>=latex',join=bevel,]
+  \pgfsetlinewidth{1bp}
+%
+\pgfsetcolor{black}
+  % Edge: a_1 -> a_2
+  \draw [->] (47bp,144bp) .. controls (44bp,136bp) and (41bp,126bp)  .. (33bp,108bp);
+  % Edge: a_2 -> a_3
+  \draw [->] (34bp,72bp) .. controls (37bp,64bp) and (40bp,54bp)  .. (48bp,36bp);
+  % Edge: a_3 -> a_1
+  \draw [->] (57bp,36bp) .. controls (59bp,46bp) and (62bp,60bp)  .. (63bp,72bp) .. controls (64bp,87bp) and (64bp,92bp)  .. (63bp,108bp) .. controls (62bp,116bp) and (61bp,126bp)  .. (57bp,144bp);
+  % Node: a_1
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \draw (54bp,162bp) ellipse (27bp and 18bp);
+  \draw (54bp,162bp) node {$a_1$};
+\end{scope}
+  % Node: a_2
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \draw (27bp,90bp) ellipse (27bp and 18bp);
+  \draw (27bp,90bp) node {$a_2$};
+\end{scope}
+  % Node: a_3
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \draw (54bp,18bp) ellipse (27bp and 18bp);
+  \draw (54bp,18bp) node {$a_3$};
+\end{scope}
+%
+\end{tikzpicture}
+
+
+\newcommand{\serverip}{192.168.56.200}
+
 \begin{tikzpicture}[level distance=2cm,
 level 1/.style={sibling distance=5.5cm},
 level 2/.style={sibling distance=2.2cm},scale=1.2]
@@ -15,7 +52,7 @@ child {node {esimene}}
 child {node {\large Kala}
 child {node {teine}}
 child {node {kolmas}}
-child {node {neljas}}
+child {node {\serverip}}
 };
 \end{tikzpicture}
 
@@ -163,5 +200,7 @@ The Fog of Cyber Defence - \url{http://urn.fi/URN:ISBN:978-951-25-2431-0}
 \url{http://www.emergencymgmt.com/training/Cybersecurity-Curriculum-University-Maryland-Students.html}\\
 \url{http://www.qatar.cmu.edu/iliano/courses/12F-CMU-CS349/index.php?page=info}\\
 {\color{red} Analüüsi peatüki kirjutamiseks vaja uurida:}
+http://www.commonexploits.com/?p=789
+\url{http://www.tandfonline.com/} - UT võrgust kättesaadav! teadusajakirjad.
 
 }

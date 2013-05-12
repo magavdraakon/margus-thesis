@@ -1,0 +1,32 @@
+digraph "ADDIE" {
+	graph [	fontname = "Helvetica-Oblique",
+		fontsize = 36,
+		size = "6,6" ];
+	node [	shape = ellipse,
+		sides = 4,
+		distortion = "0.0",
+		orientation = "0.0",
+		skew = "0.0",
+		color = white,
+		style = filled,
+		fontname = "Helvetica-Outline" ];
+	"Analysis" [sides=9, distortion="0.936354", orientation=28, skew="-0.126818", color=mistyrose2];
+	"Design" [sides=5, distortion="0.238792", orientation=11, skew="0.995935", color=deepskyblue];
+	"Development" [sides=8, distortion="0.019636", orientation=79, skew="-0.440424", color=goldenrod2];
+        "Implementation" [sides=9, distortion="0.936354", orientation=28, skew="-0.126818", color=salmon2];
+        "Evaluation" [sides=9, distortion="0.936354", orientation=28, skew="-0.126818", color=thistle2];
+
+	"Analysis" -> "Analysis" [ label = "Evaluation" ];
+	"Analysis" -> "Design";
+	"Design" -> "Design" [ label = "Evaluation" ];
+	"Design"  -> "Development";
+	"Development" -> "Development"  [ label = "Evaluation" ];
+	"Development" -> "Implementation";
+	"Implementation" -> "Evaluation";
+	"Implementation" -> "Implementation"  [ label = "Evaluation" ];
+	"Evaluation" -> "Analysis";
+        "Evaluation" -> "Design";
+        "Evaluation" -> "Development";
+        "Evaluation" -> "Implementation";
+
+}
