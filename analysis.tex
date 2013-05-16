@@ -108,9 +108,9 @@ The ADDIE model contain five stages: Analysis, Desing, Development, Implementati
 
 
 
-\begin{figure}[H] 
+\begin{figure}
  \centering 
- \includegraphics[width=0.9\textwidth]{addie_model.pdf}
+ \includegraphics[width=0.6\textwidth]{addie_model.pdf}
  \rule{35em}{0.5pt} 
  \caption{The ADDIE model} 
  \label{figure:the addie model} 
@@ -143,67 +143,38 @@ According to \gls{ADDIE} model the analysis stage establishes goals for the cour
 
 The analysis phase of the \gls{ADDIE} model contains four sub-phases \citep{website:addie}.
 \begin{enumerate}
-\item Instructional Goals
-\item Instructional Analysis
-\item Learner Analysis
-\item Learning Objectives
+\item Instructional Goals -- main objective plan for new course
+\item Instructional Analysis -- analysis of the current situation
+\item Learner Analysis -- target group properties like previous knowledge about the field
+\item Learning Objectives -- list of knowledges and skills to achieve instructional goals
 \end{enumerate}
 
 
 \subsection{Instructional Goals}
-The Instructional Goals should be established to compose main plan for new course. \citep{website:addie}
+The Instructional Goals and learning objectives should established before designing new course and they give answer to the student questions: Why should I study this topic and what I learn during this and how I will evaluated? \citep{website:addie}
 
 
-{\color{red} *
+The instructional goals for new course were established using interviews with \gls{EISA} and several companies. Therefore where listed technologies needed to know by system administrators. Moreover, the additional input fore establishing goals come form analysis of the current curriculum.
 
-Vajaduste analüüs kirjeldab, mida tudengid juba enne teavad/peavad teadma
+The list of discussed topics is too big to give full list even in appendices. After listing all possible topic all items got priorities. However, the list of topics was still too long to cover it in three year college. Although first prioritizing working group divided topics to smaller groups and divided it into three areas. First, topics what should cover private companies providing product based training. Second, topics what are not suitable for three year education and cant be efficiently integrated into study program like subjects already given in \gls{TUT} or in \gls{UT}. Third, the topics what are suitable for \gls{EITC}
 
-Vajalike teadmiste, oskuste ja suhtumiste kindlakstegemine.
+The general goals for the e-learning course: firstly, give an introduction of IT infrastructure services, secondly, give skills and knowledge for installing and configuring of IT infrastructure services, thirdly give knowledge and skills for protecting IT infrastructure services. Moreover, give knowledge and skills for documenting IT infrastructure services.
 
-Tegeliku olukorra hindamine ja cap analysis
+The instructional goal: Students will be able to install, configure and secure  IT infrastructure services:\gls{NTP}, \gls{DNS}, \gls{DHCP}, web servers, firewalls, file servers and authentication services.
 
-prioriteetide loomine
+\subsection{Instructional Analysis}
+The Instructional Analysis should answer the question: What steps are necessary to achieve  established instructional goals and what tools are needed? \citep{website:addie}.
 
-
-Vajaduste analüüsimise meetodid:
-kirjanduse uurimine, vestlused ekspertidega,
-
-
-Vaatlused ja küsitlused,
-
-
-testid - olemasolevate teadmiste hindamiseks
-
-rühmaarutelusid  - õppija vajaduste ja ootuste hindamiseks, õpieesmärkide kindlakstegemiseks.
-
-
-Asukoht õppekavas
-
-Seos teiste õppeainetega
-
-vajalikud eelteadmised
-
-}
-
-
-
-The general goal of the e-learning course are: firstly, give an introduction of IT infrastructure services, secondly, give skills and knowledge for installing and configuring of IT infrastructure services, thirdly give knowledge and skills for protecting IT infrastructure services. Moreover, give knowledge and skills for documenting IT infrastructure services.
-
-
-To achieve this goal the study focuses on hands-on practical classes combined with lecturers and seminars. Moreover, the special priority given to security aspects of the services.
-
-To achieve maximum impact of the course all content and methodology are designed to be suitable in classroom learning and using e-learning or blended learning which is combination of e-learning and classroom activities. Moreover, materials are designed to support self-study in e-learning form.
+To achieve this goal the study focuses on hands-on practical classes combined with lecturers and seminars. Moreover,to achieve maximum impact of the course, all content and methodology are designed to be suitable in classroom learning and using e-learning or blended learning which is combination of e-learning and classroom activities. Moreover, materials are designed to support self-study in e-learning form.
 
 The name of the new course: Securing IT Infrastructure Services. However the course is not yet included into curricula the subject program will be discussed on board in June 2013 and in case positive feedback the new course will be held on Spring 2014.
 
-
+New e-learning course should be given on second course at spring semester preluded with course I233 - Operating System Administration\footnote{Curriculum subject I233 \url{https://itcollege.ois.ee/en/curriculum-subject/view?curriculum_id=2&subject_id=130&year=2012}}. However, the continuous education students should pass pre-sessional entry course which covers basics of GNU/Linux course as seen in Appendix~\ref{Preliminary course - dpkg based GNU/Linux} or pass the entry theory test with questions on Table~\ref{tab:preliminary_test} on page \pageref{tab:preliminary_test} and a practical test listed in Table~\ref{tab:preliminary_practical_test} on page~\pageref{tab:preliminary_practical_test}.
 
 \subsubsection{Analysing of the requirements, scope and restrictions for e-course}
-During several curricula development seminars author establishes requirements for this particular e-course according to input from partners like \gls{EISA}, students feedback, graduate students feedback and curricula analysis from other higher educational institutes and private training companies. {\color{red} TODO tuua ära seminaride protokollid või viidata erinevatele piltidele, mis seminaris joonistati...vaja mõelda}
+During several curricula development seminars author establishes requirements for this particular e-course according to input from partners like \gls{EISA}, students feedback, graduate students feedback and curricula analysis from other higher educational institutes and private training companies. 
 
-
-The main requirements can be presented as following:
-
+Final main requirements are following:
 \begin{enumerate}[label=Requirement \arabic*.,leftmargin=*]
   \item Developed e-course must be usable for \gls{EITC} students and also in continuous education field for system administrators
   \item Course must contain pre-sessional entry course to GNU/Linux and should cover basics  of the OpenBSD/FreeBSD systems
@@ -212,28 +183,7 @@ The main requirements can be presented as following:
   \item Laboratory work should be as realistic as possible including needed infrastructure to run complex infrastructure services. Therefore required solution for set-up hands-on environment in class or home.
 \end{enumerate}
 
-
-\subsection{Instructional Analysis}
-The Instructional Analysis should answer the question: What steps are necessary to achieve  established instructional goals and what tools are needed? \citep{website:addie}.
-
- - during all of the necessary steps to achive the instructional goals. What tools we need? Sõltuvusgraaf - See on keeruline osa!
-
-
-
-
-{\color{red} TINGIMUSTE ANALÜÜS (lk 8)
-Missugused raha ja muud ressursid on vajalikud kursuse arendamiseks.
-
-Kas auditoorne või muud tüüpi koolitus.
-
-Mis materjale saab kohandada, tõlkida/muuta
-
-}
-
-
-
-
-
+Choosing technical tools, establishing learning outcomes and authoring learning materials will follow those requirements and instructional goals.
 
 %
 %{\color{red} 
@@ -256,34 +206,89 @@ Mis materjale saab kohandada, tõlkida/muuta
 
 \subsection{Learner analysis}
 
-Learner Analysis - mida nad juba oskavad? interview and survives Selle tulemusena hoiame aega kokku ja teeme kursuse efektivsemaks. 
+
+The analysis of the target group provided valuable input to the course development because starting point of the course and difficulty level of the hands-on labs depends on the target group level and course content should fill the cap between knowledge/skills of the target group and instructional goals. Therefore, analysis of the target group is needed to design efficient e-learning course.
+
+ According to problem analysis the target group can divided to two separate groups, the students who do not have long working experience and system administrators who have working experience in particular field but often do not have degree or diploma in \gls{ICT} field or they are graduated several years ago.
+
+The first target group are second and third years students who already mastered basics of operating systems, GNU/Linux administration and Windows administration. The second target group are system administrators with different background because of deep specializing in enterprises. Common relevant (on course development point of view)  properties are described in Table~\ref{tab:targetgroup}
+\begin{table}[h]
+\centering
+\caption{The target group properties}
+
+\begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
+\hline 
+\color{blue}
+Property & \color{blue} Students & \color{blue} System Administrators \\ 
+\hline 
+Background & No or few work experience in field & Experience on one or more specialized field \\ 
+\hline 
+Motivation & To get diploma and valuable work also knowledge/skills needed to protect \gls{ICT} systems & To get knowledge and skills to protect \gls{ICT} systems \\ 
+\hline 
+Time and possibilities & possible to do home work/reading & in practice can not do homework/readings efficiently  \\ 
+\hline 
+Previous knowledge & From \gls{EITC} (GNU/Linux, Windows)  &  heterogeneous, some people are very skilled and some are very weak on field. Most of people do not have proper GNU/Linux experience.  \\ 
+\hline 
+Previous study experience & Good & Lesser \\ 
+\hline 
+Study Stile & Student's style (everything done little before deadlines) & All study should take place during contact hours  \\ 
+\hline 
+How homogeneous the group are (knowledge and skills) & More flat & heterogeneous \\ 
+\hline 
+Previous experience in GNU/Linux & Enough to start the course & Poor (only 10\%) passed the theory test~\ref{Preliminary Tests}  \\ 
+\hline 
+\end{tabular} 
+
+\label{tab:targetgroup}
+\end{table}
+
+For conclusion to the analysis of target group's can stated that course material should be suitable for both groups. First group, the students have advantage because having sufficient time for home readings. However the second group has advantage from previous work experience. Second group's problem is insufficient knowledge about GNU/Linux system and separate short auxiliary course about basic command line is needed before entering to the main course. However some system administrators do not need those course and need for additional course will decided using entry test developed during this thesis.
 
 
-{\color{red}
-taustandmed - vanus, sugu, elukoht tööhõive, töökogemus.
+\subsection{Learning Outcomes}
 
-Motivatsioon - õppimise eesmärgid, ootused, lootused ja kartused, kursuse seotus nende tööga.
+Õpiväljund Oskab seadistada Interneti juurteenuseid (NTP, DNS, DHCP).
+            Oskab seadistada veebi- ja failiservereid apache2 ja SAMBA näitel
+Lävend Ṍppur suudab praktikumis seadistada õpiväljundis loetletud
+           teenuseid ja kirjeldada teenuste tööd ning põhjendada
+             paigaldatud teenuste seadistamisel tehtud valikuid.
+Õpiväljund Teab Interneti juurteenuste põhi- ja alusmõisteid. Teab veebi- ja
+              failiserverite põhi- ja alusmõisteid.
+Lävend Õppur oskab sõnastada mõistete tähendust ja seost IT
+           infrastruktuuri erinevate teenustega.
+Õpiväljund Oskab turvata veebi-, failiservereid ja Interneti juurteenuseid.
+            Õppur oskab testida enamlevinud rünnete mõju teenustele.
+Lävend Õppur oskab seadistada ja kirjeldada erinevaid teenuste
+        turvamehanisme, mida kasutatakse teenuste turvalisuse
+       tõstmisel ja testimisel.
+Teab veebiteenuste vastaseid põhilisi ründeid (injektsiooniründed,
+XSS, CSRF, DOS ja muud)
+Õppur oskab kirjeldada põhiliste rünnete toimemehanismi ja
+vastumeetmeid antud ründele.
+ 
+Oskab seadistada lihtsamaid autentimise ja autoriseerimise
+teenused juhendi alusel.
+    
+Õppur oskab seadistada LDAP ja/või Kerberose põhise autentimise
+ja autoriseerimise süsteemi ühe konkreetse süsteemi juhendi
+näitel.
+Teab IT infrastruktuuri teenuste põhilisi mõisteid vastavalt
+õppematejalis antud nimekirjale. (VPN, virtualiseerimine, SQL,
+SAN/NAS, monitooring, logiteenus, tulemüüre, IDS ja IPS) 
+Lävend
+Tudeng oskab sõnastada ja selgitada aines käsitletud teemade
+sisu ja kasutusvaldkondi.
+     
+Õpiväljund
+Õppur oskab dokumenteerida IT infrastruktuuri teenuseid
+vastavalt aines esitatud juhendmaterjalile.
+Lävend
+ Õppur koostab nõuetekohase dokumentatsiooni ühe seadistatud
+teenuse kohta.
 
-õppimisvõimet - eelnev haridustee, e-õppe kogemused, arvamused, isiklikud huvid 
 
-eelnevad teadmised - oskused, arvamused, isiklikud huvid jne...
-\citep{OppeArenduskeskus2010}
+{\color{red} 
 
-
-Vastab küsimusele:
-
-Kes on kursusel osalejad?
-
-Millised on eeltadmised, vajadused ja oskused.
-
-Kui suurt sihtrühma saab õpetada?
-
-Milline on tehniline varustus ja oskused seda kasutada?
-
-Kas kursuse alguses tuleb arendada õpioskuseid
-
-\citep{OppeArenduskeskus2010}
-}
 
 Learning Objectives - what students should be able to do when ...
 - skills 
@@ -307,56 +312,6 @@ analyse
 utilize resources better
 
 
-
-
-
-
-The analysis of the target group gives input to the course development because starting point of the course and difficulty level of the hands-on labs depends on the target group. According to problem analysis the target group can divided to two separate groups, the students who do not have long working experience and system administrators who have working experience in particular field but do not have degree or diploma in \gls{ICT} field or they are graduated several years ago.
-
-The first target group are second and third years students who already mastered basics of operating systems, GNU/Linux administration, Windows administration. The second target group are system administrators with different practical background because deep specializing in enterprises. Common relevant (on course development point of view)  properties are described in Table~\ref{tab:targetgroup}
-\begin{table}[h]
-\centering
-\caption{The target group properties}
-
-\begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
-\hline 
-\color{blue}
-Property & \color{blue} Students & \color{blue} System Administrators \\ 
-\hline 
-Background & No or few working experience & Experience on one or more specialized field \\ 
-\hline 
-Motivation & To get diploma and work and knowledge/skills needed to protect \gls{ICT} systems & To get knowledge and skills to protect \gls{ICT} systems \\ 
-\hline 
-Time and possibilities & possible to do home work/reading & in practice can not do homework/readings efficiently  \\ 
-\hline 
-Previous knowledge &   &   \\ 
-\hline 
-Previous study experience & Good & Lesser \\ 
-\hline 
-Study Stile & Student's style (everything done little before deadlines) & All study should take place during contact hours  \\ 
-\hline 
-How {\color{red}{homogeenne}} the group are  & More flat & {\color{red}{ebaühtlane}} \\ 
-\hline 
-Previous experience in GNU/Linux & Present & Poor (only 10\%) passed the test  \\ 
-\hline 
-\end{tabular} 
-
-\label{tab:targetgroup}
-\end{table}
-
-In this time no data about age and ... {\color{red} TODO mis jäi vaatluse alt välja} because of insufficient data. 
-
-
-
-For conclusion to target group's analysis can be stated that course material should be suitable for both groups. First group the students have advantage because time for home readings. However the second group has advantage from work experience. Second group's problem is insufficient knowledge about GNU/Linux system and separate short auxiliary course about basic command line is needed before entering to the main course. However some system administrators do not need those course and need for additional course will decided using entry test developed during this thesis.
-
-According to motivation the main focus of new e-course to give practical hands-on approach for protecting \gls{ICT} systems.
-
-
-\subsection{Learning Outcomes}
-
-{\color{red} 
-
 Mahu analüüs. Kas on sobiva mahuga?
 
 Vastav kursuse tasemele?
@@ -369,13 +324,13 @@ loogiliselt järjestatud.
 
 }
 \subsubsection{Analysis of the course content}
-
+All times are given in academic hours or days which equal 8 academic hours.
 \begin{enumerate}[label=Hands-on block \arabic*.,leftmargin=*]
   \item Pre-requirements courses
     \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
   	\item Operating system basics (one day)
   	\item Basic networking IPv4/IPv6, TCP/IP (one day)
-  	\item GNU/Linux basics (and OpenBSD/FreeBSD basics) (2 days)
+  	\item GNU/Linux basics (and OpenBSD/FreeBSD basics) (16h) as describbed in Appendix~\ref{Preliminary course - dpkg based GNU/Linux} on page~\pageref{Preliminary course - dpkg based GNU/Linux}
   	\item Scripting in BASH (2 days)
   	\item Scripting in Python (1.5 days)
   	\item Scripting in PowerShell (1.5 days)

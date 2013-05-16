@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TexmakerSession quickmode="10">
-    <document hasfocus="true" master="true" line="0" bookmark1="0" bookmark2="0" file="/home/margus/polygon/margus-thesis/thesis.tex" bookmark3="0"/>
+    <document hasfocus="true" master="true" line="136" bookmark1="0" bookmark2="0" file="/home/margus/polygon/margus-thesis/thesis.tex" bookmark3="0"/>
+    <document hasfocus="false" master="false" line="1" bookmark1="0" bookmark2="0" file="/home/margus/polygon/margus-thesis/abstract.tex" bookmark3="0"/>
+    <document hasfocus="false" master="false" line="1" bookmark1="0" bookmark2="0" file="/home/margus/polygon/margus-thesis/declaration.tex" bookmark3="0"/>
+    <document hasfocus="false" master="false" line="0" bookmark1="0" bookmark2="0" file="/home/margus/polygon/margus-thesis/title.tex" bookmark3="0"/>
 </TexmakerSession>

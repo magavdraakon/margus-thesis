@@ -126,11 +126,53 @@ Practical class - DNS & Co authored with Katrin Loodus  & \href{https://docs.goo
 
 
 \subsection{Text based learning material}
+Developed learning material should follow consistent style and present also one example of good documentation practice. For system administrators several howto styles exists. However practical hands-on laboratory instructions are designed that pass through using copy paste is possible but gives one working sample. However, this is not enough to pass lab scenario and student must customize own configuration.
+
+Guiding stile of the lab instruction using style convention: First, all variable parts of the text are clearly differs from other text and command. Second, all commands given by student are highlighted, and variable parts embossed as seen in followed command.
+
+
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+#Sample for changing OOM adjustment score for mysql server
+echo "-17" > /proc/$(pidof mysqld)/oom_adj
+\end{minted}
+%$
+
+
+Sample sample: Finding a proccess ID of the mysql server proccess.
+
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+ps -ef|grep mysqld
+\end{minted}
+\label{code_sample}
+%
+\small{
+\begin{Verbatim}[frame=single,
+label=Command output,framesep=2mm,rulecolor=\color{red},commandchars=\\\{\}]
+sudent@opiise:~# ps -ef|grep mysqld
+root     11290 10905  0 10:27 pts/6    00:00:00 grep --color=auto mysqld
+mysql    \fbox{\color{red}29830}    1  0 Apr25 ?        00:05:47 /usr/sbin/mysqld
+\end{Verbatim}
+%
+}
+
+All study should stored in open formats, like pdf, OpenDocument , MediaWiki markup language, html, utf8 text. Original editable source files for generating pdf, images should be publicly accessible. Moreover, text based materials should stored into version control system like git or subversion to enable contributing for other lecturers and students as well.
+
 \subsection{Audio/Visual learning material}
+The Audio/Visual material is recorded from live lectures and practical classes using echo360 equipment or screen/audio recording for some classes. Recordings are supportive materials and not the main source for knowledge.
+
+\url{http://echo360.e-uni.ee/ess/portal/section/36936084-4fbb-413c-98ec-0470f11db4e3}
+
+
 \subsection{Interactive learning material}
+
 \subsection{Online tests and laboratory scenarios}
+
 \subsection{Learning objectives}
+
 \subsection{Technical implementation of the e-course}
+
+\LaTeX Minted muutujad jne
+
 
 \subsubsection{The Environment of Distance Study}
 \label{The Environment of Distance Study}
@@ -162,7 +204,11 @@ Siin räägin üldisest disainist ja allsüsteemidest
 \subsubsection{Security Aspects of Distance Laboratory}
 
 \subsection{Testing the e-course}
+
 \section{Piloting the course}
+
 \subsection{Organizational role}
+
 \subsection{Social role}
+
 \subsection{Pedagogical role}

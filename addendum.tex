@@ -1,15 +1,51 @@
 \appendix
+\newgeometry{margin=2cm}
+% change chapter title to be without word chapter
+% http://www.latex-community.org/forum/viewtopic.php?f=4&t=638
+% appendicies do not need space in beginning of the chapter
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+	\vspace*{1 pt}%
+	{\color{chapters}\setlength{\parindent}{0pt} \raggedright \normalfont
+	\bfseries\Huge\thechapter\ #1
+	\par\nobreak\vspace{1 pt}}}
+\makeatother
 
 \input{appendix-cert-letter}
 
 \input{./lab/preliminary-test}
 
+\input{preliminary-course-gnu-linux}
 
 \input{appendix-1}
 
 \input{appendix-2}
 
 \input{appendix-3}
+
+\chapter{Feedback from students}
+\section{Comments from intensive course students}
+
+
+
+\subsubsection{Feedback from second group: International students}
+Intensive Programme 2013 "Deploying IT Infrastructure Solutions" contains one hands-on course: Protecting web applications. Students were from Estonia, Finland, Greece and from Lithuania. 
+Only Estonian students (1/3 from all students) had previous experience with GNU/Linux and this practical class was too hard for most of the students because insufficient previous knowledge:
+
+ Comments from students (unchanged): 
+*It was a bit fast, but as I have been dealing with DVWA and this kind of course before, it was okay for me. I was helping other participants. 
+*quite hard to follow and was specific for one team. 
+*Very important for the Security team, and good new perspectives and experiences for everyone else too. 
+*Interesting course. Liked that Estonians helped people who weren’t very familiar with linux. Nothing new to me. 
+*This was carried out as a practical class and was quite tough since I had little previous Linux experience. 
+*It was a very long, tiring practice lecture. Somehow it would have been better to separate the long lecture into several parts. It would have been more productive. Otherwise tired lecturer and students couldn’t follow.  
+*I took my first baby steps towards being professional hacker. In some cases, following teachers teaching was hard because of the fast pace. 
+*Not that relevant for all projects, but still important thing to understand as a IT student. 
+*Awesome, hacking is interesting. 
+*Nice topic and useful to our project. It was like a first bite of our project. And Margus taught things so that everyone can learn.
+*That was something different out of software engineering field 
+*Very good lecture. Difficult to follow. 
+*I really like to search for security holes and vulnerability threats in web pages and this tool is one of the best for testing, but I didn't manage to follow the teacher's step by step tutorial. I have got messed up in virtual machines, because I didn't have the experience for them, however I have managed to learn more about them after this topic, also Margus explained more about DVWA tool for our team, so I got the idea.
 
 
 \section{Toormaterjal}
