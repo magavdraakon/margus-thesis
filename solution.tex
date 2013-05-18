@@ -1,6 +1,8 @@
 \chapter{Solution}
 \label{solution}
 
+\lettrine[lraise=0.1, nindent=0em, slope=-.5em]{\color{Violet}A}{lgus} üks lõik enne järgmist pealkirja.
+
 \section{Design and Planning of learning process}
 
 http://www.teaching.utoronto.ca/topics/coursedesign/learning-outcomes/outcomes-objectives.htm
@@ -12,9 +14,11 @@ The Design phase contains three steps: First Design Assessments, second choose a
 
 Design assessments before creating a content - nagu tagant ettepoole minek.
 
+For design an adequate course content two aspects are required, learning objectives and assessment tests. Likewise in software development field the tests should be designed first. Therefore all learning objectives are given with evaluation methods and values.  
 
 
-\subsubsection{Analysis of the course content}
+
+\subsubsection{Design of the course content}
 All times are given in academic hours or days which equal 8 academic hours.
 \begin{enumerate}[label=Hands-on block \arabic*.,leftmargin=*]
   \item Pre-requirements courses
@@ -38,8 +42,8 @@ All times are given in academic hours or days which equal 8 academic hours.
   	\item Web server security - Protecting Web Application Against
 (D)DOS Attacks
   	\item Web server security - securing vulnerable web application using application firewalls (3 days)
+  	\end{enumerate}
   	\item Fileserver (Samba3 and Samba4) (0.5 day)
-  \end{enumerate}
     \item E-mail services (4 days)
     \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
   		\item SPAM control
@@ -52,7 +56,7 @@ All times are given in academic hours or days which equal 8 academic hours.
   		\item IP firewalls netfilter/iptables and packet filter (pf) (2 days)
 	  	\item IDS/IPS (2 days)
   		\item NetFlow (kuna seda loetakse CERT.EE abil, siis jääb välja)
-    \end{enumerate}
+		\end{enumerate}
     \item Autentication and authorization (4 days)
         \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
   		\item LDAP and Samba4 AD
@@ -136,32 +140,17 @@ Several assessment methods are used to give feedback and grades for students in 
 	\item peer assessment
 \end{itemize}
 \subsection{Choosing technological tools}
-Keywords to focus {\color{red} Viidata }
-\begin{itemize}
-	\item availability
-	\item usability 
-	\item motivating students
-	\item adaptive methods
-	\item standard compliance
-\end{itemize}
-\subsubsection{E-Learning platforms}
+For choosing technological tools for a course several following aspects need to be considered:
 
 \begin{itemize}
-	\item Millal e-õpe töötab ja millal ei? Õppur peab rohkem pingutama [Chao: 11]
-	\item Erinevad õpikeskkonnad ja nende sobivus antud õppeks
-		\begin{itemize}
-			\item Moodle
-			\item Blackboard WebCT
-			\item CISCO Network Academy
-			\item Maurus
-			\item IVA
-			\item Sakai
-			\item Wikiversity
-			\item TUT Kaur course lab
-		\end{itemize}
-	\item virtual distance laboratory
-	\item security aspects of distance laboratory
+	\item Availability of e-learning course
+	\item usability of e-learning course
+	\item Support for peer assessment and community based learning
+	\item Support for realistic environment (more then one virtual machine for most of the labs)
+	\item Standard complacence
 \end{itemize}
+
+For maintaining course materials, collaborations between students and lectures several Learning Management System (\gls{LMS}) are used by Estonian higher educational institutes. Incomplete list  of \gls{LMS}'s are Moodle, Blackboard WebCT (retried), CISO Network Academy, IVA, Sakai and Wikiversity. However the \gls{LMS} are useful for collaboration and storing learning material they can not be used as primary platform for new e-learning course because some grave limitations as: Firstly, the laboratories need virtual machines with administrative privileges in some cases  and supportive infrastructure to simulate Internet around the server. Secondly, only wikiversity and other wiki based systems are suitable for community based learning and peer assessment where students can teach and give feedback to others. Therefore no special \gls{LMS} are used in this course and materials are published in wiki, or in course web page. 
 
 
 
@@ -179,7 +168,7 @@ mida uut peaks õppija suutma teha kursuse lõpuks.
 \item VPN, SAN, NAS, IDS, IPS
 \end{enumerate}
 
-
+\url{http://blog.spiderlabs.com/2011/01/detecting-malice-with-modsecurity-csrf-attacks.html}
 
 
 
@@ -211,11 +200,57 @@ Quality Assurance
 \section{Development of the e-learning course}
 
 \subsection{Authoring the learning material}
-In the development phase the authoring of learning materials, tests, media and integration of all artefacts into consistent body. 
+Developing learning material is based on learning objectives. Each learning objective must be covered with learning material and everything else should left out as extra load for student. Therefore in the development phase the authoring of different study materials, assessment tests, audio/video media and integration of all artefacts into consistent body with one reason: ensure that all objectives are met.
+
+Authoring the study materials is one of most time consuming tasks and amount of developed study materials is too big even for appendices. Therefore one sample block - Securing web applications are included in Appendix~\ref{Protecting Web Application Against (D)DOS Attacks} and in Appendix~ \ref{Protecting an Insecure Web Application} 
+
+Developed learning material are publicly available and under (\gls{CC-BY-SA}) license to guarantee maximum impact on field. Therefore is acceptable that people with will and motivation may self-study using this e-learning course. Moreover, the private training companies can use those courses to train target group.
+
+Learning materials main download page \url{http://elab.itcollege.ee:8000/cyber-course/} {\color{red} Siia linki vaja kõik materjalid koondada.}
+
+Some never materials are developed using open source revision control system \gls{git} and all changes and commits are publicly available. Moreover, source code of \LaTeX  files and as well other files are public.
+
+Materials and thesis source code \url{https://github.com/magavdraakon/margus-thesis.git}
+
+
 
 \url{http://www.grayharriman.com/ADDIE.htm}
 
-\begin{table}[h]
+Developed learning material should follow consistent style and present also one example of good documentation practice. For system administrators several howto styles exists. However practical hands-on laboratory instructions are designed that pass through using copy paste is possible but gives one working sample. However, this is not enough to pass lab scenario and student must customize own configuration.
+
+Guiding stile of the lab instruction using style convention: First, all variable parts of the text are clearly differs from other text and command. Second, all commands given by student are highlighted, and variable parts embossed as seen in followed command.
+
+
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+#For changing Out of memory - OOM adjustment score for mysql server
+echo "-1000" > /proc/$(pidof mysqld)/oom_score_adj
+\end{minted}
+%$
+
+
+
+Sample sample: Finding a proccess ID of the mysql server proccess.
+
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+ps -ef|grep mysqld
+\end{minted}
+\label{code_sample}
+%
+\small{
+\begin{Verbatim}[frame=single,
+label=Command output,framesep=2mm,rulecolor=\color{red},commandchars=\\\{\}]
+sudent@opiise:~# ps -ef|grep mysqld
+root     11290 10905  0 10:27 pts/6    00:00:00 grep --color=auto mysqld
+mysql    \fbox{\color{red}29830}    1  0 Apr25 ?        00:05:47 /usr/sbin/mysqld
+\end{Verbatim}
+%
+}
+
+All study should stored in open formats, like pdf, OpenDocument , MediaWiki markup language, html, utf8 text. Original editable source files for generating pdf, images should be publicly accessible. Moreover, text based materials should stored into version control system like \gls{git} to enable contributing for other lecturers and students as well.
+
+
+
+\begin{table}[H]
 \centering
 \caption{The learning materials}
 
@@ -305,49 +340,59 @@ Practical class - DNS & Co authored with Katrin Loodus  & \href{https://docs.goo
 \end{table}
 
 
-\subsection{Text based learning material}
-Developed learning material should follow consistent style and present also one example of good documentation practice. For system administrators several howto styles exists. However practical hands-on laboratory instructions are designed that pass through using copy paste is possible but gives one working sample. However, this is not enough to pass lab scenario and student must customize own configuration.
-
-Guiding stile of the lab instruction using style convention: First, all variable parts of the text are clearly differs from other text and command. Second, all commands given by student are highlighted, and variable parts embossed as seen in followed command.
-
-
-\begin{minted}[frame=lines,framesep=2mm]{bash}
-#Sample for changing OOM adjustment score for mysql server
-echo "-17" > /proc/$(pidof mysqld)/oom_adj
-\end{minted}
-%$
-
-
-Sample sample: Finding a proccess ID of the mysql server proccess.
-
-\begin{minted}[frame=lines,framesep=2mm]{bash}
-ps -ef|grep mysqld
-\end{minted}
-\label{code_sample}
-%
-\small{
-\begin{Verbatim}[frame=single,
-label=Command output,framesep=2mm,rulecolor=\color{red},commandchars=\\\{\}]
-sudent@opiise:~# ps -ef|grep mysqld
-root     11290 10905  0 10:27 pts/6    00:00:00 grep --color=auto mysqld
-mysql    \fbox{\color{red}29830}    1  0 Apr25 ?        00:05:47 /usr/sbin/mysqld
-\end{Verbatim}
-%
-}
-
-All study should stored in open formats, like pdf, OpenDocument , MediaWiki markup language, html, utf8 text. Original editable source files for generating pdf, images should be publicly accessible. Moreover, text based materials should stored into version control system like git or subversion to enable contributing for other lecturers and students as well.
-
-\subsection{Audio/Visual learning material}
-The Audio/Visual material is recorded from live lectures and practical classes using echo360 equipment or screen/audio recording for some classes. Recordings are supportive materials and not the main source for knowledge.
-
-\url{http://echo360.e-uni.ee/ess/portal/section/36936084-4fbb-413c-98ec-0470f11db4e3}
-
-
-\subsection{Interactive learning material}
 
 \subsection{Online tests and laboratory scenarios}
 
 \subsection{Learning objectives}
+
+\subsection{Choosing vulnerable web application}
+
+The main need for vulnerable web application comes from scenario: Each student installs vulnerable system and must stop basic attacks without reprogramming a web application to reflect usual system administrator's work,  install needed applications and secure them.
+
+Although ready made virtual appliances can be used to install vulnerable web application the
+system administrator should be able to install vulnerable application itself to understood a main architecture of web application to choose best protection methods. Therefore chosen application should be free and open source, easily installable, implement at leas stored and reflected \gls{XSS} and several injection type attacks like \gls{SQLi} (usual and blind) and \gls{CSRF}.
+
+\subsubsection{WebGoat}
+WebGoat is a free, open source insecure J2EE web application designed to teach web application security lessons.  However the WebGoat is one of the best application for teaching the installation and J2EE requirement is not suitable for system administrators with lesser skills even authors did installation script it hides too many steps valuable for students.
+
+
+\subsubsection{Damn Vulnerable Web Application}
+The Damn Vulnerable Web Application \gls{DVWA} is web application with several vulnerabilities to be suitable for testing several security vulnerabilities and tools. However, the tool does not implement all \gls{OWASP} top ten attacks the most relevant are presented. The tool is written using PHP/MySQL which are taught for all \gls{EITC} students and known also by system administrators. Moreover the tool is designed for learning and students can choose difficulty level of exploiting \citep{website:dvwa}.
+
+Although the progam is easy to install. Integrated stdy materials, choosable difficulty level the level of vulnerability coverage is not best but sufficient.
+
+\subsubsection{NOWASP (Mutillidae)}
+NOWASP (Mutillidae) Web Pen-Test Practice Application is a free, open source vulnerable web-application for labs, security enthusiast, classrooms, \gls{CTF}, and vulnerability assessment tool targets. \citep{website:Mutillidae}
+
+
+Pros: Videos, study materials, good support for \gls{OWASP} top ten.
+\subsubsection{SQLol}
+SQLol is free and open source web application designed to test \gls{SQLi} type injectons and complatible with \gls{MySQL}, gls{PostgreSQL} and uses \gls{PHP}.
+cons: only supports \gls{SQLi}
+pros: comprehensive  \gls{SQLi} study materials.
+
+ This application was released at at Austin Hackers Association meeting 0x3f by Daniel “unicornFurnace” Crowley of Trustwave Holdings, Inc. – Spider Labs.
+Link: https://github.com/SpiderLabs/SQLol
+
+
+
+Because of defensive nature on developed course only simple vulnerabilities are needed to demonstrate a problem and all vulnerable applications are suitable for installing. To create diversity all applications what can installed easily can be used in lab. All examples are given using \gls{DVWA} but to get graded every student should choose another
+
+
+
+\gls{CSRF}
+Protection using mod\_security
+\url{http://blog.spiderlabs.com/2011/01/detecting-malice-with-modsecurity-csrf-attacks.html}
+
+\gls{XSS}
+{
+\color{red} *Kui avastad, kust on malicious script included siis saab esitada avalduse, et see domeen/virtualhost kinni pandaks...(see võiks olla tulevikus osa laborist.
+
+http://www.dcortesi.com/blog/2009/04/11/twitter-stalkdaily-worm-postmortem/
+}
+
+
+
 
 \subsection{Technical implementation of the e-course}
 
