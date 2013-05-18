@@ -345,7 +345,11 @@ Practical class - DNS & Co authored with Katrin Loodus  & \href{https://docs.goo
 
 \subsection{Learning objectives}
 
-\subsection{Choosing vulnerable web application}
+\subsection{Technical implementation of the e-course}
+
+\LaTeX Minted muutujad jne
+
+\subsection{Choosing a vulnerable web application}
 
 The main need for vulnerable web application comes from scenario: Each student installs vulnerable system and must stop basic attacks without reprogramming a web application to reflect usual system administrator's work,  install needed applications and secure them.
 
@@ -353,19 +357,16 @@ Although ready made virtual appliances can be used to install vulnerable web app
 system administrator should be able to install vulnerable application itself to understood a main architecture of web application to choose best protection methods. Therefore chosen application should be free and open source, easily installable, implement at leas stored and reflected \gls{XSS} and several injection type attacks like \gls{SQLi} (usual and blind) and \gls{CSRF}.
 
 \subsubsection{WebGoat}
-WebGoat is a free, open source insecure J2EE web application designed to teach web application security lessons.  However the WebGoat is one of the best application for teaching the installation and J2EE requirement is not suitable for system administrators with lesser skills even authors did installation script it hides too many steps valuable for students.
+WebGoat is a free, open source insecure J2EE web application designed to teach web application security lessons.  However the WebGoat is one of the best application for teaching the installation and J2EE requirement is not suitable for system administrators with lesser skills even authors did installation script it hides too many steps valuable for students. 
 
 
 \subsubsection{Damn Vulnerable Web Application}
 The Damn Vulnerable Web Application \gls{DVWA} is web application with several vulnerabilities to be suitable for testing several security vulnerabilities and tools. However, the tool does not implement all \gls{OWASP} top ten attacks the most relevant are presented. The tool is written using PHP/MySQL which are taught for all \gls{EITC} students and known also by system administrators. Moreover the tool is designed for learning and students can choose difficulty level of exploiting \citep{website:dvwa}.
 
-Although the progam is easy to install. Integrated stdy materials, choosable difficulty level the level of vulnerability coverage is not best but sufficient.
+Although the progam is easy to install. Integrated study materials, variable level of  difficulties of vulnerability, the coverage is not best but sufficient.
 
 \subsubsection{NOWASP (Mutillidae)}
-NOWASP (Mutillidae) Web Pen-Test Practice Application is a free, open source vulnerable web-application for labs, security enthusiast, classrooms, \gls{CTF}, and vulnerability assessment tool targets. \citep{website:Mutillidae}
-
-
-Pros: Videos, study materials, good support for \gls{OWASP} top ten.
+NOWASP (Mutillidae) Web Pen-Test Practice Application is a free, open source vulnerable web-application for labs, security enthusiast, classrooms, \gls{CTF}, and vulnerability assessment tool targets. \citep{website:Mutillidae} Although, the tool have video, study materials, good support for \gls{OWASP} top ten the development is relied to one person and community support is thin.
 \subsubsection{SQLol}
 SQLol is free and open source web application designed to test \gls{SQLi} type injectons and complatible with \gls{MySQL}, gls{PostgreSQL} and uses \gls{PHP}.
 cons: only supports \gls{SQLi}
@@ -376,9 +377,9 @@ Link: https://github.com/SpiderLabs/SQLol
 
 
 
-Because of defensive nature on developed course only simple vulnerabilities are needed to demonstrate a problem and all vulnerable applications are suitable for installing. To create diversity all applications what can installed easily can be used in lab. All examples are given using \gls{DVWA} but to get graded every student should choose another
+Because of defensive nature on developed course only simple vulnerabilities are needed to demonstrate a problem and all vulnerable applications are suitable for installing. To create diversity all applications what can installed easily can be used in lab. All examples are given using \gls{DVWA} but to get the grade every student should choose another vulnerable application, install it and protect it.
 
-
+%http://pentestlab.org/10-vulnerable-web-applications-you-can-play-with/ - todo 
 
 \gls{CSRF}
 Protection using mod\_security
@@ -394,9 +395,6 @@ http://www.dcortesi.com/blog/2009/04/11/twitter-stalkdaily-worm-postmortem/
 
 
 
-\subsection{Technical implementation of the e-course}
-
-\LaTeX Minted muutujad jne
 
 
 \subsubsection{The Environment of Distance Study}
