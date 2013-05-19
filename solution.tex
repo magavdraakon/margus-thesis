@@ -1,24 +1,36 @@
 \chapter{Solution}
 \label{solution}
+\lettrine[lraise=0.1, nindent=0em, slope=-.5em]{\color{Violet}T}{he} Solution chapter is divided int three phases. First, the design phase for planning on learning process. Second, development phase where authoring of learning material being held. Third, the implementation phase the piloting of the course, where each course are run-through with particular students/trainers to get feedback about timing, content and evaluation.
 
-\lettrine[lraise=0.1, nindent=0em, slope=-.5em]{\color{Violet}A}{lgus} üks lõik enne järgmist pealkirja.
 
+
+
+The Development phase  (create a sample instruction and evaluate, create course materials - and review, conduct a run-through (a real-time rehearsal of the course) saab tagasisidet ja teada aja, mis on vaja kursuse läbimiseks)
+
+
+Implementation phase (train the instructor, prepare the learners (veenduda, et eeldused on korras ja nad saavad hakkama wiki ja elabiga ja virtualiseerimisega), arrange the learning space)
+
+ 
 \section{Design and Planning of learning process}
-
-http://www.teaching.utoronto.ca/topics/coursedesign/learning-outcomes/outcomes-objectives.htm
-
+The Design phase contains four steps: First, Design learning objectives. Second, design assessments for each objective. Third, choose a course format. Fourth, create an instructional strategy. \citep{website:design_phase_ADDIE}
 
 
+\subsection{Design of the course content and learning objectives}
 
-The Design phase contains three steps: First Design Assessments, second choose a course format, third create an instructional strategy.
+In analysis phase the learning outcomes were established. However to design assessments tests and learning material more detailed learning objectives are needed. Therefore each learning outcome are divided into smaller units.
 
-Design assessments before creating a content - nagu tagant ettepoole minek.
+\subsubsection{Pre-requirements courses}
 
-For design an adequate course content two aspects are required, learning objectives and assessment tests. Likewise in software development field the tests should be designed first. Therefore all learning objectives are given with evaluation methods and values.  
+During the analysis of the target group the need for preliminary course was decided to ühtlustada the level of the participants.
+    \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+  	\item Operating system basics (one day)
+  	\item Basic networking IPv4/IPv6, TCP/IP (one day)
+  	\item GNU/Linux basics (and OpenBSD/FreeBSD basics) (16h) as describbed in Appendix~\ref{Preliminary course - dpkg based GNU/Linux} on page~\pageref{Preliminary course - dpkg based GNU/Linux}
+  	\item Scripting in BASH (2 days)
+  	\item Scripting in Python (1.5 days)
+  	\item Scripting in PowerShell (1.5 days)
+  \end{enumerate}
 
-
-
-\subsubsection{Design of the course content}
 All times are given in academic hours or days which equal 8 academic hours.
 \begin{enumerate}[label=Hands-on block \arabic*.,leftmargin=*]
   \item Pre-requirements courses
@@ -74,6 +86,44 @@ All times are given in academic hours or days which equal 8 academic hours.
 		  	\item Monitor and analyse log files (1 day)
     		\end{enumerate}
 \end{enumerate}
+
+
+
+\subsection{Design assessments}
+
+
+
+Design assessments before creating a content - nagu tagant ettepoole minek.
+
+For design an adequate course content two aspects are required, learning objectives and assessment tests. Likewise in software development field the tests should be designed first. Therefore all learning objectives are given with evaluation methods and values.  
+
+The terms and vocabulary used in assessment should stay on level the students should know at the time of the test/assessment and ejaculate only the established learning objectives.
+
+\subsection{Choosing course format}
+
+e-learning format. Võib kasutada ka probleemipõhist õpet, koostööl põhinevat õpet, kogukonnal põhivevat õpet.
+
+\subsection{Instructional strategy}
+
+
+pre instructional activities
+- Motivate students
+- illustrate course objectives
+content presentation
+- concise content - ainult objective jaoks
+
+
+learner participation
+-practice
+-feedback - midaa tudent tegi õigesti
+
+assessment
+-practice assesment
+
+follow-through activities
+-review 
+-how to apply
+
 
 
 Assessment design contains (goals, lerners, context, assessment)
@@ -206,11 +256,12 @@ Authoring the study materials is one of most time consuming tasks and amount of 
 
 Developed learning material are publicly available and under (\gls{CC-BY-SA}) license to guarantee maximum impact on field. Therefore is acceptable that people with will and motivation may self-study using this e-learning course. Moreover, the private training companies can use those courses to train target group.
 
-Learning materials main download page \url{http://elab.itcollege.ee:8000/cyber-course/} {\color{red} Siia linki vaja kõik materjalid koondada.}
+Learning materials, self-tests, course information and other materials are publicly downloadable \footnote{\href{http://elab.itcollege.ee:8000/cyber-course/}{Course Syllabus (Õpijuhis)}}.
 
-Some never materials are developed using open source revision control system \gls{git} and all changes and commits are publicly available. Moreover, source code of \LaTeX  files and as well other files are public.
 
-Materials and thesis source code \url{https://github.com/magavdraakon/margus-thesis.git}
+Some never materials are developed using open source revision control system \gls{git} and all changes and commits are publicly available. Moreover, source code of this thesis and labs are available from public \gls{git} repository with \LaTeX  source files and as well other files \footnote{\href{https://github.com/magavdraakon/margus-thesis.git}{Materials and source code of this thesis}}.
+
+
 
 
 
@@ -343,11 +394,45 @@ Practical class - DNS & Co authored with Katrin Loodus  & \href{https://docs.goo
 
 \subsection{Online tests and laboratory scenarios}
 
-\subsection{Learning objectives}
+\subsection{Course Syllabus}
 
 \subsection{Technical implementation of the e-course}
 
 \LaTeX Minted muutujad jne
+
+
+Saab teha nii kaugtöölaboris, kui ka oma virtuaalmasinates, siis on mälu/prose vajadus tudengile päris suur, rääkimata virtuaalmasinate allalaadimise vajadusest.
+
+\subsubsection{Virtualization technology}
+
+\subsubsection{The Environment of Distance Study}
+\label{The Environment of Distance Study}
+The Environment of Distance Study...
+
+TODO pilt virtuaalaborite süsteemi kontekstist
+\subsubsection{Random tags}
+\begin{itemize}
+	\item normal traffic generator
+	\item malicious traffic generator
+	\item availability monitor (for grading)
+\end{itemize}
+
+\subsubsection{Virtualization Layer}
+Siin libvirdist
+\subsubsection{Web Application Layer}
+Siin Ruby on Rails raamistikust ja veebirakendusest
+\subsubsection{Architecture of Distance Laboratory}
+Siin räägin üldisest disainist ja allsüsteemidest
+\
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{architecture.png}
+\caption{Architecture of Distance Laboratory}
+\label{fig:Architecture of Distance Laboratory}
+\end{figure}
+\
+
+\subsubsection{Security Aspects of Distance Laboratory}
 
 \subsection{Choosing a vulnerable web application}
 
@@ -396,39 +481,11 @@ http://www.dcortesi.com/blog/2009/04/11/twitter-stalkdaily-worm-postmortem/
 
 
 
-
-\subsubsection{The Environment of Distance Study}
-\label{The Environment of Distance Study}
-The Environment of Distance Study...
-
-TODO pilt virtuaalaborite süsteemi kontekstist
-\subsubsection{Random tags}
-\begin{itemize}
-	\item normal traffic generator
-	\item malicious traffic generator
-	\item availability monitor (for grading)
-\end{itemize}
-
-\subsubsection{Virtualization Layer}
-Siin libvirdist
-\subsubsection{Web Application Layer}
-Siin Ruby on Rails raamistikust ja veebirakendusest
-\subsubsection{Architecture of Distance Laboratory}
-Siin räägin üldisest disainist ja allsüsteemidest
-\
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.8\textwidth]{architecture.png}
-\caption{Architecture of Distance Laboratory}
-\label{fig:Architecture of Distance Laboratory}
-\end{figure}
-\
-
-\subsubsection{Security Aspects of Distance Laboratory}
-
 \subsection{Testing the e-course}
 
-\section{Piloting the course}
+\section{Implementation}
+According to \gls{ADDIE} model...
+Siin saame teada, kui palju aega kulub mingi osa peale ja kui realistlik oli plaan.
 
 \subsection{Organizational role}
 
