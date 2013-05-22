@@ -63,12 +63,12 @@ According to previous objectives three practical classes are needed:
 Configuring and securing web servers is essential skill required from system administrators. Therefore, web server installation, configuration and hardening are covered with this block. Because instructional goals and learning outcomes also require covering file services topic.
 
 The objectives and assessments for Web and File services:
-\begin{enumerate}
+\begin{itemize}
 \item After completing the web and file services block student is able to install web server and web application with database and several virtual hosts and configure \gls{TLS}. Minimal level for passing: Installed web server with two virtual hosts accepting \gls{HTTP} and \gls{HTTPS} connections. Configured IP aliases for \gls{HTTPS} and/or \gls{SNI}.
 \item Student is able to use caching technologies to protect web application against simpler \gls{DOS} attacks. Student configures web service and demonstrates that can be easily take offline using simple load generator. Minimal level: Student configures proper caching and demonstrates that web application survives same attack.
 \item Student are able to install different application firewalls like \gls{SQL} firewall and web application firewall. Minimal level: Student demonstrates that different types of attacks are possible and successful against particular vulnerable web application. Student installs \gls{SQL} firewall and demonstrates that basic \gls{SQLi} attacks are blocked. Student demonstrates that several web application attacks are still possible (after installing \gls{SQL} firewall reflected \gls{XSS} and possibly stored \gls{XSS}, command injection, \gls{CSRF} are minimum. Student installs application firewall before web application and demonstrates that previously succeeded attacks (at least \gls{XSS}) is stopped.
 \item Student is capable to install file server and configure shares, permissions, groups into fileserver. Criteria: Student installs service, configures two shares and group based permissions for share. Student configures client machine to mount shares on demand and on boot.
-\end{enumerate}
+\end{itemize}
 
 
 According to previous objectives four practical classes are needed:
@@ -83,27 +83,22 @@ According to previous objectives four practical classes are needed:
 
 \subsection{Choosing course format}
 
-e-learning format. Võib kasutada ka probleemipõhist õpet, koostööl põhinevat õpet, kogukonnal põhivevat õpet.
+For developing e-learning courses the choosing course format is short decision but with big influences to all participants \citep[p.14]{OppeArenduskeskus2010}. 
 
-Choosing a course format is a delivery system like medium used to present the course.
-- classroom
-- e-course
-- blended -combines different methods
-- 
+Common course delivery formats used in e-learning and blended learning (combined form of instruction-led and e-learning) used in \gls{EITC} are: 
+\begin{itemize}
+\item Asynchronous e-learning - \gls{SIS}, wikis, \gls{LMS}'s, forums, blogs and other collaboration systems.
+\item Synchronous e-learning - virtual distance laboratories, remote access for some servers, Skype and other online communications.
+\item Instructor-led lessons - practical classes
+\item Self-study - homework, reading books and other resources.
+\end{itemize}
 
+For this course several methods are used in different cases. First, a self-study are possible because all materials are available from web (except some video materials) in most cases all virtual machines are also publicly downloadable and participants may self-study. Second, combining self-study and instruction-led lessons are used for continuous education groups. Third, a asynchronous e-learning is common and may combined with instruction-led session.
 
-command dojo 
-rewards 
+For this e-learning course students can choose combination of asynchronous e-learning, instruction-led lessons (maximum half of the course) or self-study using lecture recordings.
 
-Two possible e-learning processes are common the self-paced and facilitated/instructor-led \citep[p.~10]{food2011learning}.
+In this particular e-course video lectures are not used but lecture video recordings are available. Also collaboration are preferred and students need to prepare documentation in wiki format and review others work and also give a grade because this method motivates student to produce better documentation and evaluation skills.
 
-Do we use collaboration in learning? 
-
-Do we use  e-tutoring, e-coaching, e-mentoring?
-
-Do we use chronological order or problem based? (one is good for lecturing other for practical classes) Also possible ways is spiral order logical order etc {\color{red} (viidata) }
-
-Is the content sufficient to gain learning outcomes?
 
 
 
@@ -135,26 +130,39 @@ In case of distance study and self study the discussions should being held using
 
 
 \subsection{Pedagogical view of the e-course}
-Different Pedagogical strategies can be used during learning process. First a problem based approach is {\color{red} Pooleli }
-Second koostööl põhinev õpe ja kolmas kogukonnal põhinev õpe.
+Different Pedagogical strategies can be used during learning process as \citep{OppeArenduskeskus2010}
+\begin{enumerate}
+\item problem based learning -- demands analysis approach from student by solving cases based on scenarios derived from real situations
+\item collaboration based learning -- based on group-work and cooperation
+\item community based learning -- collaboration is community based, helps students to learn from each-other
+\end{enumerate}
 
-Do we use group-work, wiki, blog and/or some e-learning environment?
-
-Synchronous or asynchronous learning.
+In case of this e-learning course all three aspects are used and combined.
+For labs a problem based learning are used. For documenting a installed service the collaboration based learning are used and course wiki aggregates this information. For review of wiki articles a community based learning are used. However, for continuous education actively used only problem based learning because of intensive nature of the course when no extra time left for homework between contact classes.
 
 \subsection{Planning grading/assessment techniques}
-What grading methods are useful for this particular course?
-
-Do we need grade knowledge, skills and {\color{red} Pooleli }
-
-Several assessment methods are used to give feedback and grades for students in e-courses {\color{red} Viide+listile viide }
-
+The assessment is used for two proposes: Firstly, ensure achievement of the learning outcomes. Secondly, as a form of the feedback for the student. By planning assessment for an e-learning course the common choises are following~\citep{OppeArenduskeskus2010}
 \begin{itemize}
 	\item self-assessment
 	\item computer assessment
 	\item tutor assessment
 	\item peer assessment
 \end{itemize}
+
+In this course self-assessment are used only for feedback and for entering the course. For example, if system administrator wants to enter the Web and File service course a self-test needed to be done to ensure a presence of the knowledge in level needed by the course. However the computer assessment is easier and less time consuming compared to tutor assessment it insufficient to guarantee the learning outcomes of the student. 
+
+The Computer assessment are used only for guiding and giving feedback to the participant. For example: In case of insecure web application lab the student can execute script that tests application vulnerability with python script performing \gls{SQLi} and test if its filtered by \gls{SQL} firewall or not. The script itself is readable for user and in case of this particular script, it is written by other students as a homework in preliminary scripting course.
+
+
+The tutor assessment are used to grade the students lab performance and this is time consuming because every student defends their lab solution by reconfiguring services and explaining the architecture and configuration of the solution.
+
+Peer assessment are used in case of documentation grading. Documentation points are given by peer students but tutor assessment are used to grade the graders.
+
+Proper grading are one way to motivate students. Moreover, the competition moment when lab performance are seen by other student gives extra motivation for skilled students but may demotivate weaker ones~\citep{KasakKaur}. In author opinion the competition moment combined with offensive \gls{CTF} type course gives motivation impulse for most of the students. However, this course focused on defence of the systems and the motivation problem is still not solved but possible solution is in implementation.
+
+The idea for motivation system for new course is to implement scoreboard and reward system based on completed and graded labs. For example: Student secures an apache web server using mod security rules the badge are added to student's profile in lab system. Steel coloured badge with apache icon for using application firewall and protecting the system. Silver coloured shield badge when proper report is submitted to "authorities" when, what happened and what student did for mitigation. Gold badge for writing new rules or new scripts or new log parsers to help administrator to deal with the problem. Actually the realization of this system will be a future work in next iteration of the course.
+
+
 \subsection{Choosing technological tools}
 For choosing technological tools for a course several following aspects need to be considered:
 
@@ -223,16 +231,11 @@ Authoring the study materials is one of most time consuming tasks and amount of 
 
 Developed learning material are publicly available and under (\gls{CC-BY-SA}) license to guarantee maximum impact on field. Therefore is acceptable that people with will and motivation may self-study using this e-learning course. Moreover, the private training companies can use those courses to train target group.
 
-Learning materials, self-tests, course information and other materials are publicly downloadable \footnote{\href{http://elab.itcollege.ee:8000/cyber-course/}{Course Syllabus (Õpijuhis)}}.
+Learning materials, self-tests, course information and other materials are publicly downloadable~\footnote{\href{http://elab.itcollege.ee:8000/cyber-course/}{Course Syllabus (Õpijuhis)}}.
 
 
-Some never materials are developed using open source revision control system \gls{git} and all changes and commits are publicly available. Moreover, source code of this thesis and labs are available from public \gls{git} repository with \LaTeX  source files and as well other files \footnote{\href{https://github.com/magavdraakon/margus-thesis.git}{Materials and source code of this thesis}}.
+Some never materials are developed using open source revision control system \gls{git} and all changes and commits are publicly available. Moreover, source code of this thesis and labs are available from public \gls{git} repository with \LaTeX  source files and as well other files~\footnote{\href{https://github.com/magavdraakon/margus-thesis.git}{Materials and source code of this thesis}}.
 
-
-
-
-
-\url{http://www.grayharriman.com/ADDIE.htm}
 
 Developed learning material should follow consistent style and present also one example of good documentation practice. For system administrators several howto styles exists. However practical hands-on laboratory instructions are designed that pass through using copy paste is possible but gives one working sample. However, this is not enough to pass lab scenario and student must customize own configuration.
 
