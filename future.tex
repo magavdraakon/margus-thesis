@@ -23,3 +23,40 @@ improve Locked Shields in the future.
 Jätame välja NFS, NIS unsecure LDAP jne ründed.
 Samuti jätame välja password crackingu. pigen nõuame, et rakendataks OS PAM password policyt + cracklibi.
  }
+ 
+ 
+File services  - private public cloud näiteks OwnCloud should be covered.
+ 
+ \begin{enumerate}
+ 
+     \item E-mail services (4 days)
+    \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+  		\item SPAM control
+	  	\item Virus protection
+  		\item MTA's 
+	  	\item MDA's
+    \end{enumerate}
+    \item IP firewalls and IDS/IPS (4 days)
+        \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+  		\item IP firewalls netfilter/iptables and packet filter (pf) (2 days)
+	  	\item IDS/IPS (2 days)
+  		\item NetFlow (kuna seda loetakse CERT.EE abil, siis jääb välja)
+		\end{enumerate}
+    \item Autentication and authorization (4 days)
+        \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+  		\item LDAP and Samba4 AD.To pass student needs to configure authentication service using SAMBA4 with Zentyal server and join GNU/Linux workstation into domain using LikeWise Open plugin.
+	  	\item Windows and Linux clients with Samba4 AD 
+  		\item Web application authentication with Samba4 AD and LDAP
+    		\end{enumerate}
+    \item GNU/Linux central management with Puppet
+        \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+	  		\item Installation of Puppet using passenger (2 day)
+		  	\item Writing puppet recipes (1 day)
+    		\end{enumerate}
+    	\item Central logging (3 days)
+    	    \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+	  		\item Collecting logs with rsyslog/syslog-ng (1 day)
+		  	\item Monitor and analyse log files (1 day)
+    		\end{enumerate}
+ \end{enumerate}
+ 

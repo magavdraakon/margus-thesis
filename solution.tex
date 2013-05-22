@@ -4,12 +4,6 @@
 
 
 
-
-The Development phase  (create a sample instruction and evaluate, create course materials - and review, conduct a run-through (a real-time rehearsal of the course) saab tagasisidet ja teada aja, mis on vaja kursuse läbimiseks)
-
-
-Implementation phase (train the instructor, prepare the learners (veenduda, et eeldused on korras ja nad saavad hakkama wiki ja elabiga ja virtualiseerimisega), arrange the learning space)
-
  
 \section{Design and Planning of learning process}
 The Design phase contains four steps: First, Design learning objectives. Second, design assessments for each objective. Third, choose a course format. Fourth, create an instructional strategy. \citep{website:design_phase_ADDIE}
@@ -19,116 +13,67 @@ The Design phase contains four steps: First, Design learning objectives. Second,
 
 In analysis phase the learning outcomes were established. However to design assessments tests and learning material more detailed learning objectives are needed. Therefore each learning outcome are divided into smaller units.
 
+For design an adequate course content two aspects are required, learning objectives and assessment tests. Likewise in software development field the tests should be designed first to ensure creation of consistent learning materials and labs. Therefore all learning objectives are given with evaluation methods and values.  
+
+The terms and vocabulary used in assessment should stay on level the students should know at the end of the lab and derived from learning objectives established in analysis phase.
+
+Because big amount of learning materials, tests and labs only some examples are included into Appendices as Preliminary Tests~\ref{Preliminary Tests}, Preliminary Course~\ref{Preliminary course - dpkg based GNU/Linux}, Protecting Web Application -- \ref{Protecting Web Application Against (D)DOS Attacks},~\ref{Protecting an Insecure Web Application}. However, other materials can be found on course syllabus page composed on section~\ref{Course Syllabus}.
+
+
 \subsubsection{Pre-requirements courses}
 
-During the analysis of the target group the need for preliminary course was decided to ühtlustada the level of the participants.
-    \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
-  	\item Operating system basics (one day)
-  	\item Basic networking IPv4/IPv6, TCP/IP (one day)
-  	\item GNU/Linux basics (and OpenBSD/FreeBSD basics) (16h) as describbed in Appendix~\ref{Preliminary course - dpkg based GNU/Linux} on page~\pageref{Preliminary course - dpkg based GNU/Linux}
-  	\item Scripting in BASH (2 days)
-  	\item Scripting in Python (1.5 days)
-  	\item Scripting in PowerShell (1.5 days)
-  \end{enumerate}
+During the analysis of the target group the need for preliminary course was decided to homogenize a knowledge and a skill level of the participants.
 
-All times are given in academic hours or days which equal 8 academic hours.
-\begin{enumerate}[label=Hands-on block \arabic*.,leftmargin=*]
-  \item Pre-requirements courses
-    \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
-  	\item Operating system basics (one day)
-  	\item Basic networking IPv4/IPv6, TCP/IP (one day)
-  	\item GNU/Linux basics (and OpenBSD/FreeBSD basics) (16h) as describbed in Appendix~\ref{Preliminary course - dpkg based GNU/Linux} on page~\pageref{Preliminary course - dpkg based GNU/Linux}
-  	\item Scripting in BASH (2 days)
-  	\item Scripting in Python (1.5 days)
-  	\item Scripting in PowerShell (1.5 days)
-  \end{enumerate}
-  \item Root services
-  \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
-  	\item NTP (0.5 days)
+The objectives and assessments for preliminary course:
+\begin{itemize}
+\item Student are able to work in command line using GNU/Linux as working with files, manage software, manage disks and partitions, manage users and groups, configure networks and user login session. Minimal level for pass is to gain more then 50\% one of the tests included in Appendix~\ref{Preliminary Tests} in Table~\ref{tab:preliminary_practical_test}
+\item Student are able to explain basic terminology of operating systems (Kernel, GUI, shell, Virtual Memory, Authentication, Authorization, RAM, Cache, puffer, latency, throughput, file system, process, thread, password hash, DAC, MAC, RBAC, command parameter, command flag, file system hierarchy, environment variable). Minimal level to pass is gather more then 51\% of closed book test like in sample in Appendix~\ref{Preliminary Tests}
+\item Student are able to configure network in GNU/Linux and explain terms like gateway, netmask, IP address, port, IP alias, DNS servers. Minimal level to pass is configuring network for lab machines.
+\item Student is able to read/modify and create simpler BASH, Python and PowerShell scripts. Minimal level of pass is create script with all common language construction in one particular language. Powershell scripting is included because furtherer labs contains also integration labs with Active Directory, SAMBA4, GNU/Linux servers and workstations and Windows workstations.
+\end{itemize}
+
+According to previous objectives six practical classes are needed:\footnote{All times are given in academic hours or days which equal 8 academic hours.}
+\begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+\item Operating system basics (one day)
+\item Basic networking IPv4/IPv6, TCP/IP (one day)
+\item GNU/Linux basics (and OpenBSD/FreeBSD basics) (16h) as describbed in Appendix~\ref{Preliminary course - dpkg based GNU/Linux} on page~\pageref{Preliminary course - dpkg based GNU/Linux}
+\item Scripting in BASH (2 days)
+\item Scripting in Python (1.5 days)
+\item Scripting in PowerShell (1.5 days)
+\end{enumerate}
+
+\subsubsection{Root Services}
+In this particular case term root services are described as \gls{NTP}, \gls{DNS}, \gls{DHCP} service.
+After finishing this block student are able to configure root services and use those services in furtherer labs.
+The objectives and assessments for Root Services lab:
+\begin{itemize}
+\item After finishing this lab student is able to install \gls{NTP} service on server and on client computer and configure client to use internal server (pool) and server to use upstream \gls{NTP} service and fall-back services. Minimal level to pass: Services are configured, and student demonstrates debug skills with different tools and user explains basic terms and (pool, stratum, delay , offset, jitter, drift)
+\item After finishing this lab student is able to install \gls{DNS} service and configure clients for new server. Minimally, students are able to configure zones, reverse zones, master -- slave replica, forwarding, different type of records (like MX, A, CNAME, TXT for SPF, PTR) and use basic management utilities to reload zone, flush name, flush cache, add records dynamically, freeze and thaw zones). Configured service does recursive quires for one particular subnet and student are able to explain what DNS attacks are used and what is Open Resolver. Student tests \gls{EITC} nameserver and explains what is wrong with that.
+\item After finishing this lab student is able to install \gls{DHCP} server and configure hosts using this service. Minimal level for pass: Student installs and configures service what gives networking configuration to client machine from range or using hardware address. Service updates \gls{DNS} records using shared key (Mandatory Access Control must not disabled for pass)
+\end{itemize}
+\begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+  	\item NTP (4h)
   	\item DNS (2.5 days)
   	\item DHCP (one day)
-  \end{enumerate}
-  \item Web/File Services
-    \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
-    \item Web server basics - installation of apache2 web server
+\end{enumerate}
+
+\subsubsection{Web and File services}
+Configuring and securing web servers is essential skill required from system administrators. Therefore, web server installation, configuration and hardening are covered with this block. Because instructional goals and learning outcomes also require covering file services topic.
+
+The objectives and assessments for Web and File services:
+
+\begin{enumerate}
+   \item Web server basics - installation of apache2 web server
   	\item Web server security - Protecting Web Application Against
 (D)DOS Attacks
   	\item Web server security - securing vulnerable web application using application firewalls (3 days)
-  	\end{enumerate}
   	\item Fileserver (Samba3 and Samba4) (0.5 day)
-    \item E-mail services (4 days)
-    \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
-  		\item SPAM control
-	  	\item Virus protection
-  		\item MTA's 
-	  	\item MDA's
-    \end{enumerate}
-    \item IP firewalls and IDS/IPS (4 days)
-        \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
-  		\item IP firewalls netfilter/iptables and packet filter (pf) (2 days)
-	  	\item IDS/IPS (2 days)
-  		\item NetFlow (kuna seda loetakse CERT.EE abil, siis jääb välja)
-		\end{enumerate}
-    \item Autentication and authorization (4 days)
-        \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
-  		\item LDAP and Samba4 AD
-	  	\item Windows and Linux clients with Samba4 AD 
-  		\item Web application authentication with Samba4 AD and LDAP
-    		\end{enumerate}
-    \item GNU/Linux central management with Puppet
-        \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
-	  		\item Installation of Puppet using passenger (2 day)
-		  	\item Writing puppet recipes (1 day)
-    		\end{enumerate}
-    	\item Central logging (3 days)
-    	    \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
-	  		\item Collecting logs with rsyslog/syslog-ng (1 day)
-		  	\item Monitor and analyse log files (1 day)
-    		\end{enumerate}
 \end{enumerate}
 
-
-
-\subsection{Design assessments}
-
-
-
-Design assessments before creating a content - nagu tagant ettepoole minek.
-
-For design an adequate course content two aspects are required, learning objectives and assessment tests. Likewise in software development field the tests should be designed first. Therefore all learning objectives are given with evaluation methods and values.  
-
-The terms and vocabulary used in assessment should stay on level the students should know at the time of the test/assessment and ejaculate only the established learning objectives.
 
 \subsection{Choosing course format}
 
 e-learning format. Võib kasutada ka probleemipõhist õpet, koostööl põhinevat õpet, kogukonnal põhivevat õpet.
-
-\subsection{Instructional strategy}
-
-
-pre instructional activities
-- Motivate students
-- illustrate course objectives
-content presentation
-- concise content - ainult objective jaoks
-
-
-learner participation
--practice
--feedback - midaa tudent tegi õigesti
-
-assessment
--practice assesment
-
-follow-through activities
--review 
--how to apply
-
-
-
-Assessment design contains (goals, lerners, context, assessment)
-kõiki õpiväljundeid tuleb testida.
-assessments: clearly written, correct punctuation and grammar.
 
 Choosing a course format is a delivery system like medium used to present the course.
 - classroom
@@ -136,23 +81,6 @@ Choosing a course format is a delivery system like medium used to present the co
 - blended -combines different methods
 - 
 
-Instructional strategy
-Collection of 
--lectures
--readings
--discussions
--projects
--worksheets
--assessments
--activities
-Activities can be divided into five topics
-\begin{enumerate}
-\item Pre-instructional activities (motivate the students, mida nad pärast paremini teha oskavad, peale seda presenteerida objectives)
-\item Content Presentation (consice content - no too many details, examples, )
-\item Learner Participation (practice and feedback, )
-\item Assessment (lisaks final assesment, practical assesment, attitude assesment  - ask students how thei feel about course )
-\item Follow-through activities (review of entire course strategy .. veidi segane)
-\end{enumerate}
 
 
 
@@ -166,7 +94,33 @@ Do we use chronological order or problem based? (one is good for lecturing other
 
 Is the content sufficient to gain learning outcomes?
 
-Is amount of work and student workload normal? How many academic hours for practical classes and home reading/lectures?
+
+
+\subsection{Instructional strategy}
+Instructional strategy for course focuses of guaranteeing learning outcomes by motivation students using ...
+
+
+\subsubsection{Pre-instructional activities}
+The main goal of pre-instructional activities is motivate the students by explaining to the students why topic started must be covered and what student will be able to do after practical class. Thereafter, present learning objectives and assessment requirements and pre-requirements for the class. However, the minimal requirement level are presented and some students are interested for higher challenges for them extra quests, exercisers are presented as-well.
+
+
+\subsubsection{Content Presentation}
+Most today’s students are bored when receiving only theoretical lecture. For example, 1/2 of students do not have sufficient knowledge to fully understood the topic, and 1/4 of the students know already the aspects given and only 1/4 of the students are in the suitable level.  However, the exact numbers varies but is possible, that similar situation occurs often. Therefore, practical classes and lectures are combined and all taking place in computer classes. Every student should take 15-30 minute long theoretical block followed with practical activities. In case of e-learning students can browse video recordings and do their labs where suitable for them.
+
+\subsubsection{Learner's feedback and assessment}
+After every class, lecture should gather feedback about objectives, theoretical parts, labs and assessments because the course is very intensive and when more then 1/3 students can not follow due some problems then next block will fail for those students because they are linked by topic.
+Is also possible that for valuable feedback are sufficient to ask from students how they feel about the course.
+
+\subsubsection{Follow-through activities}
+For explaining some situation the active discussions are needed (possible discussion topics are shown in lab materials as questions for the students) as seen in lab material highlighted with blue box with caption Discussion:
+\begin{Verbatim}[frame=single,
+label=Discussion,framesep=2mm,rulecolor=\color{blue},commandchars=\\\{\}]
+Why You can not login into server?
+Look at the server console. What is the OOM? What is the OOM killer?
+\end{Verbatim}
+In case of distance study and self study the discussions should being held using course Skype list. For conclude the discussion the lecturer must give feedback for each discussion topic using same channel or course e-mail list (In \gls{EITC} lecturer can send e-mail messages to all students participating this particular course).
+
+
 
 \subsection{Pedagogical view of the e-course}
 Different Pedagogical strategies can be used during learning process. First a problem based approach is {\color{red} Pooleli }
@@ -248,6 +202,7 @@ Processing
 Quality Assurance
 
 \section{Development of the e-learning course}
+The Development phase  (create a sample instruction and evaluate, create course materials - and review, conduct a run-through (a real-time rehearsal of the course) saab tagasisidet ja teada aja, mis on vaja kursuse läbimiseks)
 
 \subsection{Authoring the learning material}
 Developing learning material is based on learning objectives. Each learning objective must be covered with learning material and everything else should left out as extra load for student. Therefore in the development phase the authoring of different study materials, assessment tests, audio/video media and integration of all artefacts into consistent body with one reason: ensure that all objectives are met.
@@ -355,46 +310,14 @@ Practical class - DNS & Co authored with Katrin Loodus  & \href{https://docs.goo
  & & \\
 \hline
 \hline
-  \multicolumn{3}{|c|}{E-mail service} \\
-\hline 
- & & \\
-\hline
 
-\hline
- & & \\
-
-\hline
-\hline
-  \multicolumn{3}{|c|}{IP firewalls and IDS/IPS} \\
-\hline 
- & & \\
-\hline
-
-\hline
- & & \\
-
-\hline
-\hline
-  \multicolumn{3}{|c|}{Autentication and authorization} \\
-\hline 
- & & \\
-\hline
-
-\hline
- & & \\
-
-\hline
- & & \\
-\hline
 \end{tabular} 
 \label{table:learning_materials}
 \end{table}
 
 
-
-\subsection{Online tests and laboratory scenarios}
-
 \subsection{Course Syllabus}
+\label{Course Syllabus}
 
 \subsection{Technical implementation of the e-course}
 
@@ -484,6 +407,8 @@ http://www.dcortesi.com/blog/2009/04/11/twitter-stalkdaily-worm-postmortem/
 \subsection{Testing the e-course}
 
 \section{Implementation}
+
+Implementation phase (train the instructor, prepare the learners (veenduda, et eeldused on korras ja nad saavad hakkama wiki ja elabiga ja virtualiseerimisega), arrange the learning space)
 According to \gls{ADDIE} model...
 Siin saame teada, kui palju aega kulub mingi osa peale ja kui realistlik oli plaan.
 

@@ -175,8 +175,16 @@ Store test results and the command line used for tests.
 Write down request per second. No of failed requests and No of completed requests.
 
 \subsection{Hardening WordPress Installation}
+After successful load generation using ab the server is extremely slow and unresponsive.
 
-What is the OOM?
+\begin{Verbatim}[frame=single,
+label=Discussion,framesep=2mm,rulecolor=\color{blue},commandchars=\\\{\}]
+Why You can not login into server?
+Look at the server console. What is the OOM? What is the OOM killer?
+\end{Verbatim}
+
+
+If needed, reboot the server. To  guarantee log in possibility into server under attack disable swap file.
 
 Disable swap (edit /etc/fstab file or use swapoff command)
 
