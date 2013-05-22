@@ -10,17 +10,30 @@ will see. If you let me experience, I will learn." --- Lao Tzu (6th Century BC)
 \end{quote}
 
 \section{Introduction}
-\section{Pre-Requirements}
-\url{http://net.tutsplus.com/tutorials/tools-and-tips/http-the-protocol-every-web-developer-must-know-part-1/}
-\url{http://net.tutsplus.com/tutorials/tools-and-tips/http-the-protocol-every-web-developer-must-know-part-2/}
-\section{Scope}
-\section{Learning Outcomes} 
-\section{Setting up the Virtual Environment} 
+This goal of this lab secure web application -- WordPress against (D)DOS attacks to the level where main limitation becomes a network throughput. Configured server must recover after attacks are ended.
 
+Web application WordPress are used because misbehave of the default installation which can not take reasonable load.
+
+\section{Pre-Requirements}
+Prelimary course topics~\ref{Preliminary course - dpkg based GNU/Linux} and completed the preliminary test~\ref{Preliminary Tests} (theory and practice)
+Knowledge about \gls{HTTP} (different request types, virtual hosts, status codes), \gls{IP} and aliases, \gls{UDP}
+
+In case of need for refresh the basic those materials are suitable for rehearsal the basics of the \gls{HTTP}~\footnote{
+\href{http://net.tutsplus.com/tutorials/tools-and-tips/http-the-protocol-every-web-developer-must-know-part-1/}{net.tutsplus.com - tools and tips - HTTP part 1}} \footnote{
+\href{http://net.tutsplus.com/tutorials/tools-and-tips/http-the-protocol-every-web-developer-must-know-part-2/}{net.tutsplus.com - tools and tips - HTTP part 1}}
+\section{Scope}
+Software used:  GNU/Linux distribution Ubuntu Server 12.04 LTS 64bit, WordPress -- latest version available, MySQL from Ubuntu repositories, Apache2 web server from repositories, GNU/Linux Ubuntu Client 12.04 LTS 64bit for performing load generation with apache2 utils.
+
+\section{Learning Objectives}
+Student installs and configures the apache2 web server and WordPress web application with \gls{MySQL} database.
+Student is able to use caching technologies to protect web application against simpler DOS attacks. Student configures web service and demonstrates that can be
+easily take offline using simple load generator. Minimal level: Student configures
+proper caching and demonstrates that web application survives same attack.
+\section{Setting up the Virtual Environment - VirtualBox sample}
 In this lab we use two Ubuntu Linux virtual machines.
 Ubuntu server 512MB RAM, NIC1 - NAT, NIC2 - HostOnly with address 192.168.56.200
 Ubuntu client 1GB RAM NIC1 - NAT, NIC2 - HostOnly wid dynamic address. (probably 192.168.56.101)
-Download virtual machines to local disk
+Download virtual machines to the local disk
 \url{http://elab.itcollege.ee:8000/infra_klient_small.ova}
 \url{http://elab.itcollege.ee:8000/infra_server.ova}
 
@@ -39,7 +52,6 @@ Student user are in sudo group and can start administrator shell with sudo comma
 Log on to client and add two addresses on /etc/hosts
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 echo "192.168.56.200 wp.planet.zz">>/etc/hosts
-echo "192.168.56.200 dvwa.planet.zz">>/etc/hosts
 \end{minted}
 
 \section{Installation of the WordPress}
@@ -52,28 +64,30 @@ sudo -i
 
 
 
-This lab demands installing software for that update local package cache first
+This lab demands installing software for that update the local package cache.
 
 
 \begin{minted}[frame=lines,framesep=2mm]{bash}
-apt-get update\end{minted}
+apt-get update
+\end{minted}
 
 If you have time then do system upgrade
 \begin{minted}[frame=lines,framesep=2mm]{bash}
-apt-get dist-upgrade\end{minted}
+apt-get dist-upgrade
+\end{minted}
 
-Install apache webserver and mysql database and 
+Install apache2 webserver and mysql database.
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 apt-get install apache2 mysql-server ssh php5 php5-mysql 
 apt-get install apache2-utils libapache2-mod-php5
 \end{minted}
 
-Download latest version of WordPress
+Download the latest version of WordPress engine.
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 wget http://wordpress.org/latest.tar.gz
 \end{minted}
 
-Unpack tar.gz archive to  /var/www directory using tar utility.
+Unpack dowloaded \emph{latest.tar.gz} archive to  /var/www directory using tar utility.
 
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 sudo tar zxvf latest.tar.gz --directory=/var/www/
@@ -89,13 +103,13 @@ GRANT ALL PRIVILEGES ON wp.* TO 'student'@'localhost' IDENTIFIED BY 'student';
 quit
 \end{minted}
 
-Create new virtual host for wordpress 
+Create a new virtual host for wordpress 
 \marginpar{\rule[-.9cm]{1pt}{1pt}TODO}
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 cp /etc/apache2/sites-available/default /etc/apache2/sites-available/wp
 \end{minted}
 
-Change owner and group for wordpress files to ensure that web server can read and write files.
+Change the owner and the group to apache2 system user/group for wordpress directories and files to ensure that web server can read and write those files.
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 chown www-data:www-data /var/www/wordpress -R
 \end{minted}
@@ -123,13 +137,15 @@ Set correct values for defines DB\_NAME, DB\_USER, DB\_PASSWORD as:
 define('DB\_NAME', 'wp');
 
 /** MySQL database username */
+
 define('DB\_USER', 'student');
 
 /** MySQL database password */
+
 define('DB\_PASSWORD', 'student');
 
 
-Copy sample file to real config file:
+Copy sample configuration file to the real configuration file.
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 cp  -a /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php
 \end{minted}
@@ -177,7 +193,7 @@ Write down request per second. No of failed requests and No of completed request
 \subsection{Hardening WordPress Installation}
 After successful load generation using ab the server is extremely slow and unresponsive.
 
-\begin{Verbatim}[frame=single,
+\begin{Verbatim}[samepage=true,frame=single,
 label=Discussion,framesep=2mm,rulecolor=\color{blue},commandchars=\\\{\}]
 Why You can not login into server?
 Look at the server console. What is the OOM? What is the OOM killer?
@@ -270,6 +286,15 @@ margus@marguspc:~$
 
 
 Test new system with AB utility.
+
+Ensure that same testing conditions and compare the results.
+\begin{Verbatim}[samepage=true,frame=single,
+label=Discussion,framesep=2mm,rulecolor=\color{blue},commandchars=\\\{\}]
+How many requests are completed during the test?
+How many requests per second the hardened WordPress installation can take?
+Is it now safer? 
+(You can guess that something is still wrong, and figure out what exactly)
+\end{Verbatim}
 
 Links:
 \href{http://kaanon.com/blog/work/making-wordpress-shine-varnish-caching-system-part-1}{Making wordpress shine with Varnish caching system}
