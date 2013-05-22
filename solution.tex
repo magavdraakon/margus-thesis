@@ -41,6 +41,7 @@ According to previous objectives six practical classes are needed:\footnote{All 
 \item Scripting in Python (1.5 days)
 \item Scripting in PowerShell (1.5 days)
 \end{enumerate}
+After implementing the course exact load is known numbers will be arranged.
 
 \subsubsection{Root Services}
 In this particular case term root services are described as \gls{NTP}, \gls{DNS}, \gls{DHCP} service.
@@ -51,6 +52,7 @@ The objectives and assessments for Root Services lab:
 \item After finishing this lab student is able to install \gls{DNS} service and configure clients for new server. Minimally, students are able to configure zones, reverse zones, master -- slave replica, forwarding, different type of records (like MX, A, CNAME, TXT for SPF, PTR) and use basic management utilities to reload zone, flush name, flush cache, add records dynamically, freeze and thaw zones). Configured service does recursive quires for one particular subnet and student are able to explain what DNS attacks are used and what is Open Resolver. Student tests \gls{EITC} nameserver and explains what is wrong with that.
 \item After finishing this lab student is able to install \gls{DHCP} server and configure hosts using this service. Minimal level for pass: Student installs and configures service what gives networking configuration to client machine from range or using hardware address. Service updates \gls{DNS} records using shared key (Mandatory Access Control must not disabled for pass)
 \end{itemize}
+According to previous objectives three practical classes are needed:
 \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
   	\item NTP (4h)
   	\item DNS (2.5 days)
@@ -61,13 +63,21 @@ The objectives and assessments for Root Services lab:
 Configuring and securing web servers is essential skill required from system administrators. Therefore, web server installation, configuration and hardening are covered with this block. Because instructional goals and learning outcomes also require covering file services topic.
 
 The objectives and assessments for Web and File services:
-
 \begin{enumerate}
-   \item Web server basics - installation of apache2 web server
-  	\item Web server security - Protecting Web Application Against
+\item After completing the web and file services block student is able to install web server and web application with database and several virtual hosts and configure \gls{TLS}. Minimal level for passing: Installed web server with two virtual hosts accepting \gls{HTTP} and \gls{HTTPS} connections. Configured IP aliases for \gls{HTTPS} and/or \gls{SNI}.
+\item Student is able to use caching technologies to protect web application against simpler \gls{DOS} attacks. Student configures web service and demonstrates that can be easily take offline using simple load generator. Minimal level: Student configures proper caching and demonstrates that web application survives same attack.
+\item Student are able to install different application firewalls like \gls{SQL} firewall and web application firewall. Minimal level: Student demonstrates that different types of attacks are possible and successful against particular vulnerable web application. Student installs \gls{SQL} firewall and demonstrates that basic \gls{SQLi} attacks are blocked. Student demonstrates that several web application attacks are still possible (after installing \gls{SQL} firewall reflected \gls{XSS} and possibly stored \gls{XSS}, command injection, \gls{CSRF} are minimum. Student installs application firewall before web application and demonstrates that previously succeeded attacks (at least \gls{XSS}) is stopped.
+\item Student is capable to install file server and configure shares, permissions, groups into fileserver. Criteria: Student installs service, configures two shares and group based permissions for share. Student configures client machine to mount shares on demand and on boot.
+\end{enumerate}
+
+
+According to previous objectives four practical classes are needed:
+\begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
+   \item Web server basics - installation and configuring web server (4h)
+  	\item Web server security - Protecting Web Application Against (6h)
 (D)DOS Attacks
-  	\item Web server security - securing vulnerable web application using application firewalls (3 days)
-  	\item Fileserver (Samba3 and Samba4) (0.5 day)
+  	\item Web server security - securing vulnerable web application using application firewalls (6h)
+  	\item Fileserver (4h)
 \end{enumerate}
 
 
