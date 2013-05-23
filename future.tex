@@ -1,62 +1,20 @@
 \chapter{Future Research}
 \label{Future Research}
 
-\lettrine[lraise=0.1, nindent=0em, slope=-.5em]{\color{Violet}F}{uture} research...
+\lettrine[lraise=0.1, nindent=0em, slope=-.5em]{\color{Violet}I}{deas} for improvement are collected during lab sessions, preparation and development phase and big number of smaller proposals makes impossible to list all of them. However, some bigger areas what would influence a future of this particular course or sequel course are listed. Moreover, the critical development proposals for distance laboratory system are enlisted.
 
+Most important problems stayed unresolved with no particular order:
+First, Human aspect of the cyber defence - configuring boxes are only one aspect of cyber. 
+Second, maintaining central logging and log parsing
+Third, installing, and managing a \gls{IDS}/\gls{IPS} system (simpler aspects covered by  \gls{WAF} and \gls{SQL} firewalls in webserver hardening lab.
+Fourth, a configuring e-mail system with antivirus, and spam filtering
+Fifth, authentication and authorization with Kerberos, LDAP, SAMBA4 domain.
+Sixth, the IPv6 is mandatory for newer infrastructure and this need to be implemented into each lab.
 
-\begin{itemize}
-\item Ainult süsteemide halduse oskusest ei piisa, peab oskama kommunikeeruda, intsidente uurida jne...
-\item IPv6 implementeerimine erinevates juhendites ja laborites
-\end{itemize}
-{\color{red} Väheke puudujääke ja probleeme, siis ideed ja mõtte, mida tahaks veel teha
-Not all developed learning materials are following consistent style and using \gls{git}
-Blue Teams were challenged by additional Developers
+Some topics covered are ageing a file server as example. However, the new approaches like OwnCloud private cloud systems are not common today but this may change soon.
 
+The development process of curriculum ends when curriculum itself is obsolete. Therefore additional seminars with partners, other educational institutions and private companies will be carried out. For example the next phase is collect information about Locked Shield 2013 and needed skill set for technicians and also other aspects that system administrators should cope.
 
-tasks and media pressure, requiring them to have a wide range of skills to be successful. 
+Although, a feels that more should be done in the future compared to the work done, all aspects can not be implemented during one e-learning course with load of 6~\gls{ECTS}. Therefore a new areas for possible e-learning courses are listed in Appendix~\ref{Appendix:Lab proposals for the future} on page~\pageref{Appendix:Lab proposals for the future}.
 
-
-Locked Shields should remain as a live technical cyber defence exercise, as there is a clear need for
-more and similar training events. In this report, we have listed numerous observations as to how to
-improve Locked Shields in the future.
-
-Jätame välja NFS, NIS unsecure LDAP jne ründed.
-Samuti jätame välja password crackingu. pigen nõuame, et rakendataks OS PAM password policyt + cracklibi.
- }
- 
- 
-File services  - private public cloud näiteks OwnCloud should be covered.
- 
- \begin{enumerate}
- 
-     \item E-mail services (4 days)
-    \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
-  		\item SPAM control
-	  	\item Virus protection
-  		\item MTA's 
-	  	\item MDA's
-    \end{enumerate}
-    \item IP firewalls and IDS/IPS (4 days)
-        \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
-  		\item IP firewalls netfilter/iptables and packet filter (pf) (2 days)
-	  	\item IDS/IPS (2 days)
-  		\item NetFlow (kuna seda loetakse CERT.EE abil, siis jääb välja)
-		\end{enumerate}
-    \item Autentication and authorization (4 days)
-        \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
-  		\item LDAP and Samba4 AD.To pass student needs to configure authentication service using SAMBA4 with Zentyal server and join GNU/Linux workstation into domain using LikeWise Open plugin.
-	  	\item Windows and Linux clients with Samba4 AD 
-  		\item Web application authentication with Samba4 AD and LDAP
-    		\end{enumerate}
-    \item GNU/Linux central management with Puppet
-        \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
-	  		\item Installation of Puppet using passenger (2 day)
-		  	\item Writing puppet recipes (1 day)
-    		\end{enumerate}
-    	\item Central logging (3 days)
-    	    \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
-	  		\item Collecting logs with rsyslog/syslog-ng (1 day)
-		  	\item Monitor and analyse log files (1 day)
-    		\end{enumerate}
- \end{enumerate}
- 
+To supporting new scoring system with implementing badge reward system, the virtual laboratory system will redesigned in summer 2013.
