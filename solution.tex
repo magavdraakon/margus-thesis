@@ -125,7 +125,7 @@ label=Discussion,framesep=2mm,rulecolor=\color{blue},commandchars=\\\{\}]
 Why You can not login into server?
 Look at the server console. What is the OOM? What is the OOM killer?
 \end{Verbatim}
-In case of distance study and self study the discussions should being held using course Skype list. For conclude the discussion the lecturer must give feedback for each discussion topic using same channel or course e-mail list (In \gls{EITC} lecturer can send e-mail messages to all students participating this particular course).
+In case of distance study and self study the discussions should being held using course Skype list, because of suitability for group discussion as successfully tested on bigger courses~\citep{website:kakk_teistmoodi_e}. For conclude the discussion the lecturer must give feedback for each discussion topic using same channel or course e-mail list (In \gls{EITC} lecturer can send e-mail messages to all students participating this particular course).
 
 
 
@@ -141,13 +141,7 @@ In case of this e-learning course all three aspects are used and combined.
 For labs a problem based learning are used. For documenting a installed service the collaboration based learning are used and course wiki aggregates this information. For review of wiki articles a community based learning are used. However, for continuous education actively used only problem based learning because of intensive nature of the course when no extra time left for homework between contact classes.
 
 \subsection{Planning grading/assessment techniques}
-The assessment is used for two proposes: Firstly, ensure achievement of the learning outcomes. Secondly, as a form of the feedback for the student. By planning assessment for an e-learning course the common choises are following~\citep{OppeArenduskeskus2010}
-\begin{itemize}
-	\item self-assessment
-	\item computer assessment
-	\item tutor assessment
-	\item peer assessment
-\end{itemize}
+The assessment is used for two proposes: Firstly, ensure achievement of the learning outcomes. Secondly, as a form of the feedback for the student. By planning assessment for an e-learning course the common choises are following: self-assessment, computer aided assessment, tutor assessment, peer assessment. ~\citep{OppeArenduskeskus2010}
 
 In this course self-assessment are used only for feedback and for entering the course. For example, if system administrator wants to enter the Web and File service course a self-test needed to be done to ensure a presence of the knowledge in level needed by the course. However the computer assessment is easier and less time consuming compared to tutor assessment it insufficient to guarantee the learning outcomes of the student. 
 
@@ -167,15 +161,7 @@ According to \gls{ADDIE} model the next step should be "Choosing technological t
 \section{Technical implementation of the e-learning course}
 \label{Technical implementation of the e-learning course}
 
-The general aspects for consideration for choosing technical tools and systems for e-learning course are following~\citep{OppeArenduskeskus2010}:
-\begin{itemize}
-\item Availability of e-learning course
-\item Usability of e-learning course
-\item Student motivation
-\item Adaptivity
-\item Suitability for collaboration
-\item Standard compliance
-\end{itemize}
+The general aspects for consideration for choosing technical tools and systems for e-learning course are following: availability of e-learning course, Usability of e-learning course, student motivation, adaptivity, suitability for collaboration, standard compliance~\citep{OppeArenduskeskus2010}:
 
 Technological tools are needed for following activities: 
 \begin{itemize}
@@ -196,7 +182,7 @@ Author of this thesis are an architect of the distance study environment and als
 
 \subsection{The Environment of Distance Study}
 \label{The Environment of Distance Study}
-The motivation to develop environment of distance study was initiated by need to increase amount of practical hands-on work in \gls{EITC}. However, the virtualization was used in computer classes to teach system administration and other subjects the student was not able to continue theirs work after official schedule because virtual machines are stored to local disks of the classroom computer. Moreover, the student was able to use only the same machine like last class and changing classrooms or computers was not possible. However, some students preferred their own laptops for running virtual machines it is hard for labs with several virtual machines because of the requirements for hardware. Moreover, some labs need access to special infrastructure in \gls{EITC} internal LAN, and laptops can not used in this case.
+The motivation to develop environment of distance study was initiated by need to increase amount of practical hands-on work in \gls{EITC}. However, the virtualization used in computer classes to teach system administration subjects has limitations the student was not able to continue theirs work after official schedule because virtual machines are stored to local disks of the classroom computer. Moreover, the student was able to use only the same machine like last class and changing classrooms or computers was not possible. However, some students preferred their own laptops for running virtual machines it is hard for labs with several virtual machines because of the requirements for hardware. Moreover, some labs need access to special infrastructure in \gls{EITC} internal LAN, and laptops can not used in this case.
 
 Therefore, the development of the environment of distance study were initiated.
 
@@ -236,9 +222,23 @@ Labs with offensive parts are done using Kali GNU/Linux distribution but student
 The main reason to left choice is open that in labs each student must demonstrate skills and knowledge according to learning objectives and this is more important than knowledge of one system.
 
 \subsection{Choosing software for Root Services lab}
-The Root Services labs contains \gls{NTP}, \gls{DNS} and \gls{DHCP} services. However, for fulfilling a learning objectives the software should work on chosen lab platform GNU/Linux Ubuntu Server. For \gls{NTP} common packages are from OpenBSD project and from ISC.
+The Root Services labs contains \gls{NTP}, \gls{DNS} and \gls{DHCP} services. However, for fulfilling a learning objectives the software should work on chosen lab platform GNU/Linux Ubuntu Server. 
+\subsubsection{The Network Time Protocol server}
+Possible choices for \gls{NTP} server software are \emph{OpenNTPD}~\footnote{OpenNTPD \url{http://www.openntpd.org/}
+} from OpenBSD  project and the Network Time Protocol Distribution \emph{ntpd} from  Internet Systems Consortium \gls{ISC}~\footnote{Network Time Protocol Distribution \url{http://support.ntp.org/}}. Both packages are installable from ubuntu repositories using \emph{apt-get} command the Network Time Protocol Distribution are stored in main ubuntu repository but OpenNTPD is from universe section. Therefore the \gls{ntpd} are slightly more supported by Ubuntu developers.
+However, the OpenNTP is designed to be free, simple and secure implemetation of the \gls{NTP} protocol the \gls{ISC}'s \emph{ntpd} software is free, \gls{IETF} standard compliant and from main/net repository~\footnote{Information from \emph{apt-get show ntp} and \emph{apt-get show openntpd}}. Therefore the \emph{ntpd} daemon was chosen for \gls{NTP} lab.
+\subsection{The Domain Name System server}
+Several \gls{DNS} servers can be used for lab as: maradns, pdns-server,unbound, nsd~\footnote{NSD is an authoritative only, high performance, simple and open source name server - \url{http://www.nlnetlabs.nl/projects/nsd/}} and bind because of installation can be done using standard packages from Ubuntu GNU/Linux repositories\footnote{Ubuntu packages \url{http://packages.ubuntu.com/}}.
 
-DNS
+maradns - simple security-focused Domain Name Service server
+
+pdns-server - extremely powerful and versatile nameserver
+
+nsd3  - NSD is an authoritative only, high performance, simple and open source name server. 
+Several \gls{DNS} implementations are not considered for lab, because they lack support for recursive queries or designed to be caching name servers. Moreover, even the \gls{DNS} lab is not using today the \gls{DNSSEC}, the support for it is needed for future improvements. Therefore the unbound, nsd and bind are possible choices what are installable from Ubuntu package repositories. The NSD is suitable for building authoritative servers and can not be used as only \gls{DNS} server for lab.
+However, the unbound and bind are suitable for this lab the bind name-server are wide user base and number of the installations~\footnote{The \gls{ISC} BIND -- \url{https://www.isc.org/software/bind}}
+
+
 \subsection{Choosing web server and caching software}
 
 Apache2
@@ -415,12 +415,50 @@ Practical class - DNS & Co authored with Katrin Loodus  & \href{https://docs.goo
 \label{Course Syllabus}
 
 
-
-
-
-
-
 \subsection{Testing the e-course}
+Before experimenting with students in larger group the all course modules got tested by co-workers -- lecturers and assistants of \gls{EITC}. After in-house testing each lab run-through by small group of system administrator from different organizations including \gls{EISA}.
+
+
+\begin{table}[h]
+\centering
+\caption{The evaluation of the design and development stage }
+{ \small 
+\begin{tabular}{|p{6cm}|p{2cm}|p{5cm}|}
+\hline 
+\color{blue} Evoluation question & \color{blue} Result [1..4] & \color{blue} Comments and references \\
+\hline
+Does course have a proper structure? 
+& 4  &  Course Syllabus has links for study program, topics and labs  \\ 
+\hline
+Does chosen presentation learning material support the course? 
+& 4  &  Active participation of the students are encouraged \\ 
+\hline
+Students are motivated to be active? 
+& 4  &  Active participation of the students are encouraged \\ 
+\hline
+Students are motivated to be active? 
+& 4  &  Active participation of the students are encouraged \\ 
+\hline
+Students are motivated to be active? 
+& 4  &  Active participation of the students are encouraged \\ 
+\hline
+Does sufficient course syllabus exists? 
+& 4  &  Course Syllabus are in course web page \\ 
+\hline 
+Does student needs non-free software for participation?
+& 4 &  No, all software used is open source (except PowerShell lab where sotware are provided by \gls{EITC}) \\ 
+\hline 
+Is course tested before including to the curriculum?
+& 4 & Course is tested using 22 students and >80 system administrators \\ 
+\hline
+Does course technically work (links, materials)?
+& - & Testing is not completed, because migrating to the distance study environment. In case on this course there much more to be tested than links, for example all virtual machines.\\ 
+\hline 
+\end{tabular} 
+}
+\label{table:desing_develop_evaluation}
+\end{table}
+
 
 \section{Implementation}
 
