@@ -227,28 +227,24 @@ The Root Services labs contains \gls{NTP}, \gls{DNS} and \gls{DHCP} services. Ho
 Possible choices for \gls{NTP} server software are \emph{OpenNTPD}~\footnote{OpenNTPD \url{http://www.openntpd.org/}
 } from OpenBSD  project and the Network Time Protocol Distribution \emph{ntpd} from  Internet Systems Consortium \gls{ISC}~\footnote{Network Time Protocol Distribution \url{http://support.ntp.org/}}. Both packages are installable from ubuntu repositories using \emph{apt-get} command the Network Time Protocol Distribution are stored in main ubuntu repository but OpenNTPD is from universe section. Therefore the \gls{ntpd} are slightly more supported by Ubuntu developers.
 However, the OpenNTP is designed to be free, simple and secure implemetation of the \gls{NTP} protocol the \gls{ISC}'s \emph{ntpd} software is free, \gls{IETF} standard compliant and from main/net repository~\footnote{Information from \emph{apt-get show ntp} and \emph{apt-get show openntpd}}. Therefore the \emph{ntpd} daemon was chosen for \gls{NTP} lab.
-\subsection{The Domain Name System server}
-Several \gls{DNS} servers can be used for lab as: maradns, pdns-server,unbound, nsd~\footnote{NSD is an authoritative only, high performance, simple and open source name server - \url{http://www.nlnetlabs.nl/projects/nsd/}} and bind because of installation can be done using standard packages from Ubuntu GNU/Linux repositories\footnote{Ubuntu packages \url{http://packages.ubuntu.com/}}.
+\subsubsection{The Domain Name System server}
+Several \gls{DNS} servers can be used for lab as: MaraDNS~\footnote{ MaraDNS is open source, lightweight \gls{DNS} server -- \url{http://www.maradns.org/}}, PowerDNS~\footnote{PowerDNS an open source feature rich \gls{DNS} server -- \url{https://www.powerdns.com/}}, Unbound~\footnote{Unbound is a validating, recursive, and caching \gls{DNS} resolver -- \url{http://unbound.net/}}, NSD~\footnote{NSD is an authoritative only, high performance, simple and open source name server - \url{http://www.nlnetlabs.nl/projects/nsd/}} and bind because of installation can be done using standard packages from Ubuntu GNU/Linux repositories\footnote{Ubuntu packages --  \url{http://packages.ubuntu.com/}}.
 
-maradns - simple security-focused Domain Name Service server
-
-pdns-server - extremely powerful and versatile nameserver
-
-nsd3  - NSD is an authoritative only, high performance, simple and open source name server. 
-Several \gls{DNS} implementations are not considered for lab, because they lack support for recursive queries or designed to be caching name servers. Moreover, even the \gls{DNS} lab is not using today the \gls{DNSSEC}, the support for it is needed for future improvements. Therefore the unbound, nsd and bind are possible choices what are installable from Ubuntu package repositories. The NSD is suitable for building authoritative servers and can not be used as only \gls{DNS} server for lab.
-However, the unbound and bind are suitable for this lab the bind name-server are wide user base and number of the installations~\footnote{The \gls{ISC} BIND -- \url{https://www.isc.org/software/bind}}
+Several \gls{DNS} implementations are not considered for lab, because they lack support for recursive queries or designed to be caching name servers. Moreover, even the \gls{DNS} lab is not using today the \gls{DNSSEC}, the support for it is needed for future improvements. Therefore the unbound, NSD and bind are possible choices what are installable from Ubuntu package repositories. The NSD is suitable for building authoritative servers and can not be used as only \gls{DNS} server for lab.
+However, the unbound with NSD and BIND are suitable for this lab the BIND name-server are wider user base and number of the installations~\footnote{The \gls{ISC} BIND -- \url{https://www.isc.org/software/bind}}. Therefore, the BIND name server was chosen for this lab.
 
 
-\subsection{Choosing web server and caching software}
+\subsection{Choosing software for lab: Protecting Web Application Against (D)DOS Attacs}
 
-Apache2
-NGINX
-lighthttp
+\subsubsection{Web server}
+According to Netcraft Web Server Survey (May 2013) the share of active websites are: Apache~\footnote{Apache \gls{HTTP} server -- \url{http://projects.apache.org/projects/http_server.html}} -- 55.07\%,  nginx~\footnote{nginx is an HTTP and reverse proxy server -- \url{http://nginx.org/en/}} -- 13.27\%	, Microsoft Internet Information Server~\footnote{Microsoft Internet Information server -- http://www.iis.net/} -- 11.08\%~\citep{website:netcraft_web}. Microsoft IIS do not qualify because it is not open source software. Therefore, the apache chosen as main web server for lab because of market share. However, NGINX is also important platform and will be used for \gls{TLS} termination on the lab because students should able to configure \gls{HTTPS} as well and due the lab scenario in Appendix~\ref{Protecting an Insecure Web Application} separate \gls{TLS} terminator service is needed.
 
-GreenSQL
-Teised tulemüürid
+\subsubsection{Caching web application acceleration server}
+Web acceleration servers are used to reduce load of the web server and used as mitigation method for small grade denial of service attacks. However, in case of attack where all network capacity is occupied by attack traffic it will not help completely but when small attack traffic makes web site unavailable the web acceleration are a possible solution. Several web application acceleration and caching servers are popular as: Varnish Cache~\footnote{Varnish is a web application accelerator -- \url{https://www.varnish-cache.org}}, NGINX~\footnote{Nginx is an HTTP and reverse proxy server -- \url{http://nginx.org/en/}}, Squid~\footnote{Squid is a caching proxy for the Web -- \url{http://www.squid-cache.org/}},
+The personal cache systems, non open source and hardware acceleration are not compared as not suitable for the lab because license, or technical limitations.
+However, the Squid and Nginx are usable for web application acceleration the Varnish Cache have own configuration language that gives advantage for custom filtering. Therefore, the Varnish Cache was chosen for this lab.
 
-
+\subsubsection{Web application for denial of service lab}
 WordPress
 
 MediaWiki
@@ -287,18 +283,21 @@ Link: https://github.com/SpiderLabs/SQLol
 
 Because of defensive nature on developed course only simple vulnerabilities are needed to demonstrate a problem and all vulnerable applications are suitable for installing. To create diversity all applications what can installed easily can be used in lab. All examples are given using \gls{DVWA} but to get the grade every student should choose another vulnerable application, install it and protect it.
 
-%http://pentestlab.org/10-vulnerable-web-applications-you-can-play-with/ - todo 
+\subsection{Web application firewall and database firewall}
+GreenSQL
+Teised tulemüürid
+
 Practical Intrusion Analysis book - WAF võrdlus \citep{book:practica_intrusion_analysis}
 \gls{CSRF}
 Protection using mod\_security
 \url{http://blog.spiderlabs.com/2011/01/detecting-malice-with-modsecurity-csrf-attacks.html}
 
 \gls{XSS}
-{
-\color{red} *Kui avastad, kust on malicious script included siis saab esitada avalduse, et see domeen/virtualhost kinni pandaks...(see võiks olla tulevikus osa laborist.
-
-http://www.dcortesi.com/blog/2009/04/11/twitter-stalkdaily-worm-postmortem/
-}
+%{
+%\color{red} *Kui avastad, kust on malicious script included siis saab esitada avalduse, et see domeen/virtualhost kinni pandaks...(see võiks olla tulevikus osa laborist.
+%
+%http://www.dcortesi.com/blog/2009/04/11/twitter-stalkdaily-worm-postmortem/
+%}
 
 
 \section{Development of the e-learning course}
@@ -338,7 +337,7 @@ ps -ef|grep mysqld
 \label{code_sample}
 %
 \small{
-\begin{Verbatim}[frame=single,
+\begin{Verbatim}[samepage=true,frame=single,
 label=Command output,framesep=2mm,rulecolor=\color{red},commandchars=\\\{\}]
 sudent@opiise:~# ps -ef|grep mysqld
 root     11290 10905  0 10:27 pts/6    00:00:00 grep --color=auto mysqld
@@ -347,7 +346,7 @@ mysql    \fbox{\color{red}29830}    1  0 Apr25 ?        00:05:47 /usr/sbin/mysql
 %
 }
 
-All study should stored in open formats, like pdf, OpenDocument , MediaWiki markup language, html, utf8 text. Original editable source files for generating pdf, images should be publicly accessible. Moreover, text based materials should stored into version control system like \gls{git} to enable contributing for other lecturers and students as well.
+All study should stored in open formats, like pdf, OpenDocument, MediaWiki markup language, html, utf8 text. Original editable source files for generating pdf, images should be publicly accessible. Moreover, text based materials should stored into version control system like \gls{git} to enable contributing for other lecturers and students as well.
 
 
 
