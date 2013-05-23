@@ -3,6 +3,9 @@
 %for unicode support in XeLaTeX
 \usepackage{fontspec}
 
+%for continous numbering of figures and tables
+\usepackage{chngcntr}
+
 
 
 %for review uncomment following  lines (turn off hyphenation and ligatures before exporting to libreoffice to get comments)
@@ -131,6 +134,10 @@
 \makeglossaries
 
 \begin{document}
+%continous figure and table numbering
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
 \title{Hands-On E-learning course on Cyber Defence for System Administrators}
 \author{Margus Ernits}
 \date{2013}
