@@ -164,41 +164,44 @@ The idea for motivation system for new course is to implement scoreboard and rew
 
 According to \gls{ADDIE} model the next step should be "Choosing technological tools" as audio/video programs and \gls{LMS} system choices, file formats, media authoring programs and choice of collaboration environments~\citep{OppeArenduskeskus2010}. However, this course needs more detailed choices to cover learning objectives and needs for virtualised environment. Therefore, the choices are described in section~\ref{Technical implementation of the e-learning course} as an separate section. 
 
-\subsection{Technical implementation of the e-learning course}
+\section{Technical implementation of the e-learning course}
 \label{Technical implementation of the e-learning course}
 
-For implementing a laboratory classes virtualization are needed for 
-
-\LaTeX Minted muutujad jne
-
-For choosing technological tools for a course several following aspects need to be considered:
-
+The general aspects for consideration for choosing technical tools and systems for e-learning course are following~\citep{OppeArenduskeskus2010}:
 \begin{itemize}
-	\item Availability of e-learning course
-	\item usability of e-learning course
-	\item Support for peer assessment and community based learning
-	\item Support for realistic environment (more then one virtual machine for most of the labs)
-	\item Standard complacence
+\item Availability of e-learning course
+\item Usability of e-learning course
+\item Student motivation
+\item Adaptivity
+\item Suitability for collaboration
+\item Standard compliance
 \end{itemize}
 
-For maintaining course materials, collaborations between students and lectures a several Learning Management System (\gls{LMS}) are used by Estonian higher educational institutes. Incomplete list  of \gls{LMS}'s are Moodle, Blackboard WebCT (retried), CISO Network Academy, IVA, Sakai and Wikiversity. However the \gls{LMS} are useful for collaboration and storing learning material they can not be used as primary platform for new e-learning course because some grave limitations as: Firstly, the laboratories need virtual machines with administrative privileges in some cases  and supportive infrastructure to simulate Internet around the server. Secondly, only wikiversity and other wiki based systems are suitable for community based learning and peer assessment where students can teach and give feedback to others. Therefore no special \gls{LMS} are used in this course and materials are published in wiki, or in course web page.
+Technological tools are needed for following activities: 
+\begin{itemize}
+\item Sharing study materials
+\item Collaboration between students and lectures and communication tools
+\item Virtualization environment tools
+\item Tools for implementing lab scenarios -- web applications, services, testing programs
+\end{itemize}
 
-Saab teha nii kaugtöölaboris, kui ka oma virtuaalmasinates, siis on mälu/prose vajadus tudengile päris suur, rääkimata virtuaalmasinate allalaadimise vajadusest.
+For sharing study materials the \gls{EITC} wiki~\footnote{\gls{EITC} wiki - \url{https://wiki.itcollege.ee/}} are used because it is public accessible and students can add and edit materials by fixing errors in guides and grading process encourages them to share their knowledge. Study materials are stored in wiki, pdf form. Some tests and temporal assignments are stored into google docs and made available using shared link.
 
+For collaboration also wiki is used to give feedback for student group-works in talk section of the work. All homework are publicly accessible and also reviews. Students even collected all questions asked in defence of the lab and published it. E-mail and Skype are used for usual communication and course forum is implemented in future. Moreover, the configuration files and source files for scripts and learning materials are stored in to public \gls{git} repositories.
 
+Virtualization environments are used for all labs. Several virtualization solutions can be used in this e-learning course. For availability the virtual machines are distributed as Open Virtualization Format (\gls{OVA}) files and are usable in different environments~\footnote{ Distributed Management Task Force (\gls{DMTF}) OVF - \url{http://www.dmtf.org/standards/ovf}}.
 
-\subsubsection{The Environment of Distance Study}
+Availability of the lab in e-learning form should give access for lab infrastructure from outside of the \gls{EITC} computer classes. Therefore a environment of distance study are implemented in \gls{EITC} and constantly developed to accept needs for new e-learning courses. This course initiated new developments for this environment what is described in next subsection.
+Author of this thesis are an architect of the distance study environment and also back- end programmer. In next section the brief overview of the system are given and described new parts of the system developed to support this e-learning course.
+
+\subsection{The Environment of Distance Study}
 \label{The Environment of Distance Study}
+The motivation to develop environment of distance study was initiated by need to increase amount of practical hands-on work in \gls{EITC}. However, the virtualization was used in computer classes to teach system administration and other subjects the student was not able to continue theirs work after official schedule because virtual machines are stored to local disks of the classroom computer. Moreover, the student was able to use only the same machine like last class and changing classrooms or computers was not possible. However, some students preferred their own laptops for running virtual machines it is hard for labs with several virtual machines because of the requirements for hardware. Moreover, some labs need access to special infrastructure in \gls{EITC} internal LAN, and laptops can not used in this case.
 
-For labs a virtualization are used to  developed e-learning course
+Therefore, the development of the environment of distance study were initiated.
 
-TODO pilt virtuaalaborite süsteemi kontekstist
-\subsubsection{Random tags}
-\begin{itemize}
-	\item normal traffic generator
-	\item malicious traffic generator
-	\item availability monitor (for grading)
-\end{itemize}
+The environment allows students start virtual labs with pre-configured virtual machines. 
+
 
 \subsubsection{Virtualization Layer}
 Siin libvirdist
@@ -215,7 +218,44 @@ Siin räägin üldisest disainist ja allsüsteemidest
 \end{figure}
 \
 
-\subsubsection{Security Aspects of Distance Laboratory}
+\subsubsection{New developments for distance study environment}
+
+\begin{itemize}
+	\item normal traffic generator
+	\item malicious traffic generator
+	\item availability monitor (for grading)
+\end{itemize}
+
+\subsection{Operating Systems used in labs}
+Operating systems should use Open Source software for labs exception of PowerShell according to established requirement (in analysis phase)
+
+To maintain diversity and avoid vendor locking a several different operating systems are used in labs. Lab materials are developed using Ubuntu LTS, because of support and popularity, but to get graded the student should choose one different system for defence at least one lab from following list: OpenBSD, FreeBSD, OpenSolaris, Debian GNU/Linux, Fedora, CentOS, Oracle Linux, OpenSuse. Only restriction that chosen system used different packaging from other systems. For example if student chooses Ubuntu to do the \gls{DNS} lab then for \gls{DHCP} should used operating system without debian packaging system.
+
+Labs with offensive parts are done using Kali GNU/Linux distribution but student can also use BackTrack if they want.
+
+The main reason to left choice is open that in labs each student must demonstrate skills and knowledge according to learning objectives and this is more important than knowledge of one system.
+
+\subsection{Choosing software for Root Services lab}
+The Root Services labs contains \gls{NTP}, \gls{DNS} and \gls{DHCP} services. However, for fulfilling a learning objectives the software should work on chosen lab platform GNU/Linux Ubuntu Server. For \gls{NTP} common packages are from OpenBSD project and from ISC.
+
+DNS
+\subsection{Choosing web server and caching software}
+
+Apache2
+NGINX
+lighthttp
+
+GreenSQL
+Teised tulemüürid
+
+
+WordPress
+
+MediaWiki
+
+Drupal
+
+Joomla
 
 \subsection{Choosing a vulnerable web application}
 
@@ -384,25 +424,33 @@ Practical class - DNS & Co authored with Katrin Loodus  & \href{https://docs.goo
 
 \section{Implementation}
 
-Implementation phase (train the instructor, prepare the learners (veenduda, et eeldused on korras ja nad saavad hakkama wiki ja elabiga ja virtualiseerimisega), arrange the learning space)
-According to \gls{ADDIE} model...
-Siin saame teada, kui palju aega kulub mingi osa peale ja kui realistlik oli plaan.
+Implementation phase the courses are piloted and feedback from students and other lecturers are gathered, arranging the learning space  and preparing learners for the course~\citep{OppeArenduskeskus2010}.
 
+Author of this thesis piloted each block of the course and collected students feedbacks, notes for improvement ideas and tried to motivate students to behave as active and motivated as possible.
+First lab was relatively simple because of simplicity of the topic -- \gls{NTP} compared for example web server lab. However, this was intentional because during this lab the technical details are explained to the students about virtualization environment and roles of lecturer and students in this course. Therefore slow start is important for students to learn environment and organizational aspects of the course. Thereafter, a studies went smoothly for students with proper prerequisite skills and knowledge and hard for others. The main thing learned from implementation: This course is too hard for most of the students but the are motivated to learn the content. However, the preliminary course is mandatory for most of the students and system administrators because small group of students with inadequate level may slow down a whole class.
 
-The implementation phase of the ADDIE Model contains three sub-phases
+\begin{table}[h]
+\centering
+\caption{The evaluation of the implementation stage }
+{ \small 
+\begin{tabular}{|p{6cm}|p{2cm}|p{5cm}|}
+\hline 
+\color{blue} Evoluation question & \color{blue} Result [1..4] & \color{blue} Comments and references \\ 
+\hline
+Students are motivated to be active? 
+& 4  &  Active participation of the students are encouraged \\ 
+\hline 
+Does lecturer give feedback to the students?
+& 4 &  Students will get immediate feedback during contact classes, students know that \\ 
+\hline 
+Did lecturer collect data during the course how to improve course in the future?
+& 3 & Data is collected but not yet implemented (will be in next course) \\ 
+\hline
+Does feedback from student collected?
+& 4 & After every course and training feedback are collected. \\ 
+\hline 
+\end{tabular} 
+}
+\label{table:implementation_evaluation}
+\end{table}
 
-\begin{enumerate}
-\item Train the Instructor
-\item Prepare the Learners
-\item Arrange the Learning Space
-\end{enumerate}
-
-Train the Instructor - course developer is often a trainer too but some cases you need more people to train
-
-
-
-\subsection{Organizational role}
-
-\subsection{Social role}
-
-\subsection{Pedagogical role}
