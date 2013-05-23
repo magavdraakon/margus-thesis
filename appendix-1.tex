@@ -223,7 +223,7 @@ echo "-17" > /proc/$(pidof mysqld)/oom_adj
 Documentation about proc filesystem and OOM:
 \url{http://www.kernel.org/doc/Documentation/filesystems/proc.txt}
 
-Not mandatory task: Modify mysql startup script to tune OOM score. 
+Not mandatory task: Modify mysql upstart config file to set OOM adjustment score.
 
 WordPress Supercache
 Install WordPress Supercache plugin.
@@ -292,7 +292,7 @@ Ensure that same testing conditions and compare the results.
 label=Discussion,framesep=2mm,rulecolor=\color{blue},commandchars=\\\{\}]
 How many requests are completed during the test?
 How many requests per second the hardened WordPress installation can take?
-Is it now safer? 
+Is it now safer or attacker can take it down with same effort? 
 (You can guess that something is still wrong, and figure out what exactly)
 \end{Verbatim}
 
