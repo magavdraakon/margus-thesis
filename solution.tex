@@ -162,8 +162,15 @@ Proper grading are one way to motivate students. Moreover, the competition momen
 
 The idea for motivation system for new course is to implement scoreboard and reward system based on completed and graded labs. For example: Student secures an apache web server using mod security rules the badge are added to student's profile in lab system. Steel coloured badge with apache icon for using application firewall and protecting the system. Silver coloured shield badge when proper report is submitted to "authorities" when, what happened and what student did for mitigation. Gold badge for writing new rules or new scripts or new log parsers to help administrator to deal with the problem. Actually the realization of this system will be a future work in next iteration of the course.
 
+According to \gls{ADDIE} model the next step should be "Choosing technological tools" as audio/video programs and \gls{LMS} system choices, file formats, media authoring programs and choice of collaboration environments~\citep{OppeArenduskeskus2010}. However, this course needs more detailed choices to cover learning objectives and needs for virtualised environment. Therefore, the choices are described in section~\ref{Technical implementation of the e-learning course} as an separate section. 
 
-\subsection{Choosing technological tools}
+\subsection{Technical implementation of the e-learning course}
+\label{Technical implementation of the e-learning course}
+
+For implementing a laboratory classes virtualization are needed for 
+
+\LaTeX Minted muutujad jne
+
 For choosing technological tools for a course several following aspects need to be considered:
 
 \begin{itemize}
@@ -174,178 +181,16 @@ For choosing technological tools for a course several following aspects need to 
 	\item Standard complacence
 \end{itemize}
 
-For maintaining course materials, collaborations between students and lectures several Learning Management System (\gls{LMS}) are used by Estonian higher educational institutes. Incomplete list  of \gls{LMS}'s are Moodle, Blackboard WebCT (retried), CISO Network Academy, IVA, Sakai and Wikiversity. However the \gls{LMS} are useful for collaboration and storing learning material they can not be used as primary platform for new e-learning course because some grave limitations as: Firstly, the laboratories need virtual machines with administrative privileges in some cases  and supportive infrastructure to simulate Internet around the server. Secondly, only wikiversity and other wiki based systems are suitable for community based learning and peer assessment where students can teach and give feedback to others. Therefore no special \gls{LMS} are used in this course and materials are published in wiki, or in course web page. 
-
-
-
-
-
-
-Õpiväljundid on mõeldud õppijate jaoks, et anda neile ülevaade sellest, mida kursuselt oodata ning
-millele selle jooksul rõhku panna. Sellest lähtuvalt tuleks nad ka sõnastada vastavalt, st mitte õpetaja
-vaid just õppijakeskselt, kirjeldades mitte seda, mis toimub kursuse käigus vaid keskendudes sellele,
-mida uut peaks õppija suutma teha kursuse lõpuks.
-
-\begin{enumerate}[label=Learning Objective \arabic*.,leftmargin=*]
-\item NTP, DNS ,DHCP
-\item Web server, OWASP, DVWA,
-\item VPN, SAN, NAS, IDS, IPS
-\end{enumerate}
-
-\url{http://blog.spiderlabs.com/2011/01/detecting-malice-with-modsecurity-csrf-attacks.html}
-
-
-
-\begin{enumerate}
-\item Create a Sample (see on kliendile, testiks ja prototüübiks)
-\item Develop the course Materials (peab teadma activities + tagasiside review)
-\item Conduct a Run-through (real-time rehearsal testi sõbra peal kogu kursust +  feedback assessment + saab reaalselt teada aja, mis kulub kursuse läbimisele
-\end{enumerate}
-
-
-The implementation phase of the ADDIE Model contains three sub-phases
-
-\begin{enumerate}
-\item Train the Instructor
-\item Prepare the Learners
-\item Arrange the Learning Space
-\end{enumerate}
-
-Train the Instructor - course developer is often a trainer too but some cases you need more people to train
-
-
-Development:
-Authoring
-Media creation / integration / production
-Prototyping
-Processing
-Quality Assurance
-
-\section{Development of the e-learning course}
-The Development phase  (create a sample instruction and evaluate, create course materials - and review, conduct a run-through (a real-time rehearsal of the course) saab tagasisidet ja teada aja, mis on vaja kursuse läbimiseks)
-
-\subsection{Authoring the learning material}
-Developing learning material is based on learning objectives. Each learning objective must be covered with learning material and everything else should left out as extra load for student. Therefore in the development phase the authoring of different study materials, assessment tests, audio/video media and integration of all artefacts into consistent body with one reason: ensure that all objectives are met.
-
-Authoring the study materials is one of most time consuming tasks and amount of developed study materials is too big even for appendices. Therefore one sample block - Securing web applications are included in Appendix~\ref{Protecting Web Application Against (D)DOS Attacks} and in Appendix~ \ref{Protecting an Insecure Web Application} 
-
-Developed learning material are publicly available and under (\gls{CC-BY-SA}) license to guarantee maximum impact on field. Therefore is acceptable that people with will and motivation may self-study using this e-learning course. Moreover, the private training companies can use those courses to train target group.
-
-Learning materials, self-tests, course information and other materials are publicly downloadable~\footnote{\href{http://elab.itcollege.ee:8000/cyber-course/}{Course Syllabus (Õpijuhis)}}.
-
-
-Some never materials are developed using open source revision control system \gls{git} and all changes and commits are publicly available. Moreover, source code of this thesis and labs are available from public \gls{git} repository with \LaTeX  source files and as well other files~\footnote{\href{https://github.com/magavdraakon/margus-thesis.git}{Materials and source code of this thesis}}.
-
-
-Developed learning material should follow consistent style and present also one example of good documentation practice. For system administrators several howto styles exists. However practical hands-on laboratory instructions are designed that pass through using copy paste is possible but gives one working sample. However, this is not enough to pass lab scenario and student must customize own configuration.
-
-Guiding stile of the lab instruction using style convention: First, all variable parts of the text are clearly differs from other text and command. Second, all commands given by student are highlighted, and variable parts embossed as seen in followed command.
-
-
-\begin{minted}[frame=lines,framesep=2mm]{bash}
-#For changing Out of memory - OOM adjustment score for mysql server
-echo "-1000" > /proc/$(pidof mysqld)/oom_score_adj
-\end{minted}
-%$
-
-
-
-Sample sample: Finding a proccess ID of the mysql server proccess.
-
-\begin{minted}[frame=lines,framesep=2mm]{bash}
-ps -ef|grep mysqld
-\end{minted}
-\label{code_sample}
-%
-\small{
-\begin{Verbatim}[frame=single,
-label=Command output,framesep=2mm,rulecolor=\color{red},commandchars=\\\{\}]
-sudent@opiise:~# ps -ef|grep mysqld
-root     11290 10905  0 10:27 pts/6    00:00:00 grep --color=auto mysqld
-mysql    \fbox{\color{red}29830}    1  0 Apr25 ?        00:05:47 /usr/sbin/mysqld
-\end{Verbatim}
-%
-}
-
-All study should stored in open formats, like pdf, OpenDocument , MediaWiki markup language, html, utf8 text. Original editable source files for generating pdf, images should be publicly accessible. Moreover, text based materials should stored into version control system like \gls{git} to enable contributing for other lecturers and students as well.
-
-
-
-\begin{table}[H]
-\centering
-\caption{The learning materials}
-
-\begin{tabular}{|p{5cm}|p{3cm}|p{6cm}|}
-\hline 
-\color{blue}
-Name & \color{blue} Comments  & \color{blue} Location \\ 
-
-\hline
-  \multicolumn{3}{|c|}{Pre-requirement course} \\
-\hline
-Operating system basics & & \\
-\hline
-Basic networking IPv4/IPv6, TCP/IP & & \\
-
-\hline
-GNU/Linux basics (and OpenBSD/FreeBSD basics)  & & \\
-\hline
-Scripting in BASH &  & \\
-\hline
-Scripting in Python & Co authored with Lauri Võsandi & \\
-\hline
-Scripting in PowerShell & Author is Heiki Tähis & \\
-
-
-\hline
-\hline
-  \multicolumn{3}{|c|}{Root services} \\
-
-\hline 
-
-
-Lecture - Configuring NTP service & (Estonian 2012), Learning outcome no XXX & \url{http://goo.gl/toRpw} \\ 
-\hline 
-Practical class - Configuring NTP in Ubuntu  & (Estonian 2012), Learning outcome no XXX , Students improved & \url{https://wiki.itcollege.ee/index.php/NTP_Ubuntus} \\
-\hline 
-Lecture DNS & & \href{http://enos.itcollege.ee/~mernits/infrastruktuur/Interneti%20domeeninimede%20s%c3%bcsteem%20-%20IT%20infra%20loeng.odp}
-{DNS Lecture [OpenDocument]} \\
-\hline
-Practical class - DNS & Co authored with Katrin Loodus  & \href{https://docs.google.com/document/d/1ZeQpPXdVq1C7RQpxQYR0gBB0OBMYB_0g6aFFxs_-fIA/edit}{Configuring DNS [GoogleDocs] } \\
-
-\hline
-\hline
-  \multicolumn{3}{|c|}{Web/File Services} \\
-
-\hline 
- & & \\
-\hline
-
-\hline
- & & \\
-\hline
-\hline
-
-\end{tabular} 
-\label{table:learning_materials}
-\end{table}
-
-
-\subsection{Course Syllabus}
-\label{Course Syllabus}
-
-\subsection{Technical implementation of the e-course}
-
-\LaTeX Minted muutujad jne
-
+For maintaining course materials, collaborations between students and lectures a several Learning Management System (\gls{LMS}) are used by Estonian higher educational institutes. Incomplete list  of \gls{LMS}'s are Moodle, Blackboard WebCT (retried), CISO Network Academy, IVA, Sakai and Wikiversity. However the \gls{LMS} are useful for collaboration and storing learning material they can not be used as primary platform for new e-learning course because some grave limitations as: Firstly, the laboratories need virtual machines with administrative privileges in some cases  and supportive infrastructure to simulate Internet around the server. Secondly, only wikiversity and other wiki based systems are suitable for community based learning and peer assessment where students can teach and give feedback to others. Therefore no special \gls{LMS} are used in this course and materials are published in wiki, or in course web page.
 
 Saab teha nii kaugtöölaboris, kui ka oma virtuaalmasinates, siis on mälu/prose vajadus tudengile päris suur, rääkimata virtuaalmasinate allalaadimise vajadusest.
 
-\subsubsection{Virtualization technology}
+
 
 \subsubsection{The Environment of Distance Study}
 \label{The Environment of Distance Study}
-The Environment of Distance Study...
+
+For labs a virtualization are used to  developed e-learning course
 
 TODO pilt virtuaalaborite süsteemi kontekstist
 \subsubsection{Random tags}
@@ -416,6 +261,122 @@ http://www.dcortesi.com/blog/2009/04/11/twitter-stalkdaily-worm-postmortem/
 }
 
 
+\section{Development of the e-learning course}
+The Development phase  (create a sample instruction and evaluate, create course materials - and review, conduct a run-through (a real-time rehearsal of the course) saab tagasisidet ja teada aja, mis on vaja kursuse läbimiseks)
+
+\subsection{Authoring the learning material}
+Developing learning material is based on learning objectives. Each learning objective must be covered with learning material and everything else should left out as extra load for student. Therefore in the development phase the authoring of different study materials, assessment tests, audio/video media and integration of all artefacts into consistent body with one reason: ensure that all objectives are met.
+
+Authoring the study materials is one of most time consuming tasks and amount of developed study materials is too big even for appendices. Therefore one sample block - Securing web applications are included in Appendix~\ref{Protecting Web Application Against (D)DOS Attacks} and in Appendix~ \ref{Protecting an Insecure Web Application} 
+
+Developed learning material are publicly available and under (\gls{CC-BY-SA}) license to guarantee maximum impact on field. Therefore is acceptable that people with will and motivation may self-study using this e-learning course. Moreover, the private training companies can use those courses to train target group.
+
+Learning materials, self-tests, course information and other materials are publicly downloadable~\footnote{\href{http://elab.itcollege.ee:8000/cyber-course/}{Course Syllabus (Õpijuhis)}}.
+
+
+Some never materials are developed using open source revision control system \gls{git} and all changes and commits are publicly available. Moreover, source code of this thesis and labs are available from public \gls{git} repository with \LaTeX  source files and as well other files~\footnote{\href{https://github.com/magavdraakon/margus-thesis.git}{Materials and source code of this thesis}}.
+
+
+Developed learning material should follow consistent style and present also one example of good documentation practice. For system administrators several howto styles exists. However practical hands-on laboratory instructions are designed that pass through using copy paste is possible but gives one working sample. However, this is not enough to pass lab scenario and student must customize own configuration.
+
+Guiding stile of the lab instruction using style convention: First, all variable parts of the text are clearly differs from other text and command. Second, all commands given by student are highlighted, and variable parts embossed as seen in followed command.
+
+
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+#For changing Out of memory - OOM adjustment score for mysql server
+echo "-1000" > /proc/$(pidof mysqld)/oom_score_adj
+\end{minted}
+%$
+
+
+
+Sample sample: Finding a proccess ID of the mysql server proccess.
+
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+ps -ef|grep mysqld
+\end{minted}
+\label{code_sample}
+%
+\small{
+\begin{Verbatim}[frame=single,
+label=Command output,framesep=2mm,rulecolor=\color{red},commandchars=\\\{\}]
+sudent@opiise:~# ps -ef|grep mysqld
+root     11290 10905  0 10:27 pts/6    00:00:00 grep --color=auto mysqld
+mysql    \fbox{\color{red}29830}    1  0 Apr25 ?        00:05:47 /usr/sbin/mysqld
+\end{Verbatim}
+%
+}
+
+All study should stored in open formats, like pdf, OpenDocument , MediaWiki markup language, html, utf8 text. Original editable source files for generating pdf, images should be publicly accessible. Moreover, text based materials should stored into version control system like \gls{git} to enable contributing for other lecturers and students as well.
+
+
+
+\begin{table}[H]
+\centering
+\caption{The learning materials}
+
+\begin{tabular}{|p{5cm}|p{3cm}|p{6cm}|}
+\hline 
+\color{blue}
+Name & \color{blue} Comments  & \color{blue} Location \\ 
+
+\hline
+  \multicolumn{3}{|c|}{Pre-requirement course} \\
+\hline
+Operating system basics & & \\
+\hline
+Basic networking IPv4/IPv6, TCP/IP & & \\
+
+\hline
+GNU/Linux basics  & & \\
+\hline
+Scripting in BASH &  & \\
+\hline
+Scripting in Python & Co authored with Lauri Võsandi & \\
+\hline
+Scripting in PowerShell & Author is Heiki Tähis & \\
+
+
+\hline
+\hline
+  \multicolumn{3}{|c|}{Root services} \\
+
+\hline 
+
+
+Lecture - Configuring NTP service & (Estonian 2012), Learning outcome no XXX & \url{http://goo.gl/toRpw} \\ 
+\hline 
+Practical class - Configuring NTP in Ubuntu  & (Estonian 2012), Learning outcome no XXX , Students improved & \url{https://wiki.itcollege.ee/index.php/NTP_Ubuntus} \\
+\hline 
+Lecture DNS & & \href{http://enos.itcollege.ee/~mernits/infrastruktuur/Interneti%20domeeninimede%20s%c3%bcsteem%20-%20IT%20infra%20loeng.odp}
+{DNS Lecture [OpenDocument]} \\
+\hline
+Practical class - DNS & Co authored with Katrin Loodus  & \href{https://docs.google.com/document/d/1ZeQpPXdVq1C7RQpxQYR0gBB0OBMYB_0g6aFFxs_-fIA/edit}{Configuring DNS [GoogleDocs] } \\
+
+\hline
+\hline
+  \multicolumn{3}{|c|}{Web/File Services} \\
+
+\hline 
+ & & \\
+\hline
+
+\hline
+ & & \\
+\hline
+\hline
+
+\end{tabular} 
+\label{table:learning_materials}
+\end{table}
+
+
+\subsection{Course Syllabus}
+\label{Course Syllabus}
+
+
+
+
 
 
 
@@ -426,6 +387,19 @@ http://www.dcortesi.com/blog/2009/04/11/twitter-stalkdaily-worm-postmortem/
 Implementation phase (train the instructor, prepare the learners (veenduda, et eeldused on korras ja nad saavad hakkama wiki ja elabiga ja virtualiseerimisega), arrange the learning space)
 According to \gls{ADDIE} model...
 Siin saame teada, kui palju aega kulub mingi osa peale ja kui realistlik oli plaan.
+
+
+The implementation phase of the ADDIE Model contains three sub-phases
+
+\begin{enumerate}
+\item Train the Instructor
+\item Prepare the Learners
+\item Arrange the Learning Space
+\end{enumerate}
+
+Train the Instructor - course developer is often a trainer too but some cases you need more people to train
+
+
 
 \subsection{Organizational role}
 
