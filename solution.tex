@@ -1,6 +1,6 @@
 \chapter{Solution}
 \label{solution}
-\lettrine[lraise=0.1, nindent=0em, slope=-.5em]{\color{Violet}T}{he} Solution chapter is divided int three phases. First, the design phase for planning on learning process. Second, development phase where authoring of learning material being held. Third, the implementation phase the piloting of the course, where each course are run-through with particular students/trainers to get feedback about timing, content and evaluation.
+\lettrine[lraise=0.1, nindent=0em, slope=-.5em]{\color{Violet}T}{he} Solution chapter is divided into four phases. First, the design phase for planning on learning process. Second, technical implementation of the e-learning course. Third, development phase where authoring of learning material being held. Fourth, the implementation phase the piloting of the course, where each course are run-through with particular students/trainers to get feedback about timing, content and evaluation.
 
 
 
@@ -231,7 +231,7 @@ Several \gls{DNS} implementations are not considered for lab, because they lack 
 However, the unbound with NSD and BIND are suitable for this lab the BIND name-server are wider user base and number of the installations~\footnote{The \gls{ISC} BIND -- \url{https://www.isc.org/software/bind}}. Therefore, the BIND name server was chosen for this lab.
 
 
-\subsection{Choosing software for lab: Protecting Web Application Against (D)DOS Attacs}
+\subsection{Choosing software for lab: Protecting Web Application Against (D)DOS Attacks}
 
 \subsubsection{Web server}
 According to Netcraft Web Server Survey (May 2013) the share of active websites are: Apache~\footnote{Apache \gls{HTTP} server -- \url{http://projects.apache.org/projects/http_server.html}} -- 55.07\%,  nginx~\footnote{nginx is an HTTP and reverse proxy server -- \url{http://nginx.org/en/}} -- 13.27\%	, Microsoft Internet Information Server~\footnote{Microsoft Internet Information server -- http://www.iis.net/} -- 11.08\% \citep{website:netcraft_web}. Microsoft IIS do not qualify because it is not open source software. Therefore, the apache chosen as main web server for lab because of market share. However, NGINX is also important platform and will be used for \gls{TLS} termination on the lab because students should able to configure \gls{HTTPS} as well and due the lab scenario in Appendix~\ref{Protecting an Insecure Web Application} separate \gls{TLS} terminator service is needed.
@@ -270,25 +270,26 @@ SQLol~\footnote{SQLol -- \url{https://github.com/SpiderLabs/SQLol
 Because of defensive nature on developed course only simple vulnerabilities are needed to demonstrate a problem and all vulnerable applications are suitable for installing. To create diversity all applications what can installed easily can be used in lab. All examples are given using \gls{DVWA} but to get the grade every student should choose another vulnerable application, install it and protect it.
 
 \subsection{Web application firewall and database firewall}
-{\color{red} TODO }
-GreenSQL
-Teised tulemüürid
 
-Practical Intrusion Analysis book - WAF võrdlus \citep{book:practica_intrusion_analysis}
-\gls{CSRF}
-Protection using mod\_security
-\url{http://blog.spiderlabs.com/2011/01/detecting-malice-with-modsecurity-csrf-attacks.html}
 
-\gls{XSS}
-%{
-%\color{red} *Kui avastad, kust on malicious script included siis saab esitada avalduse, et see domeen/virtualhost kinni pandaks...(see võiks olla tulevikus osa laborist.
-%
-%http://www.dcortesi.com/blog/2009/04/11/twitter-stalkdaily-worm-postmortem/
-%}
+According to lab scenario the \gls{SQLi} attacks should be stopped before database. Several proprietary database firewall products like Oracle Audit Vault and Database Firewall and SecureSphere Database Firewall can provide functionality needed. However, they are not applicable in this lab because they are not free and open source software products.
+
+Only functional open source database firewall with enterprise scale functionality like web based administrative interface, support for different databases and easy to use for database administrator was GreenSQL open source database firewall. However, the development of this version is stopped and now even download is not possible from vendor homepage~\footnote{GreenSQL -- http://www.greensql.com/}, the source files and pre-build packages for Ubuntu Server 12.04 LTS 64bit are downloadable from \gls{EITC} lab page~\footnote{\gls{EITC} fork of GreenSQL database -- \url{http://elab.itcollege.ee:8000/Day3/}}. Moreover the author of this thesis fixed the source code of the firewall to get it compile with newer GNU/C compiler.
+
+For learning basics of the database fire-walling the enterprise products are not needed and for this lab open source version of GreenSQL database firewall was chosen.
+
+However, the free closed source version is still downloadable from vendor homepage, the future work is find open source replacement for GreenSQL which is actively developed and has comparable functionality.
+
+The database firewall provides protection only for database but for example the reflected \gls{XSS} are not seen in database layer. Therefore, this protection is not sufficient and additional filtering in web layer is needed and Web Application Firewall \gls{WAF} to be integrated into lab scenario.
+
+The common open source \gls{WAF} is ModSecurity~\citep[p.196]{book:practica_intrusion_analysis} from Trustwave SpiderLabs~\footnote{Trustwave SpiderLabs -- \url{https://www.trustwave.com/spiderlabs/}}. However, the ModSecurity itself is a parsing/blocking engine and needs proper rule set to block/log attacks, like \gls{OWASP} Core Rule Set Project~\footnote{OWASP ModSecurity Core Rule Set Project -- }. However, some alternatives exists and ModSecurity rules are too hard to modify for students in authors opinion the \gls{EITC} partners and several companies in Estonia using it according to conversations and discussion between system administrators from pilot lab. The product supports apache, Enginx and Inernet Information Server web servers~\footnote{Mod Security overview -- \url{http://www.modsecurity.org/projects/modsecurity/index.html}} and compatible with web servers chosen to this lab.
+
+Therefore, the Mod Security and \gls{OWASP} Core Rule Set was chosen for this lab.
+
 
 
 \section{Development of the e-learning course}
-The Development phase  (create a sample instruction and evaluate, create course materials - and review, conduct a run-through (a real-time rehearsal of the course) saab tagasisidet ja teada aja, mis on vaja kursuse läbimiseks)
+After choosing technological tools the lab materials need to be created~\citep{OppeArenduskeskus2010}. Therefore, the course materials are created, reviewed and run-through by small test group.
 
 \subsection{Authoring the learning material}
 Developing learning material is based on learning objectives. Each learning objective must be covered with learning material and everything else should left out as extra load for student. Therefore in the development phase the authoring of different study materials, assessment tests, audio/video media and integration of all artefacts into consistent body with one reason: ensure that all objectives are met.
