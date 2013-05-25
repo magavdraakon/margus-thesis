@@ -10,19 +10,47 @@ will see. If you let me experience, I will learn." --- Lao Tzu (6th Century BC)
 \end{quote}
 
 \section{Introduction}
-This goal of this lab secure web application -- WordPress against (D)DOS attacks to the level where main limitation becomes a network throughput. Configured server must recover after attacks are ended.
+This goal of this lab is secure a web application -- WordPress against (D)DOS attacks to the level where main limitation becomes a throughput of the network. Installed and hardened server must recover after attack is ended.
 
 Web application WordPress are used because misbehave of the default installation which can not take reasonable load.
 
 \section{Pre-Requirements}
-Prelimary course topics~\ref{Preliminary course - dpkg based GNU/Linux} and completed the preliminary test~\ref{Preliminary Tests} (theory and practice)
-Knowledge about \gls{HTTP} (different request types, virtual hosts, status codes), \gls{IP} and aliases, \gls{UDP}
+\begin{enumerate}
+\item Preliminary GNU/Linux course~\ref{Preliminary course - dpkg based GNU/Linux} 
+\item Preliminary test~\ref{Preliminary Tests} (theory and practice)
+\item Knowledge about \gls{HTTP} (different request types, virtual hosts, status codes), \gls{IP} and aliases, \gls{UDP}
 
-In case of need for refresh the basic those materials are suitable for rehearsal the basics of the \gls{HTTP}~\footnote{
+\end{enumerate}
+
+If renewal is needed then following materials are suitable for rehearsal the basics of the \gls{HTTP}~\footnote{
 \href{http://net.tutsplus.com/tutorials/tools-and-tips/http-the-protocol-every-web-developer-must-know-part-1/}{net.tutsplus.com - tools and tips - HTTP part 1}} \footnote{
 \href{http://net.tutsplus.com/tutorials/tools-and-tips/http-the-protocol-every-web-developer-must-know-part-2/}{net.tutsplus.com - tools and tips - HTTP part 1}}
-\section{Scope}
-Software used:  GNU/Linux distribution Ubuntu Server 12.04 LTS 64bit, WordPress -- latest version available, MySQL from Ubuntu repositories, Apache2 web server from repositories, GNU/Linux Ubuntu Client 12.04 LTS 64bit for performing load generation with apache2 utils.
+
+\section{Software and hardware}
+Students must have possibility to run at least two virtual machines with configuration seen in table~\ref{table:HW for Wordpress lab}
+
+\begin{table}
+\centering
+\caption{Hardware requirements for the (D)DOS lab}
+\begin{tabular}{|c|c|c|}
+\hline 
+\rule[-1ex]{0pt}{2.5ex} Hardware & Server & Client \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} RAM & $>=512MB$ & $>=1GB$\\ 
+\hline
+\rule[-1ex]{0pt}{2.5ex} HDD & $>=8GB$ (dynamic disk) & $>=16GB$ (dynamic disk)\\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} NIC 1 & NAT  & NAT \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} NIC 2 & HostOnly & HostOnly \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} OS & Ubuntu Server 12.04 LTS & Ubuntu Desktop 12.04 LTS\\ 
+\hline 
+\end{tabular}
+\label{table:HW for Wordpress lab}
+\end{table}
+
+GNU/Linux distribution Ubuntu Server 12.04 LTS 64bit, WordPress -- latest version available, MySQL from Ubuntu repositories, Apache2 web server from repositories, GNU/Linux Ubuntu Client 12.04 LTS 64bit for performing load generation with apache2 utils.
 
 \section{Learning Objectives}
 Student installs and configures the apache2 web server and WordPress web application with \gls{MySQL} database.
