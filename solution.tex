@@ -1,24 +1,20 @@
 \chapter{Solution}
 \label{solution}
-\lettrine[lraise=0.1, nindent=0em, slope=-.5em]{\color{Violet}T}{he} Solution chapter is divided into four phases. First, the design phase for planning on learning process. Second, technical implementation of the e-learning course. Third, development phase where authoring of learning material being held. Fourth, the implementation phase the piloting of the course, where each course are run-through with particular students/trainers to get feedback about timing, content and evaluation.
+\lettrine[lraise=0.1, nindent=0em, slope=-.5em]{\color{Violet}T}{he} solution chapter is divided into four parts. First, the design phase uses information gathered from analysis phase of the \gls{ADDIE} process and the main goals are identifying  a learning objectives, compose tests, choose course format, and planning of the learning process~\citep{website:design_phase_ADDIE}. Second, the technical implementation of the e-learning course is usually a sub-part of the previous part a design process of the \gls{ADDIE} model. However, the section focusing to the technical considerations, deserve separate part according to context of this e-learning course because its importance and capacity. Third, a development phase describes authoring of the learning material. Fourth, the implementation phase covers piloting of the course, where each part of the course are run-through with particular students/trainers to get feedback about timing, content and ~\citep{website:design_phase_ADDIE}.
 
 
 
  
 \section{Design and Planning of learning process}
-The Design phase contains four steps: First, Design learning objectives. Second, design assessments for each objective. Third, choose a course format. Fourth, create an instructional strategy. \citep{website:design_phase_ADDIE}
-
+The Design phase contains four steps: First, design of the learning objectives; Second, design the assessments for each objective. Third, choose a course format. Fourth, create an instructional strategy~\citep{website:design_phase_ADDIE}. However, in this thesis, the tests are designed together with the learning objectives to simplify reading the topics.
 
 \subsection{Design of the course content and learning objectives}
 
-In analysis phase the learning outcomes were established. However to design assessments tests and learning material more detailed learning objectives are needed. Therefore each learning outcome are divided into smaller units.
+In the analysis phase a learning outcomes were established. For design an adequate course content two aspects are required, learning objectives and assessment tests. Likewise in software development field the tests should be designed first to ensure creation of consistent learning materials and labs. Therefore all learning objectives are given with evaluation methods and values.  
 
-For design an adequate course content two aspects are required, learning objectives and assessment tests. Likewise in software development field the tests should be designed first to ensure creation of consistent learning materials and labs. Therefore all learning objectives are given with evaluation methods and values.  
+The terms and topics used in assessment should stay on level the students should know at the end of the lab and derived from learning objectives established in analysis phase.
 
-The terms and vocabulary used in assessment should stay on level the students should know at the end of the lab and derived from learning objectives established in analysis phase.
-
-Because big amount of learning materials, tests and labs only some examples are included into Appendices as Preliminary Tests~\ref{Preliminary Tests}, Preliminary Course~\ref{Preliminary course - dpkg based GNU/Linux}, Protecting Web Application -- \ref{Protecting Web Application Against (D)DOS Attacks},~\ref{Protecting an Insecure Web Application}. However, other materials can be found on course syllabus page composed on section~\ref{Course Syllabus}.
-
+Developed tests and materials of the course will be listed in course syllabus~\ref{Course Syllabus}.
 
 \subsubsection{Pre-requirements courses}
 
@@ -26,13 +22,14 @@ During the analysis of the target group the need for preliminary course was deci
 
 The objectives and assessments for preliminary course:
 \begin{itemize}
-\item Student are able to work in command line using GNU/Linux as working with files, manage software, manage disks and partitions, manage users and groups, configure networks and user login session. Minimal level for pass is to gain more then 50\% one of the tests included in Appendix~\ref{Preliminary Tests} in Table~\ref{tab:preliminary_practical_test}
-\item Student are able to explain basic terminology of operating systems (Kernel, GUI, shell, Virtual Memory, Authentication, Authorization, RAM, Cache, puffer, latency, throughput, file system, process, thread, password hash, DAC, MAC, RBAC, command parameter, command flag, file system hierarchy, environment variable). Minimal level to pass is gather more then 51\% of closed book test like in sample in Appendix~\ref{Preliminary Tests}
-\item Student are able to configure network in GNU/Linux and explain terms like gateway, netmask, IP address, port, IP alias, DNS servers. Minimal level to pass is configuring network for lab machines.
+\item Student are able to work with command line using GNU/Linux and are able: working with files, manage software, manage disks and partitions, manage users and groups, configure networks and user's login session. Minimal level for pass is to gain more then 50\% of randomly chosen test version, included in Appendix~\ref{Preliminary Tests} in Table~\ref{tab:preliminary_practical_test}
+\item Student are able to explain basic terminology of operating systems sush as: kernel, GUI, shell, Virtual memory, authentication, authorization, RAM, cache, buffer, latency, throughput, file system, process, thread, password hash, DAC, MAC, RBAC, command parameter, command flag, file system hierarchy, environment variable). Minimal level to pass is gather more then 51\% of closed book test like in sample in Appendix~\ref{Preliminary Tests}
+\item Student are able to configure a network of the GNU/Linux and explain terms like gateway, netmask, IP address, port, IP alias, DNS servers. Minimal level to pass is successful configuring network for lab machines.
 \item Student is able to read/modify and create simpler BASH, Python and PowerShell scripts. Minimal level of pass is create script with all common language construction in one particular language. Powershell scripting is included because furtherer labs contains also integration labs with Active Directory, SAMBA4, GNU/Linux servers and workstations and Windows workstations.
 \end{itemize}
 
 According to previous objectives six practical classes are needed:\footnote{All times are given in academic hours or days which equal 8 academic hours.}
+
 \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
 \item Operating system basics (one day)
 \item Basic networking IPv4/IPv6, TCP/IP (one day)
@@ -44,12 +41,12 @@ According to previous objectives six practical classes are needed:\footnote{All 
 After implementing the course exact load is known numbers will be arranged.
 
 \subsubsection{Root Services}
-In this particular case term root services are described as \gls{NTP}, \gls{DNS}, \gls{DHCP} service.
-After finishing this block student are able to configure root services and use those services in furtherer labs.
+In this particular case the term root services are described as \gls{NTP}, \gls{DNS}, \gls{DHCP} services.
+After finishing this lab block the student are able to configure root services and use those services in furtherer labs.
 The objectives and assessments for Root Services lab:
 \begin{itemize}
-\item After finishing this lab student is able to install \gls{NTP} service on server and on client computer and configure client to use internal server (pool) and server to use upstream \gls{NTP} service and fall-back services. Minimal level to pass: Services are configured, and student demonstrates debug skills with different tools and user explains basic terms and (pool, stratum, delay , offset, jitter, drift)
-\item After finishing this lab student is able to install \gls{DNS} service and configure clients for new server. Minimally, students are able to configure zones, reverse zones, master -- slave replica, forwarding, different type of records (like MX, A, CNAME, TXT for SPF, PTR) and use basic management utilities to reload zone, flush name, flush cache, add records dynamically, freeze and thaw zones). Configured service does recursive quires for one particular subnet and student are able to explain what DNS attacks are used and what is Open Resolver. Student tests \gls{EITC} nameserver and explains what is wrong with that.
+\item After finishing this lab student is able to install \gls{NTP} service on the server and on the client computer and configure client to use internal server (pool) and server to use upstream \gls{NTP} service and fall-back services. Minimal level to pass: Services are configured, and student demonstrates debug skills with different tools and user explains basic terms and (pool, stratum, delay , offset, jitter, drift)
+\item After finishing this lab student is able to install \gls{DNS} service and configure clients for new server. Minimally, students are able to configure zones, reverse zones, master -- slave replica, forwarding, different type of records (like MX, A, CNAME, TXT for SPF, PTR) and use basic management utilities to do following tasks: reload zone, flush name, flush cache, add records dynamically, freeze and thaw zones). Configured service should able to do recursive quires for one particular subnet and student are able to explain what DNS attacks are common in Internet and what is an Open Resolver. Student tests nameserver of the \gls{EITC} and explains what is wrong with that.
 \item After finishing this lab student is able to install \gls{DHCP} server and configure hosts using this service. Minimal level for pass: Student installs and configures service what gives networking configuration to client machine from range or using hardware address. Service updates \gls{DNS} records using shared key (Mandatory Access Control must not disabled for pass)
 \end{itemize}
 According to previous objectives three practical classes are needed:
@@ -60,30 +57,29 @@ According to previous objectives three practical classes are needed:
 \end{enumerate}
 
 \subsubsection{Web and File services}
-Configuring and securing web servers is essential skill required from system administrators. Therefore, web server installation, configuration and hardening are covered with this block. Because instructional goals and learning outcomes also require covering file services topic.
+Configuring and securing web servers is essential skill required from system administrators. Therefore, web server installation, configuration and hardening are covered in this block.
 
-The objectives and assessments for Web and File services:
+The learning objectives and assessments for Web and File services:
 \begin{itemize}
 \item After completing the web and file services block student is able to install web server and web application with database and several virtual hosts and configure \gls{TLS}. Minimal level for passing: Installed web server with two virtual hosts accepting \gls{HTTP} and \gls{HTTPS} connections. Configured IP aliases for \gls{HTTPS} and/or \gls{SNI}.
-\item Student is able to use caching technologies to protect web application against simpler \gls{DOS} attacks. Student configures web service and demonstrates that can be easily take offline using simple load generator. Minimal level: Student configures proper caching and demonstrates that web application survives same attack.
-\item Student are able to install different application firewalls like \gls{SQL} firewall and web application firewall. Minimal level: Student demonstrates that different types of attacks are possible and successful against particular vulnerable web application. Student installs \gls{SQL} firewall and demonstrates that basic \gls{SQLi} attacks are blocked. Student demonstrates that several web application attacks are still possible (after installing \gls{SQL} firewall reflected \gls{XSS} and possibly stored \gls{XSS}, command injection, \gls{CSRF} are minimum. Student installs application firewall before web application and demonstrates that previously succeeded attacks (at least \gls{XSS}) is stopped.
-\item Student is capable to install file server and configure shares, permissions, groups into fileserver. Criteria: Student installs service, configures two shares and group based permissions for share. Student configures client machine to mount shares on demand and on boot.
+\item Student is able to use caching technologies to protect web application against simpler \gls{DOS} attacks. Student configures web service and demonstrates that installed application can be easily taken offline using a simple load generator. Thereafter, the student configures web application accelerator as mitigation method against the  \gls{DOS} attack. Minimal level: Student configures proper caching and demonstrates that web application survives same attack.
+\item Student are able to install different application firewalls as \gls{SQL} firewall and web application firewall. Minimal level: Student demonstrates that different types of attacks are possible and successful against the vulnerable web application. Student installs \gls{SQL} firewall and demonstrates that basic \gls{SQLi} attacks are blocked. Student demonstrates that several web application attacks are still possible after installing the \gls{SQL} firewall as reflected \gls{XSS} and stored \gls{XSS}, command injection and \gls{CSRF}. Student installs application firewall before web application and demonstrates that previously succeeded attacks (at least \gls{XSS}) are stopped.
+\item Student is capable to install file server and configure shares, permissions, groups. Criteria: Student installs the service and configures two shares and group based permissions for each share. Student configures client machine to mount one share when user logs on and other share should mounted on boot.
 \end{itemize}
 
 
 According to previous objectives four practical classes are needed:
 \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
    \item Web server basics - installation and configuring web server (4h)
-  	\item Web server security - Protecting Web Application Against (6h)
-(D)DOS Attacks
+  	\item Web server security - Protecting Web Application Against (D)DOS Attacks (6h)
   	\item Web server security - securing vulnerable web application using application firewalls (6h)
-  	\item Fileserver (4h)
+  	\item Fileserver installation and configuration (4h)
 \end{enumerate}
 
 
-\subsection{Choosing course format}
+\subsection{Choosing the course format}
 
-For developing e-learning courses the choosing course format is short decision but with big influences to all participants \citep[p.14]{OppeArenduskeskus2010}. 
+For developing e-learning courses a choosing course format have a big influences to all participants \citep[p.14]{OppeArenduskeskus2010}. 
 
 Common course delivery formats used in e-learning and blended learning (combined form of instruction-led and e-learning) used in \gls{EITC} are: 
 \begin{itemize}
@@ -336,98 +332,94 @@ mysql    \fbox{\color{red}29830}    1  0 Apr25 ?        00:05:47 /usr/sbin/mysql
 
 All study should stored in open formats, like pdf, OpenDocument, MediaWiki markup language, html, utf8 text. Original editable source files for generating pdf, images should be publicly accessible. Moreover, text based materials should stored into version control system like \gls{git} to enable contributing for other lecturers and students as well.
 
-
-
-\begin{table}[H]
-\centering
-\caption{The learning materials}
-
-\begin{tabular}{|p{5cm}|p{3cm}|p{6cm}|}
-\hline 
-\color{blue}
-Name & \color{blue} Comments  & \color{blue} Location \\ 
-
-\hline
-  \multicolumn{3}{|c|}{Pre-requirement course} \\
-\hline
-Operating system basics & & \\
-\hline
-Basic networking IPv4/IPv6, TCP/IP & & \\
-
-\hline
-GNU/Linux basics  & & \\
-\hline
-Scripting in BASH &  & \\
-\hline
-Scripting in Python & Co authored with Lauri Võsandi & \\
-\hline
-Scripting in PowerShell & Author is Heiki Tähis & \\
-
-
-\hline
-\hline
-  \multicolumn{3}{|c|}{Root services} \\
-
-\hline 
-
-
-Lecture - Configuring NTP service & (Estonian 2012), Learning outcome no XXX & \url{http://goo.gl/toRpw} \\ 
-\hline 
-Practical class - Configuring NTP in Ubuntu  & (Estonian 2012), Learning outcome no XXX , Students improved & \url{https://wiki.itcollege.ee/index.php/NTP_Ubuntus} \\
-\hline 
-Lecture DNS & & \href{http://enos.itcollege.ee/~mernits/infrastruktuur/Interneti%20domeeninimede%20s%c3%bcsteem%20-%20IT%20infra%20loeng.odp}
-{DNS Lecture [OpenDocument]} \\
-\hline
-Practical class - DNS & Co authored with Katrin Loodus  & \href{https://docs.google.com/document/d/1ZeQpPXdVq1C7RQpxQYR0gBB0OBMYB_0g6aFFxs_-fIA/edit}{Configuring DNS [GoogleDocs] } \\
-
-\hline
-\hline
-  \multicolumn{3}{|c|}{Web/File Services} \\
-
-\hline 
- & & \\
-\hline
-
-\hline
- & & \\
-\hline
-\hline
-
-\end{tabular} 
-\label{table:learning_materials}
-\end{table}
+%
+%
+%\begin{table}[H]
+%\centering
+%\caption{The learning materials}
+%
+%\begin{tabular}{|p{5cm}|p{3cm}|p{6cm}|}
+%\hline 
+%\color{blue}
+%Name & \color{blue} Comments  & \color{blue} Location \\ 
+%
+%\hline
+%  \multicolumn{3}{|c|}{Pre-requirement course} \\
+%\hline
+%Operating system basics & & \\
+%\hline
+%Basic networking IPv4/IPv6, TCP/IP & & \\
+%
+%\hline
+%GNU/Linux basics  & & \\
+%\hline
+%Scripting in BASH &  & \\
+%\hline
+%Scripting in Python & Co authored with Lauri Võsandi & \\
+%\hline
+%Scripting in PowerShell & Author is Heiki Tähis & \\
+%
+%
+%\hline
+%\hline
+%  \multicolumn{3}{|c|}{Root services} \\
+%
+%\hline 
+%
+%
+%Lecture - Configuring NTP service & (Estonian 2012), Learning outcome no XXX & \url{http://goo.gl/toRpw} \\ 
+%\hline 
+%Practical class - Configuring NTP in Ubuntu  & (Estonian 2012), Learning outcome no XXX , Students improved & \url{https://wiki.itcollege.ee/index.php/NTP_Ubuntus} \\
+%\hline 
+%Lecture DNS & & \href{http://enos.itcollege.ee/~mernits/infrastruktuur/Interneti%20domeeninimede%20s%c3%bcsteem%20-%20IT%20infra%20loeng.odp}
+%{DNS Lecture [OpenDocument]} \\
+%\hline
+%Practical class - DNS & Co authored with Katrin Loodus  & \href{https://docs.google.com/document/d/1ZeQpPXdVq1C7RQpxQYR0gBB0OBMYB_0g6aFFxs_-fIA/edit}{Configuring DNS [GoogleDocs] } \\
+%
+%\hline
+%\hline
+%  \multicolumn{3}{|c|}{Web/File Services} \\
+%
+%\hline 
+% & & \\
+%\hline
+%
+%\hline
+% & & \\
+%\hline
+%\hline
+%
+%\end{tabular} 
+%\label{table:learning_materials}
+%\end{table}
 
 
 \subsection{Course Syllabus}
 \label{Course Syllabus}
-{\color{red} TODO links + overview }
+The participant of the course will get first information from Course Syllabus, where all relevant information about the course must be listed as: list of learning materials, course schedule, list of the labs, list of topics, list of exercises and homework, deadlines, grading information. Course Syllabus will be in \gls{EITC} study information system but the public copy of the information is available from lab website~\footnote{Course Syllabus -- \url{http://elab.itcollege.ee:8000/cyber-course/}}
 
 \subsection{Testing the e-course}
-Before experimenting with students in larger group the all course modules got tested by co-workers -- lecturers and assistants of \gls{EITC}. After in-house testing each lab run-through by small group of system administrator from different organizations including \gls{EISA}.
-
-{\color{red} TODO - the evaluation of design and development }
+Before experimenting with students in larger group the all course modules got tested by co-workers -- lecturers and assistants of \gls{EITC}. After in-house testing each lab run-through by small group of system administrator from different organizations including \gls{EISA}. Evaluation summary for the course is in Table~\ref{table:desing_develop_evaluation}.
 \begin{table}[h]
 \centering
 \caption{The evaluation of the design and development stage }
 { \small 
 \begin{tabular}{|p{6cm}|p{2cm}|p{5cm}|}
 \hline 
-\color{blue} Evoluation question & \color{blue} Result [1..4] & \color{blue} Comments and references \\
+\color{blue} Evaluation question & \color{blue} Result [1..4] & \color{blue} Comments and references \\
 \hline
 Does course have a proper structure? 
 & 4  &  Course Syllabus has links for study program, topics and labs  \\ 
 \hline
-Does chosen presentation learning material support the course? 
+Does chosen presentation learning material support the learning outcomes of the course? 
 & 4  &  Active participation of the students are encouraged \\ 
 \hline
-Students are motivated to be active? 
-& 4  &  Active participation of the students are encouraged \\ 
+
+Do the learning materials follow best practices? 
+& 3  &  Some materials needs improvement \\ 
 \hline
-Students are motivated to be active? 
-& 4  &  Active participation of the students are encouraged \\ 
-\hline
-Students are motivated to be active? 
-& 4  &  Active participation of the students are encouraged \\ 
+Is all web material available? 
+& 4  &  Materials are in course syllabus page \\ 
 \hline
 Does sufficient course syllabus exists? 
 & 4  &  Course Syllabus are in course web page \\ 
@@ -447,12 +439,12 @@ Does course technically work (links, materials)?
 \end{table}
 
 
-\section{Implementation}
+\section{Implementation of the e-learning course}
 
-Implementation phase the courses are piloted and feedback from students and other lecturers are gathered, arranging the learning space  and preparing learners for the course~\citep{OppeArenduskeskus2010}.
+In the implementation phase, the courses are piloted and feedback from students and other lecturers are gathered also a arranging the learning space and time and preparing learners for the course~\citep{OppeArenduskeskus2010}.
 
-Author of this thesis piloted each block of the course and collected students feedbacks, notes for improvement ideas and tried to motivate students to behave as active and motivated as possible.
-First lab was relatively simple because of simplicity of the topic -- \gls{NTP} compared for example web server lab. However, this was intentional because during this lab the technical details are explained to the students about virtualization environment and roles of lecturer and students in this course. Therefore slow start is important for students to learn environment and organizational aspects of the course. Thereafter, a studies went smoothly for students with proper prerequisite skills and knowledge and hard for others. The main thing learned from implementation: This course is too hard for most of the students but the are motivated to learn the content. However, the preliminary course is mandatory for most of the students and system administrators because small group of students with inadequate level may slow down a whole class.
+Author of this thesis piloted each block of the course and collected feedbacks from the students, make notes with improvement ideas and motivated students to behave as active and motivated as possible.
+First lab was relatively simple because of simplicity of the topic -- \gls{NTP} compared for example web server lab. However, this was intentional because during this lab the technical details are explained to the students about virtualization environment and roles of lecturer and students in this course. Therefore slow start is important for students to learn environment and organizational aspects of the course. Thereafter, a studies went smoothly for students with proper prerequisite skills and knowledge and hard for others. The main thing learned from implementation: This course is too hard for most of the students but the are motivated to learn the content. However, the preliminary course is mandatory for most of the students and system administrators because small group of students with inadequate level may slow down a whole class. During the implementation phase the piloting course was evaluated using self-assessment and criteria from \gls{ADDIE} model~\citep{OppeArenduskeskus2010}. The results are presented in Table~\ref{table:implementation_evaluation}.
 
 \begin{table}[h]
 \centering
@@ -460,7 +452,7 @@ First lab was relatively simple because of simplicity of the topic -- \gls{NTP} 
 { \small 
 \begin{tabular}{|p{6cm}|p{2cm}|p{5cm}|}
 \hline 
-\color{blue} Evoluation question & \color{blue} Result [1..4] & \color{blue} Comments and references \\ 
+\color{blue} Evaluation question & \color{blue} Result [1..4] & \color{blue} Comments and references \\ 
 \hline
 Students are motivated to be active? 
 & 4  &  Active participation of the students are encouraged \\ 
