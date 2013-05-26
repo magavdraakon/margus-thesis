@@ -57,71 +57,62 @@ Student installs and configures the apache2 web server and WordPress web applica
 Student is able to use caching technologies to protect web application against simpler DOS attacks. Student configures web service and demonstrates that can be
 easily take offline using simple load generator. Minimal level: Student configures
 proper caching and demonstrates that web application survives same attack.
+
 \section{Setting up the Virtual Environment - VirtualBox sample}
-In this lab we use two Ubuntu Linux virtual machines.
-Ubuntu server 512MB RAM, NIC1 - NAT, NIC2 - HostOnly with address 192.168.56.200
-Ubuntu client 1GB RAM NIC1 - NAT, NIC2 - HostOnly wid dynamic address. (probably 192.168.56.101)
-Download virtual machines to the local disk
+Two virtual machines are needed in this lab: Server and Client.
+Download server and client \gls{OVA} files from the following links:
 \url{http://elab.itcollege.ee:8000/infra_klient_small.ova}
 \url{http://elab.itcollege.ee:8000/infra_server.ova}
 
 Import virtual machines (If your host computer has only 4GB RAM, then reduce client machine memory to 1GB)
 
 Start both machines. 
-
 {\small{If you got an error about host only network then open Main Menu, choose File Preferences and choose Network and add Host Only Network.}}
 
-Username and password for both machines are student, student.
+Username and password for both machines are student.
 
-Username: student
-Password: student
-Student user are in sudo group and can start administrator shell with sudo command.
+Student user are in sudo group and can start administrator shell with \emph{sudo} command.
 
-Log on to client and add two addresses on /etc/hosts
+Log on to client and add two addresses on \emph{/etc/hosts}
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 echo "192.168.56.200 wp.planet.zz">>/etc/hosts
 \end{minted}
 
+Test \emph{wp.planet.zz} with ping command.
+
 \section{Installation of the WordPress}
 All following commands must executed as root user. To get root permissions in Ubuntu Server used in this lab type:
-
-
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 sudo -i
 \end{minted}
 
-
-
-This lab demands installing software for that update the local package cache.
-
-
+For installing new software, update the local package cache in client and server:
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 apt-get update
 \end{minted}
 
-If you have time then do system upgrade
+Upgrade both systems:
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 apt-get dist-upgrade
 \end{minted}
 
-Install apache2 webserver and mysql database.
+Install apache2 web server and \gls{MySQL} database on server:
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 apt-get install apache2 mysql-server ssh php5 php5-mysql 
 apt-get install apache2-utils libapache2-mod-php5
 \end{minted}
 
-Download the latest version of WordPress engine.
+Download the latest version of WordPress engine on server:
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 wget http://wordpress.org/latest.tar.gz
 \end{minted}
 
-Unpack dowloaded \emph{latest.tar.gz} archive to  /var/www directory using tar utility.
-
+Unpack downloaded \emph{latest.tar.gz} archive to server's \emph{/var/www} directory using tar utility:
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 sudo tar zxvf latest.tar.gz --directory=/var/www/
 \end{minted}
 
-Creade new mysql database called wp and database user student. Grant all privileges on database wp to user student.
+On server, create new \gls{MySQL} database called \emph{wp} and database user \emph{student}. Grant all privileges on database \emph{wp} to user \emph{student}:
 
 \begin{minted}[frame=lines, framesep=2mm]{bash}
 mysql -u root -p
@@ -131,18 +122,18 @@ GRANT ALL PRIVILEGES ON wp.* TO 'student'@'localhost' IDENTIFIED BY 'student';
 quit
 \end{minted}
 
-Create a new virtual host for wordpress 
-\marginpar{\rule[-.9cm]{1pt}{1pt}TODO}
+On server, create a new virtual host for wordpress 
+
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 cp /etc/apache2/sites-available/default /etc/apache2/sites-available/wp
 \end{minted}
 
-Change the owner and the group to apache2 system user/group for wordpress directories and files to ensure that web server can read and write those files.
+On server, change the owner and the group to apache2 system user/group for wordpress directories and files for ensure that web server can read and write those files.
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 chown www-data:www-data /var/www/wordpress -R
 \end{minted}
 
-Change root directory (DocumentRoot) for new virtualhost and add server name field (ServerName) to virtualhosts configuration file   /etc/apache2/sites-available/wp
+On server, change a document root directory (DocumentRoot) for new virtual-host and add ServerName field to virtualhosts configuration file \emph{/etc/apache2/sites-available/wp}
 
 
 \begin{minted}[frame=lines, framesep=2mm]{bash}
@@ -152,26 +143,23 @@ DocumentRoot /var/www/wordpress
 \end{minted}
 
 
-To enable new virtualhost for WordPress use a2ensite utility
+To enable new virtualhost for WordPress use \emph{a2ensite} utility (on server)
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 a2ensite wp
 \end{minted}
 
 Change wordpress configuration file
-/var/www/wordpress/wp-config-sample.php
+\emph{/var/www/wordpress/wp-config-sample.php}
 
 Set correct values for defines DB\_NAME, DB\_USER, DB\_PASSWORD as:
-
-define('DB\_NAME', 'wp');
-
+\begin{minted}[frame=lines,framesep=2mm]{php}
+/** MySQL database name */
+define('DB_NAME', 'wp');
 /** MySQL database username */
-
-define('DB\_USER', 'student');
-
+define('DB_USER', 'student');
 /** MySQL database password */
-
-define('DB\_PASSWORD', 'student');
-
+define('DB_PASSWORD', 'student');
+\end{minted}
 
 Copy sample configuration file to the real configuration file.
 \begin{minted}[frame=lines,framesep=2mm]{bash}
@@ -191,8 +179,15 @@ Choose Install
 
 \subsection{Testing Your WordPress Installation against simpler DOS attacks}
 
+\begin{Verbatim}[samepage=true,frame=single,
+label=Discussion,framesep=2mm,rulecolor=\color{blue},commandchars=\\\{\}]
+How many requests per second the default installation of WordPress will serve? 
+How many parallel connections this site should handle?
+How many parallel connections and requests can produce one attacker?
+When the website is down? 
+How many seconds client probably waits  before website considered as dead?
+\end{Verbatim}
 
-How many requests default installation will serve? (parallel connections, requests/second)
 Install apache2 utils on CLIENT computer, not in the server computer.
 
 \begin{minted}[frame=lines, framesep=2mm]{bash}
@@ -200,9 +195,9 @@ sudo apt-get update
 sudo apt-get install apache2-utils
 \end{minted}
 
-For Fedora/CentOS/RH/Oracle Linux install httpd-utils package.
+In case of Fedora/CentOS/RH/Oracle Linux install httpd-utils package.
 
-Execute Apache Benchmark program ab
+Execute Apache Benchmark program \emph{ab} with parameters discussed:
 \begin{minted}[frame=lines, framesep=2mm]{bash}
 ab -c<NO_CONN> -t<TIME> http://wp.planet.zz/
 \end{minted}
@@ -218,8 +213,9 @@ Test results
 Store test results and the command line used for tests.
 Write down request per second. No of failed requests and No of completed requests.
 
+
 \subsection{Hardening WordPress Installation}
-After successful load generation using ab the server is extremely slow and unresponsive.
+After successful load generation using \emph{ab} command, the server is extremely slow and unresponsive.
 
 \begin{Verbatim}[samepage=true,frame=single,
 label=Discussion,framesep=2mm,rulecolor=\color{blue},commandchars=\\\{\}]
@@ -248,8 +244,7 @@ For backward compatibility with old kernels (2.6.XX series) you can use oom\_adj
 echo "-17" > /proc/$(pidof mysqld)/oom_adj
 \end{minted}
 %$
-Documentation about proc filesystem and OOM:
-\url{http://www.kernel.org/doc/Documentation/filesystems/proc.txt}
+Documentation about proc filesystem and OOM can be found from kernel.org~\footnote{kernel.org - the \emph{proc} filesystem \url{http://www.kernel.org/doc/Documentation/filesystems/proc.txt}}
 
 Not mandatory task: Modify mysql upstart config file to set OOM adjustment score.
 
