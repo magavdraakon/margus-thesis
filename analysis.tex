@@ -152,76 +152,74 @@ The name of the new course is Securing IT Infrastructure Services. However, the 
 
 New e-learning course should be given on second year spring semester preceded by course I233 - Operating System Administration\footnote{Curriculum subject I233 \url{https://itcollege.ois.ee/en/curriculum-subject/view?curriculum_id=2&subject_id=130&year=2012}}. However, the continuous education students should pass pre-sessional entry course which covers the basics of GNU/Linux as seen in Appendix~\ref{Preliminary course - dpkg based GNU/Linux} or pass the entry theory test that includes questions presented in Table~\ref{tab:preliminary_test} on page \pageref{tab:preliminary_test} and a practical test listed in Table~\ref{tab:preliminary_practical_test} on page~\pageref{tab:preliminary_practical_test}.
 
-{\color{red} Siin on keelekorrektuur pooleli }
+
 \subsubsection{Analysis of the requirements, scope and restrictions of e-course}
 During several curricula development seminars, the author has established  requirements of this particular e-course according to input from partners such as \gls{EISA}, students' feedback, graduate students feedback and curricula analysis from other higher education institutions and private training companies. 
 
-As main target groups are \gls{EITC} students and IT system administrators who need knowledge and skills to defend their system, the course must be developed according to their needs and consider their with theirs previous background and knowledge. However, for students it means a compulsory prerequisite subjects list but for system administrators it means preliminary course if they need one. Therefore, the preliminary tests as a prerequisite for entering the course are needed to acquire required skills in GNU/Linux and if possible, also include \gls{BSD} family in basic level because OpenBSD is used in \gls{EISA} project S4A.
-The curricula development and authoring a learning materials are funded by EU therefore they  published using licensing terms allows to use materials for teaching the subject and also derive new work if license stays the same.
-Today EITC hands-on labs on GNU/Linux are done using one or two virtual machines but to simulate more realistic situations in laboratory scenarios the number of supportive virtual machines should be more. For example to perform lab “configuring e-mail service” a student needs fours virtual machines. One client, MTA - configured by student, DNS -  configured by student, Other preconfigured MTA and pre configured DNS. For conclusion to provide more realistic lab scenario some pre-configured virtual machines are needed for each lab type or even for each student and this is hard setup for student itself.
-
-Final main requirements are following:
+As main target groups are \gls{EITC} students and IT system administrators who need knowledge and skills to defend their system, the course must be developed according to their needs and consider their previous background and knowledge. However, for students it means a compulsory prerequisite subjects list but for system administrators it means preliminary course if they need one. Therefore, the preliminary tests as  a prerequisite for entering the course are needed to acquire required skills in GNU/Linux and if possible, also include \gls{BSD} family in basic level because OpenBSD is used in \gls{EISA} project S4A.
+The curriculum development and authoring learning materials are funded by EU hence they  will be published using licensing terms that allow using the materials for teaching the subject and derive new work if license stays the same.
+{\color{red} Today EITC hands-on labs on GNU/Linux are done using one or two virtual machines but to simulate more realistic situations in laboratory scenarios the number of supportive virtual machines should be more. }
+ For example, in order to perform the lab “configuring e-mail service”, the student needs four virtual machines: a client;  MTA -- configured by student; DNS -- configured by student; another preconfigured MTA with preconfigured DNS. In conclusion, in order to provide more realistic lab scenario, some pre-configured virtual machines are needed for each lab type or even for each student as it is a rather complicated setup for students themselves.
+ 
+Final main requirements are the following:
 \begin{enumerate}[label=Requirement \arabic*.,leftmargin=*]
-  \item Developed e-course must be usable for \gls{EITC} students and also in continuous education field for system administrators
-  \item Course must contain pre-sessional entry course to GNU/Linux and should cover basics  of the OpenBSD/FreeBSD systems
-  \item Course should contains main aspects of system administration and focus to the defence of the systems
-  \item Developed course materials should released using Creative Commons \gls{CC-BY-SA} license
-  \item Laboratory work should be as realistic as possible including needed infrastructure to run complex infrastructure services. Therefore required solution for set-up hands-on environment in class or home.
+  \item Developed e-course must be usable for \gls{EITC} students and also in continuous education field for system administrators.
+  \item The course must contain a pre-sessional entry course on GNU/Linux and should cover basics  of the OpenBSD/FreeBSD systems.
+  \item The course should contain main aspects of system administration and focus on the defence of the systems.
+  \item Developed course materials should be released using Creative Commons \gls{CC-BY-SA} license.
+  \item Laboratory work should be as realistic as possible, including needed infrastructure to run complex infrastructure services. Therefore a solution for set-up hands-on environment in class or home is required.
 \end{enumerate}
 
 
 \subsection{Learner analysis}
 
 
-The analysis of the target group provided valuable input to the course development because starting point of the course and difficulty level of the hands-on labs depends on the target group level and course content should fill the cap between knowledge/skills of the target group and instructional goals. Therefore, analysis of the target group is needed to design efficient e-learning course.
+The analysis of the target group provided valuable input to the course development because starting point of the course and difficulty level of the hands-on labs depend on the target group level and course content should fill the cap between knowledge/skills of the target group and instructional goals. Therefore, analysis of the target group is needed to design an efficient e-learning course.
 
- According to problem analysis the target group can divided to two separate groups, the students who do not have long working experience and system administrators who have working experience in particular field but often do not have degree or diploma in \gls{ICT} field or they are graduated several years ago.
+As the problem analysis revealed,  the target group can divided into two separate groups, the students who do not have long working experience and system administrators who have working experience in particular field but often do not have degree or diploma in \gls{ICT} field or they have graduated years ago.
 
-The first target group are second and third years students who already mastered basics of operating systems, GNU/Linux administration and Windows administration. The second target group are system administrators with different background because of deep specializing in enterprises. Common relevant (on course development point of view)  properties are described in Table~\ref{tab:targetgroup}. However, the ethnic, gender and age is out of investigation because irrelevance for designing this course.
+The first target group is second and third year students who have already mastered the basics of operating systems, GNU/Linux administration and Windows administration. The second target group is system administrators whose different backgrounds derive from specializing in enterprises. Common relevant (from the point of view of course development) traits of the target groups are described in Table~\ref{tab:targetgroup}. Any information regarding the ethnic origin, gender or age will not be covered as it is irrelevant to designing this course.
+
 
 \begin{table}[h]
 \centering
-\caption{The target group properties}
+\caption{The target group characteristics}
 
 \begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
 \hline 
 \color{blue}
-Property & \color{blue} Students & \color{blue} System Administrators \\ 
+Characteristic & \color{blue} Students & \color{blue} System Administrators \\ 
 \hline 
-Background & No or few work experience in field & Experience on one or more specialized field \\ 
+Background & Little or no work experience in the field & Experience in one or more specialized field \\ 
 \hline 
-Motivation & To get diploma and valuable work also knowledge/skills needed to protect \gls{ICT} systems & To get knowledge and skills to protect \gls{ICT} systems \\ 
+Motivation & To get diploma and well-paid work, also knowledge/skills needed to protect \gls{ICT} systems & To acquire  knowledge and skills to protect \gls{ICT} systems \\ 
 \hline 
-Time and possibilities & possible to do home work/reading & in practice can not do homework/readings efficiently  \\ 
+Time and possibilities & Possible to do home work/reading & in practice cannot do homework/readings efficiently  \\ 
 \hline 
-Previous knowledge & From \gls{EITC} (GNU/Linux, Windows)  &  heterogeneous, some people are very skilled and some are very weak on field. Most of people do not have proper GNU/Linux experience.  \\ 
+Previous knowledge &  \gls{EITC} (GNU/Linux, Windows)  &  heterogeneous, some people are very skilled and some are very weak on field. Most  do not have proper GNU/Linux experience.  \\ 
 \hline 
-Previous study experience & Good & Lesser \\ 
+Previous study experience & Good & Little \\ 
 \hline 
-Study Stile & Student's style (everything done little before deadlines) & All study should take place during contact hours  \\ 
+Learning stile & Student's style (everything done little before deadlines) & All studying should take place during contact hours  \\ 
 \hline 
-How homogeneous the group are (knowledge and skills) & More flat & heterogeneous \\ 
+Homogeneity of the group (knowledge and skills) & homogeneous & heterogeneous \\ 
 \hline 
-Previous experience in GNU/Linux & Enough to start the course & Poor (only 10\%) passed the theory test~\ref{Preliminary Tests}  \\ 
+Previous experience in GNU/Linux & Enough to start the course & Poor (only 10\%) passed the theory test (Appendix~\ref{Preliminary Tests})  \\ 
 \hline 
 \end{tabular} 
 
 \label{tab:targetgroup}
 \end{table}
  
-Is possible that studying cyber security affects student behaviour for example using learned methodologies to attack live systems. Therefore, special disclaimer need to be added to labs that have also offensive aspects.
+It  is possible that studying cyber security affects student behaviour, for example acquired knowledge may give one an idea of using learned methodologies to attack live systems. Therefore, special disclaimer needs to be added to labs that have also offensive aspects.
  
-For conclusion to the analysis of target group's can stated that course material should be suitable for both groups. First group, the students have advantage because having sufficient time for home readings. However the second group has advantage from previous work experience. Second group's problem is insufficient knowledge about GNU/Linux system and separate short auxiliary course about basic command line is needed before entering to the main course. However some system administrators do not need those course and need for additional course will decided using entry test developed during this thesis.
+To conclude the analysis of target groups it can be stated that course material should be suitable for both groups. First group, the students are at the advantage of having sufficient time for home readings. However, the second group has advantage of previous work experience. Second group's problem is insufficient knowledge about GNU/Linux system and a separate short preliminary course on basic command line is needed before starting the main course. However, some system administrators do not need the preliminary course and the need for additional course will be decided by using entry test developed within this thesis.
 
 
 \subsection{Learning Outcomes}
 
-By establishing learning outcomes the goals of the course should elaborate on and get more specific form. Therefore, they should give impression what to expect from course to the student and composed  \citep[p.~7]{OppeArenduskeskus2010}.
-
-The learning outcomes with threshold criteria described in Table~\ref{tab:learning_outcomes}.
-
+By establishing learning outcomes the goals of the course will be elaborated and get more specific form. Therefore, they should give the students an idea what to expect from course~\citep[p.~7]{OppeArenduskeskus2010}. The learning outcomes with threshold criteria are described in Table~\ref{tab:learning_outcomes}.
 % Students are able to demonstrate common attacks against web applications and explain attacks against \gls{DNS} (or using it for attack) as well able to explain terms \gls{VPN}, \gls{SAN}, \gls{NAS}, \gls{IDS}, \gls{IPS}. Moreover the students able to document installed services.
-
 \begin{table}[h]
 \centering
 \caption{Learning Outcomes}
@@ -233,7 +231,7 @@ The learning outcomes with threshold criteria described in Table~\ref{tab:learni
 \hline 
 
 \hline 
-After completing the e-learning course all students will be able to install, configure and secure  IT infrastructure services as \gls{NTP}, \gls{DNS}, \gls{DHCP}, web servers, firewalls, file servers and authentication services. & Participant installs and configures services and explain configuration choices done during the practical task according to lab scenario.\\ 
+After completing the e-learning course  student will be able to install, configure and secure  IT infrastructure services  such as \gls{NTP}, \gls{DNS}, \gls{DHCP}, web servers, firewalls, file servers and authentication services. & Participant installs and configures services and explains configuration choices made during the practical task based on lab scenario.\\ 
 \hline 
 Student is able to explain basic terms of \gls{NTP}, \gls{DNS}, \gls{DHCP}, web servers, firewalls, file servers and authentication services. 
 & 
@@ -241,32 +239,32 @@ Student is able to explain basic terms of \gls{NTP}, \gls{DNS}, \gls{DHCP}, web 
 Student is able to explain basic concept of \gls{NTP}, \gls{DNS}, \gls{DHCP}, web servers and  basic terminology of IT infrastructure services.
 \\ 
 \hline 
-Student are able to secure web and file services and \gls{NTP}, \gls{DNS}, \gls{DHCP} servers.
+Student is able to secure the web and file services and \gls{NTP}, \gls{DNS}, \gls{DHCP} servers.
 
 & 
-Student installs, configures and secures services according lab guide.
+Student installs, configures and secures services based on lab guide.
 \\ 
 \hline 
-Student are able to test simpler attacks against web services and measure the successiveness of the attack.
+Student is able to test simpler attacks against web services and measure the success of the attack.
 
-& Student demonstrates attacks against web services and explains the result and impact of each attack \\ 
+& Student demonstrates attacks against the web services and explains the result and impact of each attack \\ 
 \hline 
-Student are able to install central authentication services using prepared guide.
+Student is able to install central authentication services using prepared guide.
 & 
 Student configures central authentication system (LDAP, Kerberos, SAMBA4) and client machine to authenticate using central system
 \\
 \hline 
-Student are able to explain following IT infrastructure subjects as: VPN, virtualization, SQL, SAN/NAS/CAS, monitoring, logging, IDS and IPS
+Student is able to explain the following IT infrastructure subjects: VPN, virtualization, \gls{SQL}, SAN/NAS/CAS, monitoring, logging, \gls{IDS} and \gls{IPS}
 & 
-Student are able to define and explain IT infrastructure terminology.
+Student is able to define and explain IT infrastructure terminology.
 \\ 
 
 \hline 
-Student are able to document IT infrastructure service according to documentation instruction guide
+Student is able to document IT infrastructure service based on documentation instruction guide
 
 & 
 
-Student are able do compose documentation of one service according to documentation guidelines. 
+Student is able to compose documentation of one service based on documentation guidelines. 
 \\ 
 \hline 
 
@@ -275,40 +273,43 @@ Student are able do compose documentation of one service according to documentat
 \label{tab:learning_outcomes}
 \end{table}
 
-Designed learning outcomes do not describe every lab and theirs objectives. However, the good learning material needs learning objectives that support the achieve the established learning outcomes. However, sometimes learning outcomes and learning objects defined as the same, but in this thesis the objectives are more detailed then learning outcomes \citep{website:objective_vs_outcome}.
+Designed learning outcomes do not describe every lab and their objectives. However, good learning material requires learning objectives that support  achieving the established learning outcomes. Although sometimes learning outcomes and learning objects are defined the same, in this thesis the objectives are more detailed then learning outcomes \citep{website:objective_vs_outcome}.
 
 \section{Evaluation of Analysis stage}
 
-Accordingly to the \gls{ADDIE} model the evaluation for each stage should performed according to following aspectsseen in Table~\ref{tab:evoluation_analysis} \citep[p.~11]{OppeArenduskeskus2010}. Therefore the evaluation of analysis phase done by self-assessment and peer-assessment methodology according to Estonian e-learning course quality guide assessment matrix \citep{website:quality_mx}.
+According to the \gls{ADDIE} model, the evaluation of analysis stage should be performed by following the aspects presented in Table~\ref{tab:evoluation_analysis} \citep[p.~11]{OppeArenduskeskus2010}. Therefore, the evaluation of analysis phase is carried out by using self-assessment and peer-assessment methodology based on Estonian e-learning course quality guide assessment matrix~\citep{website:quality_mx}.
 
-Evaluation of the analysis phase given in Table~\ref{tab:evoluation_analysis} and it is in questionnaire format with grade scale: One, the quality requirement is not met. Two, the quality requirement is partly met. Three, the quality requirement is mostly met. Four, the quality requirement is fully met.
-
+The evaluation of the analysis phase is presented in Table~\ref{tab:evoluation_analysis} and it is in questionnaire format with grading scale: one, the quality requirement is not met; two, the quality requirement is partly met; three, the quality requirement is mostly met; four, the quality requirement is fully met.
 \begin{table}[h]
 \centering
 \caption{The evaluation of the analysis stage }
 { \small 
 \begin{tabular}{|p{6cm}|p{2cm}|p{5cm}|}
 \hline 
-\color{blue} Evoluation question & \color{blue} Result [1..4] & \color{blue} Comments and references \\ 
+\color{blue} Evaluation  question & \color{blue} Result [1..4] & \color{blue} Comments \\ 
 \hline
-E-learning course corresponds to needs and capabilities of the target group? 
-& 4  &  preliminary course fills the cap (Self-assessment)\\ 
+Does the e-learning course correspond to the needs and capabilities of the target group? 
+& 4  &  Preliminary course fills the cap (Self-assessment)\\ 
 \hline 
-Does course have institutional goal and learning outcomes established a point of student view?
+Does the course have institutional goal and learning outcomes established from the student’s point of view?
 & 4 & Self-assessment  \\ 
 \hline 
-Does e-learning suits the course and are properly explained?
-& 2 & Suits but not specially explained Self-assessment \\ 
+Does e-learning format suit the course?
+& 4 & Suits (Self-assessment) \\ 
 \hline
-Does a course content bind to learning outcomes and reckon with context of e-learning?
-& 3 & Course content is releated with learning outcomes but not specially for e-learning Self-assessment \\ 
+Is the course content associated with learning outcomes and takes the context of e-learning into consideration?
+& 3 & Course content is related with learning outcomes but not specifically with for e-learning (Self-assessment) \\ 
 \hline 
 \end{tabular} 
 }
 \label{tab:evoluation_analysis}
 \end{table}
 
-Although, the this was self-assessment and peer-assessment the Steering Committee of Curricula will assess the Subject Program seen in Appendix~\ref{appendix:SubjecProgram} on summer 2013.
+{\color{red} 
+
+The Steering Committee of Curricula will assess the Subject Program seen in Appendix~\ref{appendix:SubjecProgram} on summer 2013.
+
+}
 
 %{\color{red} 
 %Kas kursus vastab sihtrühma vajadustele ja võimalustele?
