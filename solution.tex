@@ -157,34 +157,45 @@ According to \gls{ADDIE} model the next step should be "Choosing technological t
 \section{Technical implementation of the e-learning course}
 \label{Technical implementation of the e-learning course}
 
-The general aspects for consideration for choosing technical tools and systems for e-learning course are following: availability of e-learning course, Usability of e-learning course, student motivation, adaptivity, suitability for collaboration, standard compliance~\citep{OppeArenduskeskus2010}:
+The general aspects for consideration when choosing technical tools and systems for a e-learning course are the following: availability of the e-learning course, usability of the e-learning course, student motivation, adaptivity, suitability for collaboration, standard compliance~\citep{OppeArenduskeskus2010}:
 
-Technological tools are needed for following activities: 
+Technological tools are needed for following: 
 \begin{itemize}
-\item Sharing study materials
-\item Collaboration between students and lectures and communication tools
-\item Virtualization environment tools
-\item Tools for implementing lab scenarios -- web applications, services, testing programs
+\item tools for sharing study materials;
+\item tools for collaboration and communication between students and lectures;
+\item tools for implementing virtualization environments;
+\item Tools for implementing lab scenarios such as: web applications, services, testing programs.
 \end{itemize}
 
-For sharing study materials the \gls{EITC} wiki~\footnote{\gls{EITC} wiki - \url{https://wiki.itcollege.ee/}} are used because it is public accessible and students can add and edit materials by fixing errors in guides and grading process encourages them to share their knowledge. Study materials are stored in wiki, pdf form. Some tests and temporal assignments are stored into google docs and made available using shared link.
 
-For collaboration also wiki is used to give feedback for student group-works in talk section of the work. All homework are publicly accessible and also reviews. Students even collected all questions asked in defence of the lab and published it. E-mail and Skype are used for usual communication and course forum is implemented in future. Moreover, the configuration files and source files for scripts and learning materials are stored in to public \gls{git} repositories.
+For sharing study materials the \gls{EITC} wiki~\footnote{\gls{EITC} wiki - \url{https://wiki.itcollege.ee/}} is used because it is publicly accessible and students can add and edit materials. Students can grade other students works allowing them to share their knowledge. Study materials are available in MediaWiki, pdf, OpenDocument and text formats. Some tests and temporary assignments are stored into google docs and made available by using shared links.
 
-Virtualization environments are used for all labs. Several virtualization solutions can be used in this e-learning course. For availability the virtual machines are distributed as Open Virtualization Format (\gls{OVA}) files and are usable in different environments~\footnote{ Distributed Management Task Force (\gls{DMTF}) OVF - \url{http://www.dmtf.org/standards/ovf}}.
+The wiki is used by the students to collaborate on assignments and to give feedback to others submissions.
+All homework and reviews are publicly accessible. Even the question asked during the lab defence are published in the wiki by students, helping each other to prepare for future defences.
 
-Availability of the lab in e-learning form should give access for lab infrastructure from outside of the \gls{EITC} computer classes. Therefore a environment of distance study are implemented in \gls{EITC} and constantly developed to accept needs for new e-learning courses. This course initiated new developments for this environment what is described in next subsection.
-Author of this thesis are an architect of the distance study environment and also back- end programmer. In next section the brief overview of the system are given and described new parts of the system developed to support this e-learning course.
+E-mail and Skype are being used for daily communication and a course forum is to be implemented in the future. 
+
+
+Virtualization environments are used for all labs. Several virtualization solutions can be used in this e-learning course. For availability the virtual machines are distributed as Open Virtualization Format (\gls{OVA}) files that are usable in different environments~\footnote{ Distributed Management Task Force (\gls{DMTF}) OVF - \url{http://www.dmtf.org/standards/ovf}}.
+
+
+Remote access to the \gls{EITC} computer class environment should be provided to ensure availability.
+Therefore, an environment of distance study is implemented  and constantly developed in \gls{EITC} to accept the  needs of new e-learning courses. The development of this course initiated new developments in the distance study environment.
+The author of this thesis is an architect of the distance study environment and is also its back- end programmer. 
+
+A brief overview of the system is given in the next section.
 
 \subsection{The Environment of Distance Study}
 \label{The Environment of Distance Study}
-The motivation to develop environment of distance study was initiated by need to increase amount of practical hands-on work in \gls{EITC}. However, the virtualization used in computer classes to teach system administration subjects has limitations the student was not able to continue theirs work after official schedule because virtual machines are stored to local disks of the classroom computer. Moreover, the student was able to use only the same machine like last class and changing classrooms or computers was not possible. However, some students preferred their own laptops for running virtual machines it is hard for labs with several virtual machines because of the requirements for hardware. Moreover, some labs need access to special infrastructure in \gls{EITC} internal LAN, and laptops can not used in this case.
+The motivation to develop the environment of distance study was initiated by the need to increase the amount of practical hands-on work in \gls{EITC}. However, the virtualization used in computer classes to teach system administration subjects has limitations. The students were only able to work on labs during scheduled labs.
+The students virtual machines are stored on local disks of the computer making changing computers impractical. Some students preferred to use their own laptops for running virtual machines. However, the hardware might not be sufficient to support bigger labs with several virtual machines.
 
-Therefore, the development of the environment of distance study were initiated.
+Therefore, the development of the environment of distance study was initiated.
 
-The environment allows students start virtual labs with pre-configured virtual machines. 
+The environment allows students to start virtual labs with pre-configured virtual machines.
+ 
 \subsubsection{Technical implementation}
-For virtualization \gls{API} the libvirt are used because of support for common virtualization hypervisors like \gls{KVM}, Xen, VmWare ESX, LXC and others~\footnote{libvirt - The virtualization API \url{http://libvirt.org/}}. For web interface the Ruby on Rails framework was used. The \gls{LDAP} is used for authentication and Ubuntu Server 12.04 LTS 64bit for host operating system. The architecture of distance lab system is in Figure~\ref{fig:Architecture of Distance Laboratory}.
+For virtualization \gls{API} the libvirt is being used because of support for common virtualization hypervisors like \gls{KVM}, Xen, VmWare ESX, LXC and others~\footnote{libvirt - The virtualization API \url{http://libvirt.org/}}. The web interface is being developed using the Ruby on Rails framework. \gls{LDAP} is being used for authentication and Ubuntu Server 12.04 LTS 64bit as the host operating system. The architecture of the distance lab system is shown in Figure~\ref{fig:Architecture of Distance Laboratory}.
 
 \begin{figure}[ht]
 \centering
@@ -193,10 +204,17 @@ For virtualization \gls{API} the libvirt are used because of support for common 
 \label{fig:Architecture of Distance Laboratory}
 \end{figure}
 
-For supporting new ideas from this thesis the following development has to be done: Implementing scoring table with virtual reward badges, new network configuration infrastructure to support several internal networks to isolate \gls{DOS} attacks generated by students and also the \gls{DHCP} traffic, better feedback for defensive labs allowing automatically test the student achievements in protection of the system.
-The development is not finished except the network configuration part because lack of the resources. Most of the programming work was done by students as diploma projects and supervised by author of this thesis.
-The source code of the distance laboratory system is publicly available on \gls{git} repository~\footnote{The distance laboratory system i-tee -- \url{https://github.com/magavdraakon/i-tee}}
-The system itself is accessible using \gls{EITC} account~\footnote{The i-tee distance laboratory system -- \url{https://elab.itcollege.ee/}}
+To support new ideas from this thesis the following development has to be done:
+\begin{itemize}
+\item implementing a scoring table with virtual reward badges;
+\item implementing a new  network configuration infrastructure to support several internal networks isolating \gls{DOS} attacks generated by the students and the \gls{DHCP} traffic;
+\item implementing a automatic feedback system for students achievements  in defensive labs.
+\end{itemize}
+
+The development is not finished except for the network configuration part. Most of the programming work was done by students as diploma or master projects and supervised by author of this thesis.
+
+The source code of the distance laboratory system is publicly available in a \gls{git} repository~\footnote{The distance laboratory system i-tee -- \url{https://github.com/magavdraakon/i-tee}}.
+The system itself is accessible using a \gls{EITC} account~\footnote{The i-tee distance laboratory system -- \url{https://elab.itcollege.ee/}}.
 %\subsubsection{New developments for distance study environment}
 %
 %\begin{itemize}
@@ -206,69 +224,76 @@ The system itself is accessible using \gls{EITC} account~\footnote{The i-tee dis
 %\end{itemize}
 
 \subsection{Operating Systems used in labs}
-Operating systems should use Open Source software for labs exception of PowerShell according to established requirement (in analysis phase)
 
-To maintain diversity and avoid vendor locking a several different operating systems are used in labs. Lab materials are developed using Ubuntu LTS, because of support and popularity, but to get graded the student should choose one different system for defence at least one lab from following list: OpenBSD, FreeBSD, OpenSolaris, Debian GNU/Linux, Fedora, CentOS, Oracle Linux, OpenSuse. Only restriction that chosen system used different packaging from other systems. For example if student chooses Ubuntu to do the \gls{DNS} lab then for \gls{DHCP} should used operating system without debian packaging system.
+According to the requirement established in the analysis, the labs should use open source operating systems.
+Several operating systems are being used in labs to maintain diversity and avoid vendor locking.
+Lab materials are developed with Ubuntu LTS in mind, because of its support and popularity. To get graded the student should choose one different system for defence in at least one lab. The system could be chosen from the following list: OpenBSD, FreeBSD, OpenSolaris, Debian GNU/Linux, Fedora, CentOS, Oracle Linux, OpenSuse. The only restriction is that the chosen system should use a different packaging. For example if a student chooses Ubuntu to do the \gls{DNS} lab then for the \gls{DHCP} lab a operating system without debian packaging system should be used.
 
-Labs with offensive parts are done using Kali GNU/Linux distribution but student can also use BackTrack if they want.
+Labs with offensive parts are done using Kali GNU/Linux distribution but students can also choose BackTrack.
 
-The main reason to left choice is open that in labs each student must demonstrate skills and knowledge according to learning objectives and this is more important than knowledge of one system.
+The main reason the choice is left open is that in labs each student must demonstrate skills and knowledge according to the learning objectives that are more important than knowledge of one system.
 
 \subsection{Choosing software for Root Services lab}
-The Root Services labs contains \gls{NTP}, \gls{DNS} and \gls{DHCP} services. However, for fulfilling a learning objectives the software should work on chosen lab platform GNU/Linux Ubuntu Server. 
+The Root Services labs contains \gls{NTP}, \gls{DNS} and \gls{DHCP} services. However, for fulfilling the learning objectives the software should work on the chosen lab platform -- GNU/Linux Ubuntu Server. 
+
 \subsubsection{The Network Time Protocol server}
 Possible choices for \gls{NTP} server software are \emph{OpenNTPD}~\footnote{OpenNTPD \url{http://www.openntpd.org/}
-} from OpenBSD  project and the Network Time Protocol Distribution \emph{ntpd} from  Internet Systems Consortium \gls{ISC}~\footnote{Network Time Protocol Distribution \url{http://support.ntp.org/}}. Both packages are installable from ubuntu repositories using \emph{apt-get} command the Network Time Protocol Distribution are stored in main ubuntu repository but OpenNTPD is from universe section. Therefore the \gls{ntpd} are slightly more supported by Ubuntu developers.
-However, the OpenNTP is designed to be free, simple and secure implemetation of the \gls{NTP} protocol the \gls{ISC}'s \emph{ntpd} software is free, \gls{IETF} standard compliant and from main/net repository~\footnote{Information from \emph{apt-get show ntp} and \emph{apt-get show openntpd}}. Therefore the \emph{ntpd} daemon was chosen for \gls{NTP} lab.
+} from OpenBSD  project and the Network Time Protocol Distribution \emph{ntpd} from  Internet Systems Consortium \gls{ISC}~\footnote{Network Time Protocol Distribution \url{http://support.ntp.org/}}. Both packages are installable from ubuntu repositories using the \emph{apt-get} command. The Network Time Protocol Distribution are stored in the main ubuntu repository but OpenNTPD is from the universe section. Therefore the \gls{ntpd} is  slightly more supported by Ubuntu developers.
+However, the OpenNTP is designed to be a free, simple and secure implementation of the \gls{NTP} protocol. The \gls{ISC}'s \emph{ntpd} software is free, \gls{IETF} standard compliant and from main/net repository~\footnote{Information from \emph{apt-get show ntp} and \emph{apt-get show openntpd}}. Therefore the \emph{ntpd} daemon was chosen for \gls{NTP} lab.
 \subsubsection{The Domain Name System server}
-Several \gls{DNS} servers can be used for lab as: MaraDNS~\footnote{ MaraDNS is open source, lightweight \gls{DNS} server -- \url{http://www.maradns.org/}}, PowerDNS~\footnote{PowerDNS an open source feature rich \gls{DNS} server -- \url{https://www.powerdns.com/}}, Unbound~\footnote{Unbound is a validating, recursive, and caching \gls{DNS} resolver -- \url{http://unbound.net/}}, NSD~\footnote{NSD is an authoritative only, high performance, simple and open source name server - \url{http://www.nlnetlabs.nl/projects/nsd/}} and bind because of installation can be done using standard packages from Ubuntu GNU/Linux repositories\footnote{Ubuntu packages --  \url{http://packages.ubuntu.com/}}.
+Several \gls{DNS} servers can be used in the lab such as: MaraDNS~\footnote{ MaraDNS is open source, lightweight \gls{DNS} server -- \url{http://www.maradns.org/}}, PowerDNS~\footnote{PowerDNS an open source feature rich \gls{DNS} server -- \url{https://www.powerdns.com/}}, Unbound~\footnote{Unbound is a validating, recursive, and caching \gls{DNS} resolver -- \url{http://unbound.net/}}, NSD~\footnote{NSD is an authoritative only, high performance, simple and open source name server - \url{http://www.nlnetlabs.nl/projects/nsd/}} and \gls{BIND}, because of installation can be done using standard packages from Ubuntu GNU/Linux repositories\footnote{Ubuntu packages --  \url{http://packages.ubuntu.com/}}.
 
-Several \gls{DNS} implementations are not considered for lab, because they lack support for recursive queries or designed to be caching name servers. Moreover, even the \gls{DNS} lab is not using today the \gls{DNSSEC}, the support for it is needed for future improvements. Therefore the unbound, NSD and bind are possible choices what are installable from Ubuntu package repositories. The NSD is suitable for building authoritative servers and can not be used as only \gls{DNS} server for lab.
-However, the unbound with NSD and BIND are suitable for this lab the BIND name-server are wider user base and number of the installations~\footnote{The \gls{ISC} BIND -- \url{https://www.isc.org/software/bind}}. Therefore, the BIND name server was chosen for this lab.
+Several \gls{DNS} implementations are not considered for lab, because they lack support for recursive queries or  were designed to be caching only name servers. However, the current \gls{DNS} lab is not using the \gls{DNSSEC} standard, its support is needed for future improvements. Therefore the unbound, NSD and \gls{BIND} are possible choices that are installable from the Ubuntu package repositories. The NSD is suitable for building authoritative (only) servers and can not be used in a \gls{DNS} lab alone.
+However, the unbound with NSD or \gls{BIND} alone is suitable for this lab. The \gls{BIND} name-server has a wider user base and a number of installations~\footnote{The \gls{ISC} \gls{BIND} -- \url{https://www.isc.org/software/bind}}. Therefore, the \gls{BIND} name server was chosen for this lab.
 
 
 \subsection{Choosing software for lab: Protecting Web Application Against (D)DOS Attacks}
 
 \subsubsection{Web server}
-According to Netcraft Web Server Survey (May 2013) the share of active websites are: Apache~\footnote{Apache \gls{HTTP} server -- \url{http://projects.apache.org/projects/http_server.html}} -- 55.07\%,  nginx~\footnote{nginx is an HTTP and reverse proxy server -- \url{http://nginx.org/en/}} -- 13.27\%	, Microsoft Internet Information Server~\footnote{Microsoft Internet Information server -- http://www.iis.net/} -- 11.08\% \citep{website:netcraft_web}. Microsoft IIS do not qualify because it is not open source software. Therefore, the apache chosen as main web server for lab because of market share. However, NGINX is also important platform and will be used for \gls{TLS} termination on the lab because students should able to configure \gls{HTTPS} as well and due the lab scenario in Appendix~\ref{Protecting an Insecure Web Application} separate \gls{TLS} terminator service is needed.
+According to Netcraft Web Server Survey (May 2013) the web server shares of active websites are: Apache~\footnote{Apache \gls{HTTP} server -- \url{http://projects.apache.org/projects/http_server.html}} -- 55.07\%,  nginx~\footnote{nginx is an HTTP and reverse proxy server -- \url{http://nginx.org/en/}} -- 13.27\%	, Microsoft Internet Information Server~\footnote{Microsoft Internet Information server -- http://www.iis.net/} -- 11.08\% \citep{website:netcraft_web}. Microsoft IIS does not qualify because it is not open source software.  Therefore, the apache is chosen as the primary web server for the lab because of its market share. However, the NGINX is also a important platform and will be used for \gls{TLS} termination in the lab, because students should be able to configure \gls{HTTPS} as well.
 
 \subsubsection{Caching web application acceleration server}
-Web acceleration servers are used to reduce load of the web server and used as mitigation method for small grade denial of service attacks. However, in case of attack where all network capacity is occupied by attack traffic it will not help completely but when small attack traffic makes web site unavailable the web acceleration are a possible solution. Several web application acceleration and caching servers are popular as: Varnish Cache~\footnote{Varnish is a web application accelerator -- \url{https://www.varnish-cache.org}}, NGINX~\footnote{Nginx is an HTTP and reverse proxy server -- \url{http://nginx.org/en/}}, Squid~\footnote{Squid is a caching proxy for the Web -- \url{http://www.squid-cache.org/}},
-The personal cache systems, non open source and hardware acceleration are not compared as not suitable for the lab because license, or technical limitations.
-However, the Squid and Nginx are usable for web application acceleration the Varnish Cache have own configuration language that gives advantage for custom filtering. Therefore, the Varnish Cache was chosen for this lab.
+Web acceleration servers are used to reduce the load on the web server and as a mitigation method for small grade denial of service attacks. Is is a possible solution in case of a small attack traffic, but it is useless when all network capacity is occupied by the attack. 
+Several popular web application acceleration and caching servers are: Varnish Cache~\footnote{Varnish is a web application accelerator -- \url{https://www.varnish-cache.org}}, NGINX~\footnote{Nginx is an HTTP and reverse proxy server -- \url{http://nginx.org/en/}}, Squid~\footnote{Squid is a caching proxy for the Web -- \url{http://www.squid-cache.org/}}.
+The personal cache systems, non open source systems and hardware acceleration systems are not compared because of license or technical limitations.
+Even though, the Squid and Nginx are usable for web application acceleration, the Varnish Cache has its own configuration language, giving it an advantage for custom filtering. Therefore, the Varnish Cache was chosen for this lab.
 
 \subsubsection{Web application for testing the web acceleration}
-However, the list of different web applications is too big to give reasonable choice, some applications are common and suitable for load testing and web acceleration for example: WordPress~\footnote{WordPress is open souce website or blog engine -- \url{http://wordpress.org/}}, MediaWiki~\footnote{MediaWiki is open source wiki package -- \url{http://www.mediawiki.org/wiki/MediaWiki}} and  Drupal~\footnote{Drupal is an open source content management platform -- \url{http://drupal.org/}}. However, the students can choose own web application from previous list the lab, but for guide the WordPress are chosen because of easy installation and good documentation.
+The list of different web applications is long and makes it difficult to give a reasonable choice.
+Some applications are common and suitable for load testing and web acceleration for example: WordPress~\footnote{WordPress is open souce website or blog engine -- \url{http://wordpress.org/}}, MediaWiki~\footnote{MediaWiki is open source wiki package -- \url{http://www.mediawiki.org/wiki/MediaWiki}} and  Drupal~\footnote{Drupal is an open source content management platform -- \url{http://drupal.org/}}. Even though, the students can choose their own web application from the previous list, the lab guide covers WordPress because of its easy installation and good documentation.
 
 
 \subsection{Choosing a vulnerable web application for Protecting an Insecure Web Application lab}
 
-The main need for vulnerable web application comes from scenario: Each student installs vulnerable system and must stop basic attacks without reprogramming a web application to reflect usual system administrator's work,  install needed applications and secure them.
+The main need for a vulnerable web application comes from the scenario: Each student installs a vulnerable system and must stop basic attacks without reprogramming a web application.
 
-Although ready made virtual appliances can be used to install vulnerable web application the
-system administrator should be able to install vulnerable application itself to understood a main architecture of web application to choose best protection methods. Therefore chosen application should be free and open source, easily installable, implement at leas stored and reflected \gls{XSS} and several injection type attacks like \gls{SQLi} (usual and blind) and \gls{CSRF}.
+Although, ready made virtual appliances can be used to install a vulnerable web application the
+system administrator should be able to install it himself, helping him to understand the main architecture of a web application to choose suitable protection methods. Therefore, the chosen application should be free and open source, easily installable, implementing  at least stored and reflected \gls{XSS}, several injection type attacks like \gls{SQLi} (usual and blind) and \gls{CSRF}.
 
 \subsubsection{WebGoat}
-WebGoat is a free, open source insecure J2EE web application designed to teach web application security lessons~\footnote{WebGoat -- \url{https://www.owasp.org/index.php/Category:OWASP_WebGoat_Project}}.  However the WebGoat is one of the best application for teaching the installation and J2EE requirement is not suitable for system administrators with lesser skills even authors did installation script it hides too many steps valuable for students. 
+WebGoat is a free, open source insecure J2EE web application designed to teach web application security lessons~\footnote{WebGoat -- \url{https://www.owasp.org/index.php/Category:OWASP_WebGoat_Project}}.  Even though, the WebGoat is one of the best applications for teaching web vulnerabilities, the installation and J2EE requirement is not suitable for system administration students because it has too many steps to follow.
 
 
 \subsubsection{Damn Vulnerable Web Application}
-The Damn Vulnerable Web Application \gls{DVWA} is web application with several vulnerabilities to be suitable for testing several security vulnerabilities and tools. However, the tool does not implement all \gls{OWASP} top ten attacks the most relevant are presented. The tool is written using PHP/MySQL which are taught for all \gls{EITC} students and known also by system administrators. Moreover the tool is designed for learning and students can choose difficulty level of exploiting \citep{website:dvwa}.
+The Damn Vulnerable Web Application \gls{DVWA} is web application with several vulnerabilities. It is suitable for testing several security vulnerabilities and tools. Even though, the tool does not implement all \gls{OWASP} top ten attacks, the most relevant are presented. The tool is written using PHP/MySQL which are taught to all \gls{EITC} students and usually known by system administrators. The tool is designed for learning and students can choose the difficulty level of exploiting~\citep{website:dvwa}.
 
-Although the progam is easy to install. Integrated study materials, variable level of  difficulties of vulnerability, the coverage is not best but sufficient.
+The program is easy to install. It has integrated study materials and variable levels of vulnerabilities.
+The vulnerability coverage is not best compared to WebGoat but is sufficient for this lab.
 
 \subsubsection{NOWASP (Mutillidae)}
-NOWASP (Mutillidae)~\footnote{NOWASP (Mutillidae) -- \url{http://sourceforge.net/projects/mutillidae/}} a web pen-test practice application is a free, open source vulnerable web-application for labs, security enthusiast, classrooms, \gls{CTF}, and vulnerability assessment tool targets. \citep{website:Mutillidae} Although, the tool have video, study materials, good support for \gls{OWASP} top ten the development is relied to one person and community support is thin.
+NOWASP (Mutillidae)~\footnote{NOWASP (Mutillidae) -- \url{http://sourceforge.net/projects/mutillidae/}} web pen-test practice application is a free, open source vulnerable web-application for labs, security enthusiasts, classrooms, \gls{CTF}, and vulnerability assessment tool targets. \citep{website:Mutillidae} Although, the tool documentation has videos, study materials and a good support for \gls{OWASP} top ten vulnerabilities, but the development relies on one person and the community support is thin.
 \subsubsection{SQLol}
 SQLol~\footnote{SQLol -- \url{https://github.com/SpiderLabs/SQLol
-}} is free and open source web application designed to test \gls{SQLi} type injectons and complatible with \gls{MySQL}, gls{PostgreSQL} and uses \gls{PHP}. However, the application have comprehensive capabilites on \gls{SQLi}, the other vulnerabilities are not covered.
+}} is a free and open source web application designed to test \gls{SQLi} type attacks and is compatible with \gls{MySQL}, gls{PostgreSQL}. Even though, the application has comprehensive capabilities on \gls{SQLi}, the other vulnerabilities are not covered.
 
-Because of defensive nature on developed course only simple vulnerabilities are needed to demonstrate a problem and all vulnerable applications are suitable for installing. To create diversity all applications what can installed easily can be used in lab. All examples are given using \gls{DVWA} but to get the grade every student should choose another vulnerable application, install it and protect it.
 
+In conclusion, because of the defensive nature of the developed course, only simple vulnerabilities are needed to demonstrate a problem and all vulnerable applications are suitable for the lab. To create diversity all the applications that can be installed easily may be used in the lab. All the examples are given using \gls{DVWA} (because of its name) but to get the grade every student should choose another vulnerable application from the list, install  and protect it.
+
+{\color{red} Siin on pooleli}
 \subsection{Web application firewall and database firewall}
 
 
-According to lab scenario the \gls{SQLi} attacks should be stopped before database. Several proprietary database firewall products like Oracle Audit Vault and Database Firewall and SecureSphere Database Firewall can provide functionality needed. However, they are not applicable in this lab because they are not free and open source software products.
+According to lab scenario the \gls{SQLi} attacks should be stopped before database (Appendix~\ref{Protecting an Insecure Web Application}). Several proprietary database firewall products like Oracle Audit Vault and Database Firewall and SecureSphere Database Firewall can provide functionality needed. However, they are not applicable in this lab because they are not free and open source software products.
 
 Only functional open source database firewall with enterprise scale functionality like web based administrative interface, support for different databases and easy to use for database administrator was GreenSQL open source database firewall. However, the development of this version is stopped and now even download is not possible from vendor homepage~\footnote{GreenSQL -- http://www.greensql.com/}, the source files and pre-build packages for Ubuntu Server 12.04 LTS 64bit are downloadable from \gls{EITC} lab page~\footnote{\gls{EITC} fork of GreenSQL database -- \url{http://elab.itcollege.ee:8000/Day3/}}. Moreover the author of this thesis fixed the source code of the firewall to get it compile with newer GNU/C compiler.
 

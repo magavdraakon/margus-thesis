@@ -274,19 +274,28 @@ sed 's/:80>/:8080>/' -i /etc/apache2/sites-enabled/wp
 \end{minted}
 
 
-Install varnish and change varnish default port from 6081 to 80
+Install varnish web accelerator 
+
+\begin{minted}[frame=lines,framesep=2mm]{bash}
 apt-get install varnish
-change /etc/default/varnish configuration file
-Change line
-\begin{minted}[frame=lines,framesep=2mm]{bash}
-DAEMON_OPTS="-a *:6081 \ 
-\end{minted}
-to
-\begin{minted}[frame=lines,framesep=2mm]{bash}
-DAEMON_OPTS="-a *:80 \
 \end{minted}
 
-This means that varnish will listen port 80 on webserver
+Open configuration file for varnish defaults: \emph{/etc/default/varnish} and change default listen port from 6081 to 80 \emph{varnis}  in \emph{DAEMON\_OPTS} section.
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+DAEMON_OPTS="-a :6081 \
+             -T localhost:6082 \
+             -f /etc/varnish/default.vcl \
+             -S /etc/varnish/secret \
+             -s malloc,256m" 
+\end{minted}
+The port is specified with flag \emph{-a}
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+DAEMON_OPTS="-a *:80 \
+             -T localhost:6082 \
+             -f /etc/varnish/default.vcl \
+             -S /etc/varnish/secret \
+             -s malloc,256m" 
+\end{minted}
 
 Restart apache and varnish services
 \begin{minted}[frame=lines,framesep=2mm]{bash}
@@ -302,15 +311,16 @@ netstat -lp | grep varnish
 
 \begin{Verbatim}[frame=single,
 label=Command output,framesep=2mm,rulecolor=\color{red},commandchars=\\\{\}]
-margus@marguspc:~$ 
-\fbox{\color{red}varnsih}  \fbox{\color{red}TODO}
+student@opiise:~$ netstat -lp | grep varnish
+tcp        0      0 \fbox{\color{red}*:80}             *:*                LISTEN  1869/varnishd   
+tcp        0      0 localhost:6082    *:*                LISTEN  1868/varnishd   
 \end{Verbatim}
 %$
+%\fbox{\color{red}varnsih}  \fbox{\color{red}TODO}
+
+Test new system with AB utility using exactly the same test parameters and conditions as before \emph{varnish}
 
 
-Test new system with AB utility.
-
-Ensure that same testing conditions and compare the results.
 \begin{Verbatim}[samepage=true,frame=single,
 label=Discussion,framesep=2mm,rulecolor=\color{blue},commandchars=\\\{\}]
 How many requests are completed during the test?
@@ -319,9 +329,19 @@ Is it now safer or attacker can take it down with same effort?
 (You can guess that something is still wrong, and figure out what exactly)
 \end{Verbatim}
 
-Links:
+
+\begin{Verbatim}[samepage=true,frame=single,
+label=Discussion,framesep=2mm,rulecolor=\color{blue},commandchars=\\\{\}]
+What can be used as possible alternative for \emph{varnish} web accelerator?
+What about \gls{TLS}, do You see any problems?
+What about authenticated users?
+\end{Verbatim}
+
+Additional and optional reading:
 \href{http://kaanon.com/blog/work/making-wordpress-shine-varnish-caching-system-part-1}{Making wordpress shine with Varnish caching system}
+
 \href{http://kaanon.com/blog/varnish/making-wordpress-shine-varnish-caching-system-part-2}{Making wordpress shine with Varnish caching system part 2}
+
 \href{http://www.google.com/producer/editions/CAowvZtX/full_circle_magazine_57_lite}
 {Full Circle Magazine 57}
 
