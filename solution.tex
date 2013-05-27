@@ -20,7 +20,7 @@ Developed tests and materials of the course will be listed in course syllabus de
 
 During the analysis of the target group the need for preliminary course emerged to homogenize the knowledge and skill level of the participants.
 
-The objectives and assessments for preliminary course are the following.
+The objectives and assessments for preliminary course are the following:
 \begin{itemize}
 \item Students are able to work with command line using GNU/Linux, work with files, manage software, manage disks and partitions, manage users and groups, configure networks and user's login session.  The pass mark is more than 50\% of randomly chosen test version, referred to in   Appendix~\ref{Preliminary Tests} in Table~\ref{tab:preliminary_practical_test}.
 \item Students are able to explain basic terminology of operating systems such as kernel, GUI, shell, Virtual memory, authentication, authorization, RAM, cache, buffer, latency, throughput, file system, process, thread, password hash, DAC, MAC, RBAC, command parameter, command flag, file system hierarchy, environment variable). The pass mark is over 51\% of closed book test such as presented in a sample in  Appendix~\ref{Preliminary Tests}.
@@ -35,7 +35,7 @@ Deriving from previous objectives, six practical classes are needed:~\footnote{A
 \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
 \item Operating system basics (one day)
 \item Basic networking IPv4/IPv6, TCP/IP (one day)
-\item GNU/Linux basics (and OpenBSD/FreeBSD basics) (16h) as described in Appendix~\ref{Preliminary course - dpkg based GNU/Linux} on page~\pageref{Preliminary course - dpkg based GNU/Linux}
+\item GNU/Linux basics (and OpenBSD/FreeBSD basics) (2 days) as described in Appendix~\ref{Preliminary course - dpkg based GNU/Linux} on page~\pageref{Preliminary course - dpkg based GNU/Linux}
 \item Scripting in BASH (2 days)
 \item Scripting in Python (1.5 days)
 \item Scripting in PowerShell (1.5 days)
@@ -217,7 +217,7 @@ To support new ideas from this thesis the following development has to be done:
 \item implementing a automatic feedback system for students achievements  in defensive labs.
 \end{itemize}
 
-The development is not finished except for the network configuration part. Most of the programming work was done by students as diploma or master projects and supervised by author of this thesis.
+The development is not finished except for the network configuration part. Most of the programming work was done by students as diploma or master projects and supervised by the author of this thesis.
 
 The source code of the distance laboratory system is publicly available in a \gls{git} repository~\footnote{The distance laboratory system i-tee -- \url{https://github.com/magavdraakon/i-tee}}.
 The system itself is accessible using a \gls{EITC} account~\footnote{The i-tee distance laboratory system -- \url{https://elab.itcollege.ee/}}.
@@ -240,7 +240,7 @@ Labs with offensive parts are done using Kali GNU/Linux distribution but student
 The main reason the choice is left open is that in labs each student must demonstrate skills and knowledge according to the learning objectives that are more important than knowledge of one system.
 
 \subsection{Choosing software for Root Services lab}
-The Root Services labs contains \gls{NTP}, \gls{DNS} and \gls{DHCP} services. However, for fulfilling the learning objectives the software should work on the chosen lab platform -- GNU/Linux Ubuntu Server. 
+The Root Services lab contains \gls{NTP}, \gls{DNS} and \gls{DHCP} services. However, for fulfilling the learning objectives the software should work on the chosen lab platform -- GNU/Linux Ubuntu Server. 
 
 \subsubsection{The Network Time Protocol server}
 Possible choices for \gls{NTP} server software are \emph{OpenNTPD}~\footnote{OpenNTPD \url{http://www.openntpd.org/}
@@ -287,7 +287,7 @@ The program is easy to install. It has integrated study materials and variable l
 The vulnerability coverage is not best compared to WebGoat but is sufficient for this lab.
 
 \subsubsection{NOWASP (Mutillidae)}
-NOWASP (Mutillidae)~\footnote{NOWASP (Mutillidae) -- \url{http://sourceforge.net/projects/mutillidae/}} web pen-test practice application is a free, open source vulnerable web-application for labs, security enthusiasts, classrooms, \gls{CTF}, and vulnerability assessment tool targets. \citep{website:Mutillidae} Although, the tool documentation has videos, study materials and a good support for \gls{OWASP} top ten vulnerabilities, but the development relies on one person and the community support is thin.
+NOWASP (Mutillidae)~\footnote{NOWASP (Mutillidae) -- \url{http://sourceforge.net/projects/mutillidae/}} web pen-test practice application is a free, open source vulnerable web-application for labs, security enthusiasts, classrooms, \gls{CTF}, and vulnerability assessment tool targets. \citep{website:Mutillidae} Although, the tool documentation has videos, study materials and a good support for \gls{OWASP} top ten vulnerabilities, the development relies on one person and the community support is thin.
 \subsubsection{SQLol}
 SQLol~\footnote{SQLol -- \url{https://github.com/SpiderLabs/SQLol
 }} is a free and open source web application designed to test \gls{SQLi} type attacks and is compatible with \gls{MySQL}, gls{PostgreSQL}. Even though, the application has comprehensive capabilities on \gls{SQLi}, the other vulnerabilities are not covered.
@@ -301,7 +301,7 @@ In conclusion, because of the defensive nature of the developed course, only sim
 
 According to the lab scenario the \gls{SQLi} attacks should be stopped before they reach the database (Appendix~\ref{Protecting an Insecure Web Application}). Several proprietary database firewall products as: \emph{Oracle Audit Vault and Database Firewall} and \emph{SecureSphere Database Firewall} can provide the needed functionality. They are not applicable in this lab because they are not free and open source software products.
 
-Only open source database firewall with sufficient functionality such as: web based administrative interface, support for different databases and easy to use was GreenSQL database firewall. However, the development of this product is discontinued  and it can not be downloaded from the vendor homepage~\footnote{GreenSQL -- http://www.greensql.com/}, its source files and pre-build packages for Ubuntu Server 12.04 LTS 64bit are downloadable from the \gls{EITC} lab page~\footnote{\gls{EITC} fork of GreenSQL database -- \url{http://elab.itcollege.ee:8000/Day3/}}. Additionally, the author of this thesis fixed the source code of the firewall to make it compile with newer GNU/C compiler.
+Only open source database firewall with sufficient functionality such as: web based administrative interface, support for different databases and easy to use was GreenSQL database firewall. Although, the development of this product is discontinued  and it can not be downloaded from the vendor homepage~\footnote{GreenSQL -- http://www.greensql.com/}, its source files and pre-build packages for Ubuntu Server 12.04 LTS 64bit are downloadable from the \gls{EITC} lab page~\footnote{\gls{EITC} fork of GreenSQL database -- \url{http://elab.itcollege.ee:8000/Day3/}}. Additionally, the author of this thesis fixed the firewall source code to make it compile with a newer GNU/C compiler.
 
 For learning the basics of database fire-walling, the enterprise product is not needed and for this lab the open source version of the GreenSQL database firewall was chosen.
 
