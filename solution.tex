@@ -10,30 +10,32 @@ The Design phase contains four steps: first, designing the learning objectives; 
 
 \subsection{Design of the course content and learning objectives}
 
-In the analysis phase a learning outcomes were established. For design an adequate course content two aspects are required, learning objectives and assessment tests. Likewise in software development field the tests should be designed first to ensure creation of consistent learning materials and labs. Therefore all learning objectives are given with evaluation methods and values.  
+In the analysis phase the learning outcomes were established. Two components need to be considered when designing adequate course content -- learning objectives and assessment tests. Similarly to the software development field the tests should be designed first to ensure creation of consistent learning materials and labs. Therefore all learning objectives are presented along with evaluation methods and values.
 
-The terms and topics used in assessment should stay on level the students should know at the end of the lab and derived from learning objectives established in analysis phase.
+The terms and topics used in assessment should be kept on the level the students should know at the end of the lab and derived from learning objectives established in analysis phase.
 
-Developed tests and materials of the course will be listed in course syllabus~\ref{Course Syllabus}.
+Developed tests and materials of the course will be listed in course syllabus described in point ~\ref{Course Syllabus}.
 
-\subsubsection{Pre-requirements courses}
+\subsubsection{Pre-requirement courses}
 
-During the analysis of the target group the need for preliminary course was decided to homogenize a knowledge and a skill level of the participants.
+During the analysis of the target group the need for preliminary course emerged to homogenize the knowledge and skill level of the participants.
 
-The objectives and assessments for preliminary course:
+The objectives and assessments for preliminary course are the following.
 \begin{itemize}
-\item Student are able to work with command line using GNU/Linux and are able: working with files, manage software, manage disks and partitions, manage users and groups, configure networks and user's login session. Minimal level for pass is to gain more then 50\% of randomly chosen test version, included in Appendix~\ref{Preliminary Tests} in Table~\ref{tab:preliminary_practical_test}
-\item Student are able to explain basic terminology of operating systems sush as: kernel, GUI, shell, Virtual memory, authentication, authorization, RAM, cache, buffer, latency, throughput, file system, process, thread, password hash, DAC, MAC, RBAC, command parameter, command flag, file system hierarchy, environment variable). Minimal level to pass is gather more then 51\% of closed book test like in sample in Appendix~\ref{Preliminary Tests}
-\item Student are able to configure a network of the GNU/Linux and explain terms like gateway, netmask, IP address, port, IP alias, DNS servers. Minimal level to pass is successful configuring network for lab machines.
-\item Student is able to read/modify and create simpler BASH, Python and PowerShell scripts. Minimal level of pass is create script with all common language construction in one particular language. Powershell scripting is included because furtherer labs contains also integration labs with Active Directory, SAMBA4, GNU/Linux servers and workstations and Windows workstations.
+\item Students are able to work with command line using GNU/Linux, work with files, manage software, manage disks and partitions, manage users and groups, configure networks and user's login session.  The pass mark is more than 50\% of randomly chosen test version, referred to in   Appendix~\ref{Preliminary Tests} in Table~\ref{tab:preliminary_practical_test}.
+\item Students are able to explain basic terminology of operating systems such as kernel, GUI, shell, Virtual memory, authentication, authorization, RAM, cache, buffer, latency, throughput, file system, process, thread, password hash, DAC, MAC, RBAC, command parameter, command flag, file system hierarchy, environment variable). The pass mark is over 51\% of closed book test such as presented in a sample in  Appendix~\ref{Preliminary Tests}.
+\item Students are able to configure a network of the GNU/Linux and explain terms
+such as gateway, netmask, IP address, port, IP alias, DNS servers. Minimal level
+to pass is successfully configuring network for lab machines.
+\item Students are able to read/modify and create simpler BASH, Python and PowerShell scripts. Pass mark stands at creating scripts in all common language constructions at least in one scripting language. Powershell scripting is included because the following labs also contain integration labs with Active Directory, SAMBA4, GNU/Linux servers and workstations and Windows workstations.
 \end{itemize}
 
-According to previous objectives six practical classes are needed:\footnote{All times are given in academic hours or days which equal 8 academic hours.}
+Deriving from previous objectives, six practical classes are needed:~\footnote{All times are given in academic hours or days which equal 8 academic hours.}
 
 \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
 \item Operating system basics (one day)
 \item Basic networking IPv4/IPv6, TCP/IP (one day)
-\item GNU/Linux basics (and OpenBSD/FreeBSD basics) (16h) as describbed in Appendix~\ref{Preliminary course - dpkg based GNU/Linux} on page~\pageref{Preliminary course - dpkg based GNU/Linux}
+\item GNU/Linux basics (and OpenBSD/FreeBSD basics) (16h) as described in Appendix~\ref{Preliminary course - dpkg based GNU/Linux} on page~\pageref{Preliminary course - dpkg based GNU/Linux}
 \item Scripting in BASH (2 days)
 \item Scripting in Python (1.5 days)
 \item Scripting in PowerShell (1.5 days)
@@ -41,15 +43,15 @@ According to previous objectives six practical classes are needed:\footnote{All 
 After implementing the course exact load is known numbers will be arranged.
 
 \subsubsection{Root Services}
-In this particular case the term root services are described as \gls{NTP}, \gls{DNS}, \gls{DHCP} services.
-After finishing this lab block the student are able to configure root services and use those services in furtherer labs.
-The objectives and assessments for Root Services lab:
+In this particular case the term "root services" is defined  as \gls{NTP}, \gls{DNS}, \gls{DHCP} services.
+After finishing this lab block, the students are able to configure root services and use those services in following labs.
+The objectives and assessments for Root Services lab are:
 \begin{itemize}
-\item After finishing this lab student is able to install \gls{NTP} service on the server and on the client computer and configure client to use internal server (pool) and server to use upstream \gls{NTP} service and fall-back services. Minimal level to pass: Services are configured, and student demonstrates debug skills with different tools and user explains basic terms and (pool, stratum, delay , offset, jitter, drift)
-\item After finishing this lab student is able to install \gls{DNS} service and configure clients for new server. Minimally, students are able to configure zones, reverse zones, master -- slave replica, forwarding, different type of records (like MX, A, CNAME, TXT for SPF, PTR) and use basic management utilities to do following tasks: reload zone, flush name, flush cache, add records dynamically, freeze and thaw zones). Configured service should able to do recursive quires for one particular subnet and student are able to explain what DNS attacks are common in Internet and what is an Open Resolver. Student tests nameserver of the \gls{EITC} and explains what is wrong with that.
-\item After finishing this lab student is able to install \gls{DHCP} server and configure hosts using this service. Minimal level for pass: Student installs and configures service what gives networking configuration to client machine from range or using hardware address. Service updates \gls{DNS} records using shared key (Mandatory Access Control must not disabled for pass)
+\item After finishing this lab, student is able to install \gls{NTP} service on the server and on the client computer and configure client to use internal server (pool) and server to use upstream \gls{NTP} service and fall-back services. Minimal level to pass is achieved if services are configured, and student demonstrates debug skills with different tools and explains basic terms and (pool, stratum, delay , offset, jitter, drift)
+\item After finishing this lab, student is able to install \gls{DNS} service and configure clients for new server. Minimally, students are able to configure zones, reverse zones, master -- slave replica, forwarding, different type of records (such as MX, A, CNAME, TXT for SPF, PTR) and use basic management utilities to do following tasks: reload zone, flush name, flush cache, add records dynamically, freeze and thaw zones). Configured service should able to do make recursive queries for one particular subnet and student are able to explain which \gls{DNS} attacks are common in Internet and what  an Open Resolver is. Student tests the nameserver of the \gls{EITC} and explains what is wrong with that.
+\item After finishing this lab, student is able to install a \gls{DHCP} server and configure hosts using this service. Minimal level to pass is the following: student installs and configures a service that gives networking configuration to client machine. Service updates \gls{DNS} records using shared key (Mandatory Access Control must not disabled for pass).
 \end{itemize}
-According to previous objectives three practical classes are needed:
+Deriving from previous objectives, three practical classes are needed:
 \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
   	\item NTP (4h)
   	\item DNS (2.5 days)
@@ -57,30 +59,29 @@ According to previous objectives three practical classes are needed:
 \end{enumerate}
 
 \subsubsection{Web and File services}
-Configuring and securing web servers is essential skill required from system administrators. Therefore, web server installation, configuration and hardening are covered in this block.
+Configuring and securing web servers is an essential skill required from system administrators. Therefore, web server installation, configuration and hardening are covered in this block.
 
-The learning objectives and assessments for Web and File services:
+The learning objectives and assessments for Web and File services are the following:
 \begin{itemize}
-\item After completing the web and file services block student is able to install web server and web application with database and several virtual hosts and configure \gls{TLS}. Minimal level for passing: Installed web server with two virtual hosts accepting \gls{HTTP} and \gls{HTTPS} connections. Configured IP aliases for \gls{HTTPS} and/or \gls{SNI}.
-\item Student is able to use caching technologies to protect web application against simpler \gls{DOS} attacks. Student configures web service and demonstrates that installed application can be easily taken offline using a simple load generator. Thereafter, the student configures web application accelerator as mitigation method against the  \gls{DOS} attack. Minimal level: Student configures proper caching and demonstrates that web application survives same attack.
-\item Student are able to install different application firewalls as \gls{SQL} firewall and web application firewall. Minimal level: Student demonstrates that different types of attacks are possible and successful against the vulnerable web application. Student installs \gls{SQL} firewall and demonstrates that basic \gls{SQLi} attacks are blocked. Student demonstrates that several web application attacks are still possible after installing the \gls{SQL} firewall as reflected \gls{XSS} and stored \gls{XSS}, command injection and \gls{CSRF}. Student installs application firewall before web application and demonstrates that previously succeeded attacks (at least \gls{XSS}) are stopped.
-\item Student is capable to install file server and configure shares, permissions, groups. Criteria: Student installs the service and configures two shares and group based permissions for each share. Student configures client machine to mount one share when user logs on and other share should mounted on boot.
-\end{itemize}
+\item After completing the web and file services block student is able to install web server and web application with database and several virtual hosts and configure \gls{TLS}.Minimal level for passing is reached when a web server with two virtual hosts accepting \gls{HTTP} and \gls{HTTPS} connections is installed and IP aliases for  \gls{HTTPS} and/or \gls{SNI} have been configured.
+\item Student is able to use caching technologies to protect web application against simpler \gls{DOS} attacks. Student configures web service and demonstrates that installed application can be easily taken offline using a simple load generator. Then, the student configures web application accelerator as mitigation method against the  \gls{DOS} attack.  Minimal level is reached if the student configures proper caching and demonstrates that web application survives \gls{DOS} attack.
+\item Student is able to install different application firewalls such as \gls{SQL} firewall and web application firewall. Minimal level is reached if the student demonstrates that different types of attacks are possible and successful against the vulnerable web application, installs \gls{SQL} firewall and demonstrates that basic \gls{SQLi} attacks are blocked, demonstrates that several web application attacks are still possible after installing the \gls{SQL} firewall such as reflected \gls{XSS} and stored \gls{XSS}, command injection and \gls{CSRF}, installs application firewall before web application and demonstrates that previously succeeded attacks (at least \gls{XSS}) are stopped.
+\item Student is capable of installing a file server and configure shares, permissions, groups. The passing criteria are: student installs the service and configures two shares and group based permissions for each share, configures client machine to mount one share when user logs on and other share should mounted on boot.\end{itemize}
 
 
-According to previous objectives four practical classes are needed:
+Deriving from previous objectives, four practical classes are needed:
 \begin{enumerate}[label=LAB \arabic*.,leftmargin=*]
    \item Web server basics - installation and configuring web server (4h)
   	\item Web server security - Protecting Web Application Against (D)DOS Attacks (6h)
-  	\item Web server security - securing vulnerable web application using application firewalls (6h)
+  	\item Web server security - securing a vulnerable web application by using application firewalls (6h)
   	\item Fileserver installation and configuration (4h)
 \end{enumerate}
 
 
 \subsection{Choosing the course format}
 
-For developing e-learning courses a choosing course format have a big influences to all participants \citep[p.14]{OppeArenduskeskus2010}. 
-
+When developing e-learning courses, choosing the course format is quick decision but strongly influences all participants~\citep[p.14]{OppeArenduskeskus2010}. 
+{\color{red} Siin on pooleli}
 Common course delivery formats used in e-learning and blended learning (combined form of instruction-led and e-learning) used in \gls{EITC} are: 
 \begin{itemize}
 \item Asynchronous e-learning - \gls{SIS}, wikis, \gls{LMS}'s, forums, blogs and other collaboration systems.
