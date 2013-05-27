@@ -246,27 +246,29 @@ echo "-17" > /proc/$(pidof mysqld)/oom_adj
 %$
 Documentation about proc filesystem and OOM can be found from kernel.org~\footnote{kernel.org - the \emph{proc} filesystem \url{http://www.kernel.org/doc/Documentation/filesystems/proc.txt}}
 
-Not mandatory task: Modify mysql upstart config file to set OOM adjustment score.
+Optional task: Modify mysql upstart config file to set OOM adjustment score.
 
-WordPress Supercache
+
 Install WordPress Supercache plugin.
-Change Permalinks settings
-Test cache with AB
+Change Permalinks settings under custom structure:
+\begin{minted}[frame=lines,framesep=2mm]{php}
+/index.php/?p=%post_id%
+\end{minted}
+Test the caching with \emph{ab} command as previously.
 
-Install Varnish HTTP cache
-Change apache default port to 8080
-In file /etc/apache2/ports.conf
-Change 80 > 8080
-Like:
+To install \emph{varnish} web accelerator change the \emph{apache} service port to 8080.
+
+In file \emph{ /etc/apache2/ports.conf} change 80 > 8080 like:
+\begin{minted}[frame=lines,framesep=2mm]{apache}
 NameVirtualHost *:8080
 Listen 8080
-
+\end{minted}
 Or just download new file using wget 
-
+\begin{minted}[frame=lines,framesep=2mm]{bash}
 cd /etc/apache2
 mv ports.conf /root/ports.conf.old
 wget http://elab.itcollege.ee:8000/Configs/apache2/ports.conf
-
+\end{minted}
 Change all virtual hosts to use new 8080 port using text editor or sed command.
 
 \begin{minted}[frame=lines,framesep=2mm]{bash}
@@ -338,6 +340,7 @@ What about authenticated users?
 \end{Verbatim}
 
 Additional and optional reading:
+
 \href{http://kaanon.com/blog/work/making-wordpress-shine-varnish-caching-system-part-1}{Making wordpress shine with Varnish caching system}
 
 \href{http://kaanon.com/blog/varnish/making-wordpress-shine-varnish-caching-system-part-2}{Making wordpress shine with Varnish caching system part 2}

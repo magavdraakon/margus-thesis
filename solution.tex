@@ -1,6 +1,6 @@
 \chapter{Solution}
 \label{solution}
-\lettrine[lraise=0.1, nindent=0em, slope=-.5em]{\color{Violet}T}{he}solution chapter is divided into four parts. First, the design section draws on information gathered during the analysis phase of the  \gls{ADDIE}process. The main goals are identifying the learning objectives, composing tests, choosing course format, and planning the learning process~\citep{website:design_phase_ADDIE}.  Second, the technical implementation of the e-learning course is usually a sub-part of the previous part, the design process of the~\gls{ADDIE}  model. However, the section focusing on the technical considerations deserves a separate part in the context of this e-learning course because its importance and  volume. Third, the section dedicated to the development phase describes authoring of the learning material. The fourth section expands upon the implementation phase, covering piloting of the course, where each part of the course is a run-through by certain students/trainers to get feedback about timing and consistency of content~\citep{website:design_phase_ADDIE}.
+\lettrine[lraise=0.1, nindent=0em, slope=-.5em]{\color{Violet}T}{he} solution chapter is divided into four parts. First, the design section draws on information gathered during the analysis phase of the  \gls{ADDIE} process. The main goals are identifying the learning objectives, composing tests, choosing course format, and planning the learning process~\citep{website:design_phase_ADDIE}.  Second, the technical implementation of the e-learning course is usually a sub-part of the previous part, the design process of the~\gls{ADDIE}  model. However, the section focusing on the technical considerations deserves a separate part in the context of this e-learning course because its importance and  volume. Third, the section dedicated to the development phase describes authoring of the learning material. The fourth section expands upon the implementation phase, covering piloting of the course, where each part of the course is a run-through by certain students/trainers to get feedback about timing and consistency of content~\citep{website:design_phase_ADDIE}.
 
 
 
@@ -63,7 +63,7 @@ Configuring and securing web servers is an essential skill required from system 
 
 The learning objectives and assessments for Web and File services are the following:
 \begin{itemize}
-\item After completing the web and file services block student is able to install web server and web application with database and several virtual hosts and configure \gls{TLS}.Minimal level for passing is reached when a web server with two virtual hosts accepting \gls{HTTP} and \gls{HTTPS} connections is installed and IP aliases for  \gls{HTTPS} and/or \gls{SNI} have been configured.
+\item After completing the web and file services block student is able to install web server and web application with database and several virtual hosts and configure \gls{TLS}. Minimal level for passing is reached when a web server with two virtual hosts accepting \gls{HTTP} and \gls{HTTPS} connections is installed and IP aliases for  \gls{HTTPS} and/or \gls{SNI} have been configured.
 \item Student is able to use caching technologies to protect web application against simpler \gls{DOS} attacks. Student configures web service and demonstrates that installed application can be easily taken offline using a simple load generator. Then, the student configures web application accelerator as mitigation method against the  \gls{DOS} attack.  Minimal level is reached if the student configures proper caching and demonstrates that web application survives \gls{DOS} attack.
 \item Student is able to install different application firewalls such as \gls{SQL} firewall and web application firewall. Minimal level is reached if the student demonstrates that different types of attacks are possible and successful against the vulnerable web application, installs \gls{SQL} firewall and demonstrates that basic \gls{SQLi} attacks are blocked, demonstrates that several web application attacks are still possible after installing the \gls{SQL} firewall such as reflected \gls{XSS} and stored \gls{XSS}, command injection and \gls{CSRF}, installs application firewall before web application and demonstrates that previously succeeded attacks (at least \gls{XSS}) are stopped.
 \item Student is capable of installing a file server and configure shares, permissions, groups. The passing criteria are: student installs the service and configures two shares and group based permissions for each share, configures client machine to mount one share when user logs on and other share should mounted on boot.\end{itemize}
@@ -80,80 +80,85 @@ Deriving from previous objectives, four practical classes are needed:
 
 \subsection{Choosing the course format}
 
-When developing e-learning courses, choosing the course format is quick decision but strongly influences all participants~\citep[p.14]{OppeArenduskeskus2010}. 
-{\color{red} Siin on pooleli}
-Common course delivery formats used in e-learning and blended learning (combined form of instruction-led and e-learning) used in \gls{EITC} are: 
+When developing e-learning courses, choosing the course format is a quick decision but one that strongly influences all participants~\citep[p.14]{OppeArenduskeskus2010}. 
+
+The common course delivery formats used in e-learning and blended learning (combined form of instruction-led and e-learning) are: 
 \begin{itemize}
-\item Asynchronous e-learning - \gls{SIS}, wikis, \gls{LMS}'s, forums, blogs and other collaboration systems.
-\item Synchronous e-learning - virtual distance laboratories, remote access for some servers, Skype and other online communications.
-\item Instructor-led lessons - practical classes
+\item Asynchronous e-learning - \gls{SIS}, wikis, \gls{LMS}'s, forums, blogs and other collaboration systems;
+\item Synchronous e-learning - virtual distance laboratories, remote access for some servers, Skype and other online communications;
+\item Instructor-led lessons - practical classes;
 \item Self-study - homework, reading books and other resources.
 \end{itemize}
 
-For this course several methods are used in different cases. First, a self-study are possible because all materials are available from web (except some video materials) in most cases all virtual machines are also publicly downloadable and participants may self-study. Second, combining self-study and instruction-led lessons are used for continuous education groups. Third, a asynchronous e-learning is common and may combined with instruction-led session.
+For this course several of these methods are used in different cases. First, self-study is made possible because all the materials and virtual machines are available from web (except some video materials). Second, a combination of self-study and instruction-led lessons are used for continuous education groups. Third, a asynchronous e-learning is commonly used and is combined with instruction-led sessions.
 
-For this e-learning course students can choose combination of asynchronous e-learning, instruction-led lessons (maximum half of the course) or self-study using lecture recordings.
+For this e-learning course the students can choose a combination of asynchronous e-learning, instruction-led lessons (maximum half of the course) or self-study using lecture recordings.
 
-In this particular e-course video lectures are not used but lecture video recordings are available. Also collaboration are preferred and students need to prepare documentation in wiki format and review others work and also give a grade because this method motivates student to produce better documentation and evaluation skills.
+The student collaboration is preferred when preparing documentation in wiki format, reviewing others work and also grading others work because this method motivates students to produce better documentations.
 
 
 
 
 \subsection{Instructional strategy}
-Instructional strategy for course focuses of guaranteeing learning outcomes by motivation students using proper content and activities planning.
+The instructional strategy for courses focuses on guaranteeing learning outcomes by motivating students, using proper content and activities planning~\citep{website:design_phase_ADDIE}.
 
 
 \subsubsection{Pre-instructional activities}
-The main goal of pre-instructional activities is motivate the students by explaining to the students why topic started must be covered and what student will be able to do after practical class. Thereafter, present learning objectives and assessment requirements and pre-requirements for the class. However, the minimal requirement level are presented and some students are interested for higher challenges for them extra quests, exercisers are presented as-well.
+The main goal of pre-instructional activities is to motivate the students by explaining why started topic must be covered and what the student will be able to do after practical classes. Thereafter, learning objectives, assessment requirements and pre-requirements for the class are presented. The minimal requirement level is presented while providing motivated students with higher challenges.
 
 
 \subsubsection{Content Presentation}
-Most today’s students are bored when receiving only theoretical lecture. For example, 1/2 of students do not have sufficient knowledge to fully understood the topic, and 1/4 of the students know already the aspects given and only 1/4 of the students are in the suitable level.  However, the exact numbers varies but is possible, that similar situation occurs often. Therefore, practical classes and lectures are combined and all taking place in computer classes. Every student should take 15-30 minute long theoretical block followed with practical activities. In case of e-learning students can browse video recordings and do their labs where suitable for them. Moreover, the content presentation should contain a principle author would like to call a \emph{Command Dojo}, where all participants doing the same exercise with same goal with help of the lectures as master with classroom or using screen-cast. The name of the method is derived from \gls{Coding Dojo} in software development~\footnote{A Coding Dojo is a meeting where a bunch of coders get together to work on a programming challenge \url{http://codingdojo.org/cgi-bin/wiki.pl?WhatIsCodingDojo}}.
-After completing exercise or running out of time the new goal is given and to demonstrate learned skills the same objective in modifications are given for students and this will assessed by master. The reason behind this solution is simple: Students need good guide to follow and learn, but to show achieved outcomes student needs to configure services without blindly coping and pasting from lab material.
+Most today’s students are not interested in receiving only theoretical lectures. For example, 1/2 of students do not have sufficient knowledge to fully understand the topic, 1/4 of the students already know the given aspects and only 1/4 of the students are on the suitable level. Although, the exact numbers vary, it is possible that a similar situation occurs often. Therefore, practical classes and lectures are combined and all taking place in computer classes. Every student should take 15-30 minute long theoretical blocks followed by practical activities. In case of e-learning students can browse video recordings and do their labs when and where it is suitable for them. The content presentation should contain a principle the author would like to call a \emph{Command Dojo}, where all the  participants are doing the same exercise with the help of the lectures as masters in the classroom or by using screen-cast. The name of the method is derived from \gls{Coding Dojo} in software development~\footnote{A Coding Dojo is a meeting where a bunch of coders get together to work on a programming challenge \url{http://codingdojo.org/cgi-bin/wiki.pl?WhatIsCodingDojo}}.
+The reason behind this method is simple: Students need a good guide to follow and learn from, but to demonstrate learned skills the students get a new goal where they need to configure services without blindly coping and pasting from lab materials.
 
 \subsubsection{Learner's feedback and assessment}
-After every class, lecture should gather feedback about objectives, theoretical parts, labs and assessments because the course is very intensive and when more then 1/3 students can not follow due some problems then next block will fail for those students because they are linked by topic.
-Is also possible that for valuable feedback are sufficient to ask from students how they feel about the course.
+After every class, the lecturer should gather feedback on objectives, theoretical parts, labs and assessments because the course is very intensive. When more then 1/3 students can not follow due to some problems then they will fail in the next block because they are linked by topic.
+It is also possible that asking students how they feel about the course provides valuable feedback.
 
 \subsubsection{Follow-through activities}
-For explaining some situation the active discussions are needed (possible discussion topics are shown in lab materials as questions for the students) as seen in lab material highlighted with blue box with caption Discussion:
+Active discussions are needed to explain some situations. Possible discussion topics are shown in the lab materials as questions for the students that are highlighted in a blue box with the caption \emph{discussion}. 
+
 \begin{Verbatim}[frame=single,
 label=Discussion,framesep=2mm,rulecolor=\color{blue},commandchars=\\\{\}]
 Why You can not login into server?
 Look at the server console. What is the OOM? What is the OOM killer?
 \end{Verbatim}
-In case of distance study and self study the discussions should being held using course Skype list, because of suitability for group discussion as successfully tested on bigger courses~\citep{website:kakk_teistmoodi_e}. For conclude the discussion the lecturer must give feedback for each discussion topic using same channel or course e-mail list (In \gls{EITC} lecturer can send e-mail messages to all students participating this particular course).
 
+In case of distance study and self-study the discussions should be held using the course Skype list, because it is suitable for group discussions and has been  successfully tested on bigger courses~\citep{website:kakk_teistmoodi_e}. To conclude the discussion the lecturer must give feedback on each discussion topic using the same channel or course e-mail list.
 
 
 \subsection{Pedagogical view of the e-course}
-Different Pedagogical strategies can be used during learning process as \citep{OppeArenduskeskus2010}
+Different Pedagogical strategies can be used during the learning process such as \citep{OppeArenduskeskus2010}:
+
 \begin{enumerate}
-\item problem based learning -- demands analysis approach from student by solving cases based on scenarios derived from real situations
-\item collaboration based learning -- based on group-work and cooperation
-\item community based learning -- collaboration is community based, helps students to learn from each-other
+\item problem based learning -- demands an analytical approach from the student by solving cases based on scenarios derived from real situations;
+\item collaboration based learning -- based on group-work and cooperation;
+\item community based learning -- collaboration is community based, helps students to learn from each-other.
 \end{enumerate}
 
-In case of this e-learning course all three aspects are used and combined.
-For labs a problem based learning are used. For documenting a installed service the collaboration based learning are used and course wiki aggregates this information. For review of wiki articles a community based learning are used. However, for continuous education actively used only problem based learning because of intensive nature of the course when no extra time left for homework between contact classes.
+All three aspects are used and combined in this course. The problem based learning method is used in labs. The collaboration learning is used for documenting a installed service using the course wiki that aggregates this information. Community based learning is used while reviewing the wiki articles. 
+
+The problem based learning is used in case of continuous education because of its intensive nature and time limitations that exclude the possibility to give home assignments.
 
 \subsection{Planning grading/assessment techniques}
-The assessment is used for two proposes: Firstly, ensure achievement of the learning outcomes. Secondly, as a form of the feedback for the student. By planning assessment for an e-learning course the common choises are following: self-assessment, computer aided assessment, tutor assessment, peer assessment. ~\citep{OppeArenduskeskus2010}
+The assessment is used for two proposes: Firstly, to ensure the achievement of the learning outcomes. Secondly, as a form of feedback for the student. By planning assessment for an e-learning course the common choices are the following: self-assessment, computer aided assessment, tutor assessment and peer assessment. ~\citep{OppeArenduskeskus2010}
 
-In this course self-assessment are used only for feedback and for entering the course. For example, if system administrator wants to enter the Web and File service course a self-test needed to be done to ensure a presence of the knowledge in level needed by the course. However the computer assessment is easier and less time consuming compared to tutor assessment it insufficient to guarantee the learning outcomes of the student. 
+Self-assessment is used as self tests before the course and for  deciding the need for a preliminary course.
 
-The Computer assessment are used only for guiding and giving feedback to the participant. For example: In case of insecure web application lab the student can execute script that tests application vulnerability with python script performing \gls{SQLi} and test if its filtered by \gls{SQL} firewall or not. The script itself is readable for user and in case of this particular script, it is written by other students as a homework in preliminary scripting course.
+For example, if a system administrator wants to enter the Web and File service course a self-test has to be done to ensure the presence of knowledge needed in the course.
+
+Although, the computer assessment is easier and less time consuming compared to tutor assessment it is insufficient to guarantee the learning outcomes of the student. The computer assessment is only used for guiding and giving feedback to the participant. For example: In case of the insecure web application lab the student can execute a script that tests the applications vulnerabilities by performing \gls{SQLi} attacks and testing if the attack is filtered by the \gls{SQL} firewall or not. The testing script itself is available to the user and in case of this particular script, was written by other students as a homework in a preliminary scripting course.
 
 
-The tutor assessment are used to grade the students lab performance and this is time consuming because every student defends their lab solution by reconfiguring services and explaining the architecture and configuration of the solution.
+The tutor assessment is used to grade the students lab performance and is time consuming because every student defends their lab solution by reconfiguring services and explaining the architecture and configuration of the solution.
 
-Peer assessment are used in case of documentation grading. Documentation points are given by peer students but tutor assessment are used to grade the graders.
+Peer assessment is used in case of grading the documentation. The grade points are given by peer students and tutor assessment is used to grade the graders.
 
-Proper grading are one way to motivate students. Moreover, the competition moment when lab performance are seen by other student gives extra motivation for skilled students but may demotivate weaker ones~\citep{KasakKaur}. In author opinion the competition moment combined with offensive \gls{CTF} type course gives motivation impulse for most of the students. However, this course focused on defence of the systems and the motivation problem is still not solved but possible solution is in implementation.
+Proper grading is one way to motivate students. Moreover, a competition moment while performing labs seen by other students gives extra motivation to skilled students but may demotivate weaker ones~\citep{KasakKaur}. In the authors opinion the competition moment combined with the offensive \gls{CTF} type course gives a motivation impulse to most of the students. Although, this course focuses on defending IT systems, the motivation problem is still not solved but one possible solution is in implementation.
 
-The idea for motivation system for new course is to implement scoreboard and reward system based on completed and graded labs. For example: Student secures an apache web server using mod security rules the badge are added to student's profile in lab system. Steel coloured badge with apache icon for using application firewall and protecting the system. Silver coloured shield badge when proper report is submitted to "authorities" when, what happened and what student did for mitigation. Gold badge for writing new rules or new scripts or new log parsers to help administrator to deal with the problem. Actually the realization of this system will be a future work in next iteration of the course.
+The idea for a motivation system for the new course is to implement a scoreboard and a reward system based on completed and graded labs. For example: when the student secures an \emph{apache} web server using mod security rules the badge is added to the student's profile in the lab system. A steel coloured badge with the \emph{apache} icon is given for using a application firewall and protecting the system. A silver coloured shield badge is given when a proper report is submitted to "authorities" describing when, what happened and what the student did for the mitigation. A golden badge is given for writing new rules, new scripts or new log parsers to help the administrator to deal with the problem. The technical  realization of this system will be a future work in the next iteration of the course.
 
-According to \gls{ADDIE} model the next step should be "Choosing technological tools" as audio/video programs and \gls{LMS} system choices, file formats, media authoring programs and choice of collaboration environments~\citep{OppeArenduskeskus2010}. However, this course needs more detailed choices to cover learning objectives and needs for virtualised environment. Therefore, the choices are described in section~\ref{Technical implementation of the e-learning course} as an separate section. 
+According to the \gls{ADDIE} model the next step should be "Choosing technological tools" as audio/video programs and \gls{LMS} system choices, file formats, media authoring programs and choice of collaboration environments~\citep{OppeArenduskeskus2010}. However, this course needs more detailed technical choices to cover learning objectives and needs for a virtualized environment. Therefore, the choices are described in a separate section~\ref{Technical implementation of the e-learning course}.
 
 \section{Technical implementation of the e-learning course}
 \label{Technical implementation of the e-learning course}
@@ -251,7 +256,7 @@ However, the unbound with NSD or \gls{BIND} alone is suitable for this lab. The 
 \subsection{Choosing software for lab: Protecting Web Application Against (D)DOS Attacks}
 
 \subsubsection{Web server}
-According to Netcraft Web Server Survey (May 2013) the web server shares of active websites are: Apache~\footnote{Apache \gls{HTTP} server -- \url{http://projects.apache.org/projects/http_server.html}} -- 55.07\%,  nginx~\footnote{nginx is an HTTP and reverse proxy server -- \url{http://nginx.org/en/}} -- 13.27\%	, Microsoft Internet Information Server~\footnote{Microsoft Internet Information server -- http://www.iis.net/} -- 11.08\% \citep{website:netcraft_web}. Microsoft IIS does not qualify because it is not open source software.  Therefore, the apache is chosen as the primary web server for the lab because of its market share. However, the NGINX is also a important platform and will be used for \gls{TLS} termination in the lab, because students should be able to configure \gls{HTTPS} as well.
+According to Netcraft Web Server Survey (May 2013) the web server shares of active websites are: Apache~\footnote{Apache \gls{HTTP} server -- \url{http://projects.apache.org/projects/http_server.html}} -- 55.07\%,  nginx~\footnote{nginx is an HTTP and reverse proxy server -- \url{http://nginx.org/en/}} -- 13.27\%	, Microsoft Internet Information Server~\footnote{Microsoft Internet Information server -- http://www.iis.net/} -- 11.08\% \citep{website:netcraft_web}. Microsoft IIS does not qualify because it is not open source software.  Therefore, Apache is chosen as the primary web server for the lab because of its market share. However, the NGINX is also a important platform and will be used for \gls{TLS} termination in the lab, because students should be able to configure \gls{HTTPS} as well.
 
 \subsubsection{Caching web application acceleration server}
 Web acceleration servers are used to reduce the load on the web server and as a mitigation method for small grade denial of service attacks. Is is a possible solution in case of a small attack traffic, but it is useless when all network capacity is occupied by the attack. 
@@ -290,21 +295,23 @@ SQLol~\footnote{SQLol -- \url{https://github.com/SpiderLabs/SQLol
 
 In conclusion, because of the defensive nature of the developed course, only simple vulnerabilities are needed to demonstrate a problem and all vulnerable applications are suitable for the lab. To create diversity all the applications that can be installed easily may be used in the lab. All the examples are given using \gls{DVWA} (because of its name) but to get the grade every student should choose another vulnerable application from the list, install  and protect it.
 
-{\color{red} Siin on pooleli}
+%%{\color{red} Siin on pooleli}
 \subsection{Web application firewall and database firewall}
 
 
-According to lab scenario the \gls{SQLi} attacks should be stopped before database (Appendix~\ref{Protecting an Insecure Web Application}). Several proprietary database firewall products like Oracle Audit Vault and Database Firewall and SecureSphere Database Firewall can provide functionality needed. However, they are not applicable in this lab because they are not free and open source software products.
+According to the lab scenario the \gls{SQLi} attacks should be stopped before they reach the database (Appendix~\ref{Protecting an Insecure Web Application}). Several proprietary database firewall products as: \emph{Oracle Audit Vault and Database Firewall} and \emph{SecureSphere Database Firewall} can provide the needed functionality. They are not applicable in this lab because they are not free and open source software products.
 
-Only functional open source database firewall with enterprise scale functionality like web based administrative interface, support for different databases and easy to use for database administrator was GreenSQL open source database firewall. However, the development of this version is stopped and now even download is not possible from vendor homepage~\footnote{GreenSQL -- http://www.greensql.com/}, the source files and pre-build packages for Ubuntu Server 12.04 LTS 64bit are downloadable from \gls{EITC} lab page~\footnote{\gls{EITC} fork of GreenSQL database -- \url{http://elab.itcollege.ee:8000/Day3/}}. Moreover the author of this thesis fixed the source code of the firewall to get it compile with newer GNU/C compiler.
+Only open source database firewall with sufficient functionality such as: web based administrative interface, support for different databases and easy to use was GreenSQL database firewall. However, the development of this product is discontinued  and it can not be downloaded from the vendor homepage~\footnote{GreenSQL -- http://www.greensql.com/}, its source files and pre-build packages for Ubuntu Server 12.04 LTS 64bit are downloadable from the \gls{EITC} lab page~\footnote{\gls{EITC} fork of GreenSQL database -- \url{http://elab.itcollege.ee:8000/Day3/}}. Additionally, the author of this thesis fixed the source code of the firewall to make it compile with newer GNU/C compiler.
 
-For learning basics of the database fire-walling the enterprise products are not needed and for this lab open source version of GreenSQL database firewall was chosen.
+For learning the basics of database fire-walling, the enterprise product is not needed and for this lab the open source version of the GreenSQL database firewall was chosen.
 
-However, the free closed source version is still downloadable from vendor homepage, the future work is find open source replacement for GreenSQL which is actively developed and has comparable functionality.
+Although, the closed source version is still downloadable from the vendor homepage, the future goal is to find an open source replacement for GreenSQL, that is actively developed and has comparable functionality.
 
-The database firewall provides protection only for database but for example the reflected \gls{XSS} are not seen in database layer. Therefore, this protection is not sufficient and additional filtering in web layer is needed and Web Application Firewall \gls{WAF} to be integrated into lab scenario.
+The database firewall provides protection only for the database and does not protect against  reflected \gls{XSS} attacks as they are not seen in the database layer. Therefore, this protection is not sufficient and additional filtering in web layer is needed and Web Application Firewall \gls{WAF} to be integrated into the lab scenario.
 
-The common open source \gls{WAF} is ModSecurity~\citep[p.196]{book:practica_intrusion_analysis} from Trustwave SpiderLabs~\footnote{Trustwave SpiderLabs -- \url{https://www.trustwave.com/spiderlabs/}}. However, the ModSecurity itself is a parsing/blocking engine and needs proper rule set to block/log attacks, like \gls{OWASP} Core Rule Set Project~\footnote{OWASP ModSecurity Core Rule Set Project -- }. However, some alternatives exists and ModSecurity rules are too hard to modify for students in authors opinion the \gls{EITC} partners and several companies in Estonia using it according to conversations and discussion between system administrators from pilot lab. The product supports apache, Enginx and Inernet Information Server web servers~\footnote{Mod Security overview -- \url{http://www.modsecurity.org/projects/modsecurity/index.html}} and compatible with web servers chosen to this lab.
+The commonly used open source \gls{WAF} is ModSecurity~\citep[p.196]{book:practica_intrusion_analysis} from Trustwave SpiderLabs~\footnote{Trustwave SpiderLabs -- \url{https://www.trustwave.com/spiderlabs/}}. However, the ModSecurity itself is a parsing/blocking engine and needs a proper rule set like \gls{OWASP} Core Rule Set Project~\footnote{OWASP ModSecurity Core Rule Set Project -- } to block/log attacks. Although, there are alternatives and the ModSecurity rules are hard to modify (for students), the \gls{EITC} partners and several companies in Estonia are using it according to conversations and discussion between system administrators  from  the pilot lab.
+
+The product supports apache, Enginx and Inernet Information Server web servers~\footnote{Mod Security overview -- \url{http://www.modsecurity.org/projects/modsecurity/index.html}} and is compatible with the web servers chosen for this lab.
 
 Therefore, the Mod Security and \gls{OWASP} Core Rule Set was chosen for this lab.
 
@@ -314,22 +321,27 @@ Therefore, the Mod Security and \gls{OWASP} Core Rule Set was chosen for this la
 After choosing technological tools the lab materials need to be created~\citep{OppeArenduskeskus2010}. Therefore, the course materials are created, reviewed and run-through by small test group.
 
 \subsection{Authoring the learning material}
-Developing learning material is based on learning objectives. Each learning objective must be covered with learning material and everything else should left out as extra load for student. Therefore in the development phase the authoring of different study materials, assessment tests, audio/video media and integration of all artefacts into consistent body with one reason: ensure that all objectives are met.
+Developing learning material is based on learning objectives. Each learning objective must be covered with learning material and everything else should be left out as extra load. Therefore in the development phase the different study materials, assessment tests, audio/video media are authored and integrated into a consistent body to ensure that all the objectives are met~\citep{OppeArenduskeskus2010}.
 
-Authoring the study materials is one of most time consuming tasks and amount of developed study materials is too big even for appendices. Therefore one sample block - Securing web applications are included in Appendix~\ref{Protecting Web Application Against (D)DOS Attacks} and in Appendix~ \ref{Protecting an Insecure Web Application} 
+Authoring the study materials is one of the most time consuming tasks and the amount of developed study materials is too big to include in the appendices. Therefore one sample block - Securing web applications is included in Appendix~\ref{Protecting Web Application Against (D)DOS Attacks} and in Appendix~ \ref{Protecting an Insecure Web Application}. 
 
-Developed learning material are publicly available and under (\gls{CC-BY-SA}) license to guarantee maximum impact on field. Therefore is acceptable that people with will and motivation may self-study using this e-learning course. Moreover, the private training companies can use those courses to train target group.
+The developed learning materials are publicly available  under the \gls{CC-BY-SA} license to guarantee maximum impact in the cyber security field. Therefore the e-learning course is also usable by motivated self-studiers and training companies. 
 
 Learning materials, self-tests, course information and other materials are publicly downloadable~\footnote{\href{http://elab.itcollege.ee:8000/cyber-course/}{Course Syllabus (Õpijuhis)}}.
 
 
-Some never materials are developed using open source revision control system \gls{git} and all changes and commits are publicly available. Moreover, source code of this thesis and labs are available from public \gls{git} repository with \LaTeX  source files and as well other files~\footnote{\href{https://github.com/magavdraakon/margus-thesis.git}{Materials and source code of this thesis}}.
+New materials are stored using the open source revision control system \gls{git} and all changes and commits are publicly available. Additionally, the source code of this thesis is available from a public \gls{git} repository consisting of \LaTeX  source files~\footnote{\href{https://github.com/magavdraakon/margus-thesis.git}{Materials and source code of this thesis}}.
 
 
-Developed learning material should follow consistent style and present also one example of good documentation practice. For system administrators several howto styles exists. However practical hands-on laboratory instructions are designed that pass through using copy paste is possible but gives one working sample. However, this is not enough to pass lab scenario and student must customize own configuration.
+Developed learning materials should follow a consistent style:
+%and present also one example of good documentation practice. For system administrators several howto styles exists. However practical hands-on laboratory instructions are designed that pass through using copy paste is possible but gives one working sample. However, this is not enough to pass lab scenario and student must customize own configuration.
 
-Guiding stile of the lab instruction using style convention: First, all variable parts of the text are clearly differs from other text and command. Second, all commands given by student are highlighted, and variable parts embossed as seen in followed command.
+%Guiding stile of the lab instruction using style convention: 
+First, all variable parts of the text are clearly distinguishable between other text and commands.
 
+
+
+Second, all command examples given to the student are highlighted as shown in the following example.
 
 \begin{minted}[frame=lines,framesep=2mm]{bash}
 #For changing Out of memory - OOM adjustment score for mysql server
@@ -338,14 +350,7 @@ echo "-1000" > /proc/$(pidof mysqld)/oom_score_adj
 %$
 
 
-
-Sample sample: Finding a proccess ID of the mysql server proccess.
-
-\begin{minted}[frame=lines,framesep=2mm]{bash}
-ps -ef|grep mysqld
-\end{minted}
-\label{code_sample}
-%
+The command output is displayed as following:
 \small{
 \begin{Verbatim}[samepage=true,frame=single,
 label=Command output,framesep=2mm,rulecolor=\color{red},commandchars=\\\{\}]
@@ -356,7 +361,14 @@ mysql    \fbox{\color{red}29830}    1  0 Apr25 ?        00:05:47 /usr/sbin/mysql
 %
 }
 
-All study should stored in open formats, like pdf, OpenDocument, MediaWiki markup language, html, utf8 text. Original editable source files for generating pdf, images should be publicly accessible. Moreover, text based materials should stored into version control system like \gls{git} to enable contributing for other lecturers and students as well.
+The previous output was produced using this command.
+\begin{minted}[frame=lines,framesep=2mm]{bash}
+ps -ef|grep mysqld
+\end{minted}
+\label{code_sample}
+%
+
+All study materials should be stored using open formats, like pdf, OpenDocument, MediaWiki markup language, html or utf8 text. The text based materials should be stored into a revision control system like \gls{git} to enable contributing by other lecturers and students as well.
 
 %
 %
@@ -422,10 +434,10 @@ All study should stored in open formats, like pdf, OpenDocument, MediaWiki marku
 
 \subsection{Course Syllabus}
 \label{Course Syllabus}
-The participant of the course will get first information from Course Syllabus, where all relevant information about the course must be listed as: list of learning materials, course schedule, list of the labs, list of topics, list of exercises and homework, deadlines, grading information. Course Syllabus will be in \gls{EITC} study information system but the public copy of the information is available from lab website~\footnote{Course Syllabus -- \url{http://elab.itcollege.ee:8000/cyber-course/}}
+The course participant will get first information about the course from its syllabus, where all relevant information must be listed, such as: list of learning materials, course schedule, list of labs, list of covered topics, list of exercises and homework, deadlines and grading information. Course Syllabus will be available in the \gls{EITC} study information system and in the lab website~\footnote{Course Syllabus -- \url{http://elab.itcollege.ee:8000/cyber-course/}}.
 
 \subsection{Testing the e-course}
-Before experimenting with students in larger group the all course modules got tested by co-workers -- lecturers and assistants of \gls{EITC}. After in-house testing each lab run-through by small group of system administrator from different organizations including \gls{EISA}. Evaluation summary for the course is in Table~\ref{table:desing_develop_evaluation}.
+Before experimenting with a larger group of students, all of the course modules should be  tested by co-workers -- lecturers and assistants of the \gls{EITC}. After in-house testing each lab is run-through by a small group of system administrators from different organizations including \gls{EISA}. The evaluation summary for the course is given in Table~\ref{table:desing_develop_evaluation}.
 \begin{table}[h]
 \centering
 \caption{The evaluation of the design and development stage }
@@ -434,30 +446,30 @@ Before experimenting with students in larger group the all course modules got te
 \hline 
 \color{blue} Evaluation question & \color{blue} Result [1..4] & \color{blue} Comments and references \\
 \hline
-Does course have a proper structure? 
-& 4  &  Course Syllabus has links for study program, topics and labs  \\ 
+Does the course have a proper structure? 
+& 4  &  The course syllabus has links to the  study program, topics and labs  \\ 
 \hline
-Does chosen presentation learning material support the learning outcomes of the course? 
-& 4  &  Active participation of the students are encouraged \\ 
+Does the chosen presentation method of the learning material support the learning outcomes of the course? 
+& 4  &  Labs, videos, text and slides are used to support learning outcomes \\ 
 \hline
 
-Do the learning materials follow best practices? 
-& 3  &  Some materials needs improvement \\ 
+Do the learning materials follow the best practices? 
+& 3  &  Some materials need improvement \\ 
 \hline
 Is all web material available? 
-& 4  &  Materials are in course syllabus page \\ 
+& 4  &  Materials are available in the course syllabus page \\ 
 \hline
-Does sufficient course syllabus exists? 
-& 4  &  Course Syllabus are in course web page \\ 
+Does a sufficient course syllabus exist? 
+& 4  &  Course Syllabus exists \\ 
 \hline 
-Does student needs non-free software for participation?
-& 4 &  No, all software used is open source (except PowerShell lab where sotware are provided by \gls{EITC}) \\ 
+Does the student need any non-free software for participation?
+& 4 &  No, all used software is open source (except PowerShell lab where software is provided by the \gls{EITC}) \\ 
 \hline 
-Is course tested before including to the curriculum?
-& 4 & Course is tested using 22 students and >80 system administrators \\ 
+Is the course tested before including into the curriculum?
+& 4 & The course is tested by 34 students and >80 system administrators \\ 
 \hline
-Does course technically work (links, materials)?
-& - & Testing is not completed, because migrating to the distance study environment. In case on this course there much more to be tested than links, for example all virtual machines.\\ 
+Does the course work technically (links, materials)?
+& - & Testing is not completed as of now.\\ 
 \hline 
 \end{tabular} 
 }
@@ -467,10 +479,15 @@ Does course technically work (links, materials)?
 
 \section{Implementation of the e-learning course}
 
-In the implementation phase, the courses are piloted and feedback from students and other lecturers are gathered also a arranging the learning space and time and preparing learners for the course~\citep{OppeArenduskeskus2010}.
+In the implementation phase, the courses are piloted and feedback from students and other lecturers is gathered. In this phase the learning space and time are arranged, preparing learners for the course~\citep{OppeArenduskeskus2010}.
 
-Author of this thesis piloted each block of the course and collected feedbacks from the students, make notes with improvement ideas and motivated students to behave as active and motivated as possible.
-First lab was relatively simple because of simplicity of the topic -- \gls{NTP} compared for example web server lab. However, this was intentional because during this lab the technical details are explained to the students about virtualization environment and roles of lecturer and students in this course. Therefore slow start is important for students to learn environment and organizational aspects of the course. Thereafter, a studies went smoothly for students with proper prerequisite skills and knowledge and hard for others. The main thing learned from implementation: This course is too hard for most of the students but the are motivated to learn the content. However, the preliminary course is mandatory for most of the students and system administrators because small group of students with inadequate level may slow down a whole class. During the implementation phase the piloting course was evaluated using self-assessment and criteria from \gls{ADDIE} model~\citep{OppeArenduskeskus2010}. The results are presented in Table~\ref{table:implementation_evaluation}.
+The author of this thesis piloted each course blocks and collected feedback from the students, made notes with improvement ideas and encouraged students to be as active and motivated as possible.
+
+The first lab was relatively easy because of the topic -- \gls{NTP}. This was intentional because technical details about the virtualization environment and the roles of the lecturer and students in this course are explained to the students during this lab. Therefore the slow start is important for the students to familiarize themselves with the environment and organizational aspects of the course. Thereafter, the studies went smoothly for the students with proper prerequisite skills and knowledge but hard for others. 
+
+The main aspect learned from the implementation phase was that even though this course was hard for most of the students, they were still motivated to learn the content. The preliminary course is mandatory for most of the students and system administrators because  a small group of students with inadequate level may slow down a whole class. 
+
+During the implementation phase the piloting of the course was evaluated using self-assessment and criteria from \gls{ADDIE} model~\citep{OppeArenduskeskus2010}. The results are presented in Table~\ref{table:implementation_evaluation}.
 
 \begin{table}[h]
 \centering
@@ -478,19 +495,19 @@ First lab was relatively simple because of simplicity of the topic -- \gls{NTP} 
 { \small 
 \begin{tabular}{|p{6cm}|p{2cm}|p{5cm}|}
 \hline 
-\color{blue} Evaluation question & \color{blue} Result [1..4] & \color{blue} Comments and references \\ 
+\color{blue} Evaluation question & \color{blue} Result [1..4] & \color{blue} Comments \\ 
 \hline
-Students are motivated to be active? 
-& 4  &  Active participation of the students are encouraged \\ 
+Are students motivated to be active? 
+& 4  &  Active participation of the students was encouraged \\ 
 \hline 
-Does lecturer give feedback to the students?
-& 4 &  Students will get immediate feedback during contact classes, students know that \\ 
+Does the lecturer give feedback to the students?
+& 4 &  Students got immediate feedback during classes \\ 
 \hline 
-Did lecturer collect data during the course how to improve course in the future?
-& 3 & Data is collected but not yet implemented (will be in next course) \\ 
+Did the lecturer collect data during the course on how to improve the course in the future?
+& 3 & Data was collected but is not yet used (will be in next course) \\ 
 \hline
-Does feedback from student collected?
-& 4 & After every course and training feedback are collected. \\ 
+Is feedback from students collected?
+& 4 & Feedback was collected after every course and training. \\ 
 \hline 
 \end{tabular} 
 }
