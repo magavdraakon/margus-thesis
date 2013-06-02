@@ -1,58 +1,177 @@
-\documentclass[12pt,a4paper,oneside]{memoir}
+\documentclass[12pt,a4paper,oneside]{report}
+%xelatex -shell-escape  -synctex=1 -8bit  -interaction=nonstopmode %.tex
+%xelatex used because good support for unicode
+%syntac cororing is done using pygments - you need to install it using following command 
+%sudo apt-get install python-pygments
+%You also need texlive extra fonts
+%apt-get install texlive-fonts-extra
+%sudo apt-get install xindy
+
+\usepackage[estonian,english]{babel}
+
+%for unicode support in XeLaTeX
+\usepackage{fontspec}
+
+%for continous numbering of figures and tables
+\usepackage{chngcntr}
+
+
+
+%for review uncomment following  lines (turn off hyphenation and ligatures before exporting to libreoffice to get comments)
+%\usepackage[none]{hyphenat}
+%\addfontfeatures{Ligatures={NoRequired, NoCommon, NoContextual}}
+%\setmainfont{Latin Modern Roman}
+
+
+\usepackage{hyphenat}
+\setmainfont[Ligatures=TeX]{Linux Libertine O}
+
+
+
+%fancy verbatim - with box
+\usepackage{fancyvrb}
+%\usepackage{fancybox}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+
+%pdfpages - include pdf pages to latex document - for Subject Program
+\usepackage{pdfpages}
+
+%to produce dummy text for testing proposes
+\usepackage{lipsum}
+
+%for coloring syntax
 \usepackage{minted}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+
+%If you want use latex uncomment fontenc and inputenc
+%for UTF8 fonts
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%for custom enumerators like requirements 1, requirements 2 ...
+\usepackage{enumitem} %for requirements enumeration
+
+%Special colors for chapter titpes, sections, links and citations
+\definecolor{chapters}{RGB}{68,40,138}
+\definecolor{sections}{RGB}{68,40,138}
+\definecolor{linkcolor}{RGB}{50,50,100}
+\definecolor{citecolor}{RGB}{50,100,100}
+
+%For mindmaps
+\usepackage{tikz}
+%\usetikzlibrary{mindmap,trees}
+\usetikzlibrary{snakes,arrows,shapes,mindmap,trees}
+
+\usepackage{ucs}
+\usepackage{colortbl}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{makeidx}
-\usepackage{graphicx}
-%\chapterstyle{lyhne}
-\chapterstyle{ell}
-\chapterstyle{madsen}
+\usepackage{url}
 \usepackage{hyperref}
 \hypersetup{
 %   bookmarks=true,         % show bookmarks bar?
-    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
     pdftoolbar=true,        % show Acrobat’s toolbar?
     pdfmenubar=true,        % show Acrobat’s menu?
     pdffitwindow=false,     % window fit to page when opened
     pdfstartview={FitH},    % fits the width of the page to the window
-    pdftitle={My title},    % title
+    pdftitle={Hands-On E-learning Course on Cyber Defence for System Administrators},    % title
     pdfauthor={Margus Ernits},     % author
-    pdfsubject={Subject},   % subject of the document
-    pdfcreator={Creator},   % creator of the document
-    pdfproducer={Producer}, % producer of the document
-    pdfkeywords={Cybersecurity} {thesis} {handson}, % list of keywords
+    pdfsubject={Master's Thesis},   % subject of the document
+    pdfcreator={XeLaTeX with hyperref},   % creator of the document
+    pdfproducer={XeLaTeX with hyperref}, % producer of the document
+    pdfkeywords={cyber} {security} {thesis} {hands-on} {e-learning}, % list of keywords
     pdfnewwindow=true,      % links in new window
     colorlinks=true,       % false: boxed links; true: colored links
-    linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
-    citecolor=green,        % color of links to bibliography
+    linkcolor=linkcolor,          % color of internal links (change box color with linkbordercolor)
+    citecolor=citecolor,        % color of links to bibliography
     filecolor=magenta,      % color of file links
     urlcolor=cyan           % color of external links
 }
+\usepackage{alltt}
 \usepackage[xindy,toc]{glossaries}
 \makeglossaries 
 \usepackage{graphicx}
-\graphicspath{{../illustrations/}}
+\graphicspath{{./illustrations/}}
 
-\author{Margus Ernits}
-\title{Web Application Security Hands-on Laboratories}
-\usepackage[square]{natbib}
+% for resizing page
+\usepackage[top=2.50cm, bottom=2.50cm, left=3.50cm, right=2.50cm, includefoot]{geometry}
+
+% use space to separate paragraphs
+\usepackage{parskip}
+\setlength{\parskip}{0.50cm} 
+
+%\usepackage{type1cm}
+%\usepackage{lettrine}
+
+% line spacing
+\usepackage{setspace}
+\onehalfspace
+
+\usepackage{sectsty}
+%\chapterfont{\color{blue}}  % sets colour of chapters
+%\sectionfont{\color{cyan}}  % sets colour of sections
+\allsectionsfont{\color{sections}}
+%\chapterfont{\color{chapters}}
+
+
+% change chapter title to be without word chapter
+% http://www.latex-community.org/forum/viewtopic.php?f=4&t=638
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+	\vspace*{50 pt}%
+	{\color{chapters}\setlength{\parindent}{0pt} \raggedright \normalfont
+	\bfseries\Huge\thechapter\ #1
+	\par\nobreak\vspace{40 pt}}}
+\makeatother
+
+% Add perfix to chapters
+%http://tex.stackexchange.com/questions/21047/how-to-change-appendix-chapter-name
+\makeatletter
+\def\setChapterprefix#1{\gdef\@Prefix{#1}}
+\setChapterprefix{}
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip 1.0em \@plus\p@
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      {\color{chapters}
+      \@Prefix 
+      #1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par}
+      \penalty\@highpenalty
+    \endgroup
+  \fi}
+\makeatother
+
+\usepackage{graphicx, type1cm, lettrine, blindtext}
+
+\usepackage[round]{natbib}
 
 % for adding bibliography to TOC
 %\usepackage[nottoc]{tocbibind}
-
+\title{Hardening web application (DOS and Application firewalls}
+\author{Margus Ernits}
+\date{2013}
 % Change the name TOC to 
 \renewcommand{\contentsname}{Table of Contents}
-
-
+\newgeometry{margin=2cm}
+%fancy quotes
+%\usepackage[helvetica]{quotchap} 
+%\usepackage[utopia]{quotchap} 
+%tikZ pictures
+\usepackage{tikz}
 
 \input{../glossaries}
 %do remember run:
 %makeglossaries thesis
 \makeglossaries
-
 \begin{document}
 \maketitle
 \tableofcontents
@@ -60,4 +179,5 @@
 \listoftables
 \printglossaries
 \input{../appendix-1}
+\input{../appendix-2}
 \end{document}
