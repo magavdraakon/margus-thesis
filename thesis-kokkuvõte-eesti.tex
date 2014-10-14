@@ -1,0 +1,217 @@
+\documentclass[12pt,a4paper,oneside]{article}
+%xelatex -shell-escape  -synctex=1 -8bit  -interaction=nonstopmode %.tex
+%xelatex used because good support for unicode
+%syntac cororing is done using pygments - you need to install it using following command 
+%sudo apt-get install python-pygments
+%You also need texlive extra fonts
+%apt-get install texlive-fonts-extra
+%sudo apt-get install xindy
+
+\usepackage[english,estonian]{babel}
+
+%for unicode support in XeLaTeX
+\usepackage{fontspec}
+
+%for continous numbering of figures and tables
+\usepackage{chngcntr}
+
+
+
+%for review uncomment following  lines (turn off hyphenation and ligatures before exporting to libreoffice to get comments)
+%\usepackage[none]{hyphenat}
+%\addfontfeatures{Ligatures={NoRequired, NoCommon, NoContextual}}
+%\setmainfont{Latin Modern Roman}
+
+
+\usepackage{hyphenat}
+\setmainfont[Ligatures=TeX]{Linux Libertine O}
+
+
+
+%fancy verbatim - with box
+\usepackage{fancyvrb}
+%\usepackage{fancybox}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+
+%pdfpages - include pdf pages to latex document - for Subject Program
+\usepackage{pdfpages}
+
+%to produce dummy text for testing proposes
+\usepackage{lipsum}
+
+%for coloring syntax
+\usepackage{minted}
+
+%If you want use latex uncomment fontenc and inputenc
+%for UTF8 fonts
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%for custom enumerators like requirements 1, requirements 2 ...
+\usepackage{enumitem} %for requirements enumeration
+
+%Special colors for chapter titpes, sections, links and citations
+\definecolor{chapters}{RGB}{68,40,138}
+\definecolor{sections}{RGB}{68,40,138}
+\definecolor{linkcolor}{RGB}{50,50,100}
+\definecolor{citecolor}{RGB}{50,100,100}
+
+%For mindmaps
+\usepackage{tikz}
+%\usetikzlibrary{mindmap,trees}
+\usetikzlibrary{snakes,arrows,shapes,mindmap,trees}
+
+\usepackage{ucs}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+%   bookmarks=true,         % show bookmarks bar?
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={Hands-On E-learning Course on Cyber Defence for System Administrators},    % title
+    pdfauthor={Margus Ernits},     % author
+    pdfsubject={Master's Thesis},   % subject of the document
+    pdfcreator={XeLaTeX with hyperref},   % creator of the document
+    pdfproducer={XeLaTeX with hyperref}, % producer of the document
+    pdfkeywords={cyber} {security} {thesis} {hands-on} {e-learning}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=linkcolor,          % color of internal links (change box color with linkbordercolor)
+    citecolor=citecolor,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+\usepackage{alltt}
+\usepackage[xindy,toc]{glossaries}
+\makeglossaries 
+\usepackage{graphicx}
+\graphicspath{{./illustrations/}}
+
+% for resizing page
+\usepackage[top=2.50cm, bottom=2.50cm, left=3.50cm, right=2.50cm, includefoot]{geometry}
+
+% use space to separate paragraphs
+\usepackage{parskip}
+\setlength{\parskip}{0.50cm} 
+
+%\usepackage{type1cm}
+%\usepackage{lettrine}
+
+% line spacing
+\usepackage{setspace}
+\onehalfspace
+
+\usepackage{sectsty}
+%\chapterfont{\color{blue}}  % sets colour of chapters
+%\sectionfont{\color{cyan}}  % sets colour of sections
+\allsectionsfont{\color{sections}}
+%\chapterfont{\color{chapters}}
+
+
+% change chapter title to be without word chapter
+% http://www.latex-community.org/forum/viewtopic.php?f=4&t=638
+%\makeatletter
+%\renewcommand{\@makechapterhead}[1]{%
+%	\vspace*{50 pt}%
+%	{\color{chapters}\setlength{\parindent}{0pt} \raggedright \normalfont
+%	\bfseries\Huge\thechapter\ #1
+%	\par\nobreak\vspace{40 pt}}}
+%\makeatother
+%
+%% Add perfix to chapters
+%%http://tex.stackexchange.com/questions/21047/how-to-change-appendix-chapter-name
+%\makeatletter
+%\def\setChapterprefix#1{\gdef\@Prefix{#1}}
+%\setChapterprefix{}
+%\renewcommand*\l@chapter[2]{%
+%  \ifnum \c@tocdepth >\m@ne
+%    \addpenalty{-\@highpenalty}%
+%    \vskip 1.0em \@plus\p@
+%    \setlength\@tempdima{1.5em}%
+%    \begingroup
+%      \parindent \z@ \rightskip \@pnumwidth
+%      \parfillskip -\@pnumwidth
+%      \leavevmode \bfseries
+%      \advance\leftskip\@tempdima
+%      \hskip -\leftskip
+%      {\color{chapters}
+%      \@Prefix 
+%      #1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par}
+%      \penalty\@highpenalty
+%    \endgroup
+%  \fi}
+%\makeatother
+
+\usepackage{graphicx, type1cm, lettrine, blindtext}
+
+\usepackage[round]{natbib}
+
+% for adding bibliography to TOC
+\usepackage[nottoc]{tocbibind}
+
+% Change the name TOC to 
+\renewcommand{\contentsname}{Table of Contents}
+
+%fancy quotes
+%\usepackage[helvetica]{quotchap} 
+%\usepackage[utopia]{quotchap} 
+%tikZ pictures
+\usepackage{tikz}
+
+\input{glossaries}
+%do remember run:
+%makeglossaries thesis
+\makeglossaries
+
+\begin{document}
+%continous figure and table numbering
+%\counterwithout{figure}{chapter}
+%\counterwithout{table}{chapter}
+
+\title{TALLINNA TEHNIKAÜLIKOOL\\
+		Praktilise küberkaitse e-kursus süsteemiadministraatoritele\\
+		Hands-On E-learning Course on Cyber Defence for System Administrators	
+}
+\author{Margus Ernits\\
+		magistritöö kokkuvõte\\
+		}
+\date{Tallinn 2013}
+
+\maketitle
+%\include{title}
+%\include{declaration}
+%\include{abstract}
+\tableofcontents
+%\listoffigures
+%\listoftables
+\include{kokkuvõte}
+\printglossaries
+%\include{introduction}
+%\include{analysis}
+%\include{solution}
+%\include{feedback}
+%\include{future}
+%\include{conclusion}
+
+%\renewcommand\bibname{references}
+%\bibliographystyle{plainnat}
+\bibliographystyle{abbrvnat}
+
+%\bibliography{references}
+
+
+\bibliography{references}
+
+%\include{addendum}
+
+%test.tex is for testing latex capabilities
+%\include{test}
+\end{document}

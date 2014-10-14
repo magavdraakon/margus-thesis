@@ -1,0 +1,32 @@
+digraph "ADDIE" {
+	graph [	fontname = "Helvetica-Oblique",
+		fontsize = 36,
+		size = "6,6" ];
+	node [	shape = ellipse,
+		sides = 4,
+		distortion = "0.0",
+		orientation = "0.0",
+		skew = "0.0",
+		color = white,
+		style = filled,
+		fontname = "Helvetica-Outline" ];
+	"analüüsi etapp" [sides=9, distortion="0.936354", orientation=28, skew="-0.126818", color=mistyrose2];
+	"kavandamise etapp" [sides=5, distortion="0.238792", orientation=11, skew="0.995935", color=deepskyblue];
+	"väljatöötamise etapp" [sides=8, distortion="0.019636", orientation=79, skew="-0.440424", color=goldenrod2];
+        "läbiviimise etapp" [sides=9, distortion="0.936354", orientation=28, skew="-0.126818", color=salmon2];
+        "hindamise etapp" [sides=9, distortion="0.936354", orientation=28, skew="-0.126818", color=thistle2];
+
+	"analüüsi etapp" -> "analüüsi etapp" [ label = "hindamise etapp" ];
+	"analüüsi etapp" -> "kavandamise etapp";
+	"kavandamise etapp" -> "kavandamise etapp" [ label = "hindamise etapp" ];
+	"kavandamise etapp"  -> "väljatöötamise etapp";
+	"väljatöötamise etapp" -> "väljatöötamise etapp"  [ label = "hindamise etapp" ];
+	"väljatöötamise etapp" -> "läbiviimise etapp";
+	"läbiviimise etapp" -> "hindamise etapp";
+	"läbiviimise etapp" -> "läbiviimise etapp"  [ label = "hindamise etapp" ];
+	"hindamise etapp" -> "analüüsi etapp";
+        "hindamise etapp" -> "kavandamise etapp";
+        "hindamise etapp" -> "väljatöötamise etapp";
+        "hindamise etapp" -> "läbiviimise etapp";
+
+}
